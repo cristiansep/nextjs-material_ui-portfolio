@@ -1,16 +1,96 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+/* html,body {
+    margin: 0;
+    overflow-x: hidden;
+   
+    
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } */
+
+
+.progress {
+	background-color: #d8d8d8;
+	border-radius: 20px;
+	position: relative;
+	margin: 15px 0;
+	height: 20px;
+	width: 92%;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.progress-done {
+  /* background: linear-gradient(to left, #F2709C, #FF9472);
+  box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C; */
+  background-color: #e3324d;
+  box-shadow: 0 3px 3px -5px #e3324d, 0 2px 5px #e3324d;
+	border-radius: 20px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 0;
+	opacity: 0;
+	transition: 1s ease 0.3s;
 }
 
-* {
-  box-sizing: border-box;
-}
+
+
+
+.transitions-item {
+	overflow: hidden;
+	width: 100%;
+	color: white;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: 2em;
+	font-weight: 800;
+	text-transform: uppercase;
+	will-change: transform, opacity, height;
+	white-space: nowrap;
+	/* cursor: pointer; */
+	line-height: 30px;
+  }
+
+
+
+  .card1,
+  /* .card2,
+  .card3, */
+  .card4 {
+	position: absolute;
+	border-radius: 5px;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	will-change: transform;
+  }
+  
+  .card1 {
+	min-width: 60ch;
+	min-height: 60ch;
+	width: 45vw;
+	height: 45vw;
+	max-width: 100ch;
+	max-height: 100ch;
+	z-index: 1;
+	background-image: url(../public/images/5.svg);
+  }
+  
+  
+  .card4 {
+	width: 45vw;
+	height: 45vw;
+	background-image: url(../public/images/2.svg);
+  }
+  
+  .container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
