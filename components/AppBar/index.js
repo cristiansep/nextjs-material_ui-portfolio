@@ -1,17 +1,15 @@
-import React, {useState,useRef, useEffect} from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import AppBarCollapse from './AppBarCollapse';
-import { Grid } from '@material-ui/core';
-import { Button} from "@material-ui/core";
+import React, { useState, useRef, useEffect } from "react";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Box from "@material-ui/core/Box";
+import AppBarCollapse from "./AppBarCollapse";
+import { Grid } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
-import useStyles from './styles';
+import useStyles from "./styles";
 import { animateScroll as scroll } from "react-scroll";
-import ButtonSong from '../ButtonSong';
-
-
+import ButtonSong from "../ButtonSong";
+import Fade from "react-reveal/Fade";
 
 export default function AppBarComponent() {
   const classes = useStyles();
@@ -38,30 +36,29 @@ export default function AppBarComponent() {
   }, []);
 
   return (
-    <Box  display="flex" >
-      <Grid container >
+    <Box display="flex">
+      <Grid container>
         <AppBar position="fixed" className={classes[navRef.current]}>
           <Toolbar className={classes.spacingAppbar}>
-
             <Box variant="div" className={classes.title}>
-                <Button 
-                color="inherit" 
-                className={classes.buttonTitle}
-                onClick={() => scroll.scrollToTop()}
+              <Fade top>
+                <Button
+                  color="inherit"
+                  className={classes.buttonTitle}
+                  onClick={() => scroll.scrollToTop()}
                 >
-                CRISTIANSEP
+                  CRISTIANSEP
                 </Button>
+              </Fade>
             </Box>
-            
-            <Box component="div">
+
+            <Box component="div" className={classes.menu}>
               <AppBarCollapse />
             </Box>
 
-            <Box component="div">
-              <ButtonSong/>
+            <Box component="div" className={classes.buttonSong}>
+              <ButtonSong />
             </Box>
-
-        
           </Toolbar>
         </AppBar>
       </Grid>

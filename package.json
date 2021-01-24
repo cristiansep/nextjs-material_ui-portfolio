@@ -21,6 +21,7 @@
     "react-spring": "^8.0.27",
     "react-typed": "^1.2.0",
     "sweetalert2": "^10.13.0",
-    "use-sound": "^2.0.1"
+    "use-sound": "^2.0.1",
+    "uuid": "^8.3.2"
   }
 }

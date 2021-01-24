@@ -6,6 +6,9 @@ import Fade from 'react-reveal/Fade';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import {useSpring, animated} from 'react-spring'
+import Button from '@material-ui/core/Button';
+import {aboutData} from '../../data';
+
 
 
 import { Skills } from '../Skills';
@@ -29,153 +32,187 @@ const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg)
 
 export const About = () => {
   const classes = useStyles();
-  
 
-  const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 350, friction: 40 } }));
- 
+  const [props, set] = useSpring(() => ({
+    xys: [0, 0, 1],
+    config: { mass: 5, tension: 350, friction: 40 },
+  }));
+
   return (
     <div className={classes.root}>
       <Container className={classes.cardGrid} maxWidth="lg" id="about">
         <Title title="Sobre mi" />
 
-        
         <Paper className={classes.paperStyle}>
-        <Grid container spacing={2} justify="center" id="skill">
-          {/*Section 1*/}
-          <Fade bottom>
-            <animated.div
-              onMouseMove={({ clientX: x, clientY: y }) =>
-                set({ xys: calc(x, y) })
-              }
-              onMouseLeave={() => set({ xys: [0, 0, 1] })}
-              style={{ transform: props.xys.interpolate(trans) }}
+          {aboutData.map((about) => (
+            <Grid
+              container
+              spacing={2}
+              justify="center"
+              id="skill"
+              key={about.id}
             >
-              <Grid item xs={12} sm={6} md={6} className={classes.marginImg}>
-                <img
-                  src="/images/me.jpg"
-                  alt="Foto Perfil"
-                  className={classes.imagen}
-                />
-              </Grid>
-            </animated.div>
-          </Fade>
-
-
-          <Grid item xs={12} sm={8} md={6} xl={6}>
-
-           
+              {/*Section 1*/}
               <Fade bottom>
-              <Grid container direction="column" className={classes.top}>
-                <Grid container item direction="row"  className={classes.boxData}>
-                  <Grid item >
-                  <Typography
-                    variant="subtitle1"
-                    component="span"
-                    className={classes.primero}
+                <animated.div
+                  onMouseMove={({ clientX: x, clientY: y }) =>
+                    set({ xys: calc(x, y) })
+                  }
+                  onMouseLeave={() => set({ xys: [0, 0, 1] })}
+                  style={{ transform: props.xys.interpolate(trans) }}
+                >
+                  <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                    md={6}
+                    className={classes.marginImg}
                   >
-                    Nombre:
-                  </Typography>
+                    <img
+                      src={about.img}
+                      alt="Foto Perfil"
+                      className={classes.imagen}
+                    />
                   </Grid>
-                  <Grid item >
-                  <Typography
-                    variant="subtitle1" 
-                    component="span"
-                    className={classes.segundo}
-                  >
-                    Cristian Sepúlveda
-                  </Typography>
-                  </Grid>
-                </Grid>
+                </animated.div>
+              </Fade>
 
-                <Grid container item direction="row" className={classes.boxData}>
-                  <Grid item>
-                  <Typography
-                    variant="subtitle1"
-                    component="span"
-                    className={classes.primero}
-                  >
-                    Perfil:
-                  </Typography>
-                  </Grid>
-                  <Grid item>
-                  <Typography
-                    variant="subtitle1" 
-                    component="span"
-                    className={classes.segundo}
-                  >
-                    Full Stack Developer
-                  </Typography>
-                  </Grid>
-                </Grid>
-             
-                <Grid container item direction="row" className={classes.boxData}>
-                  <Grid item>
-                  <Typography
-                    variant="subtitle1"
-                    component="span"
-                    className={classes.primero}
-                  >
-                    Email:
-                  </Typography>
-                  </Grid>
-                  <Grid item>
-                  <Typography
-                    variant="subtitle1" 
-                    component="span"
-                    className={classes.segundo}
-                  >
-                    cristiansepulvedamendez@gmail.com
-                  </Typography>
-                  </Grid>
-                </Grid>
+              <Grid item xs={12} sm={8} md={6} xl={6}>
+                <Fade bottom>
+                  <Grid container direction="column" className={classes.top}>
+                    <Grid
+                      container
+                      item
+                      direction="row"
+                      className={classes.boxData}
+                    >
+                      <Grid item>
+                        <Typography
+                          variant="subtitle1"
+                          component="span"
+                          className={classes.primero}
+                        >
+                          Nombre:
+                        </Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography
+                          variant="subtitle1"
+                          component="span"
+                          className={classes.segundo}
+                        >
+                          {about.name}
+                        </Typography>
+                      </Grid>
+                    </Grid>
 
-                <Grid container item direction="row" className={classes.boxData}>
-                  <Grid item>
-                  <Typography
-                    variant="subtitle1"
-                    component="span"
-                    className={classes.primero}
-                  >
-                    Telefono:
-                  </Typography>
+                    <Grid
+                      container
+                      item
+                      direction="row"
+                      className={classes.boxData}
+                    >
+                      <Grid item>
+                        <Typography
+                          variant="subtitle1"
+                          component="span"
+                          className={classes.primero}
+                        >
+                          Perfil:
+                        </Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography
+                          variant="subtitle1"
+                          component="span"
+                          className={classes.segundo}
+                        >
+                          {about.perfil}
+                        </Typography>
+                      </Grid>
+                    </Grid>
+
+                    <Grid
+                      container
+                      item
+                      direction="row"
+                      className={classes.boxData}
+                    >
+                      <Grid item>
+                        <Typography
+                          variant="subtitle1"
+                          component="span"
+                          className={classes.primero}
+                        >
+                          Email:
+                        </Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography
+                          variant="subtitle1"
+                          component="span"
+                          className={classes.segundo}
+                        >
+                          {about.email}
+                        </Typography>
+                      </Grid>
+                    </Grid>
+
+                    <Grid
+                      container
+                      item
+                      direction="row"
+                      className={classes.boxData}
+                    >
+                      <Grid item>
+                        <Typography
+                          variant="subtitle1"
+                          component="span"
+                          className={classes.primero}
+                        >
+                          Telefono:
+                        </Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography
+                          variant="subtitle1"
+                          component="span"
+                          className={classes.segundo}
+                        >
+                          {about.phone}
+                        </Typography>
+                      </Grid>
+                    </Grid>
                   </Grid>
-                  <Grid item>
-                  <Typography
-                    variant="subtitle1" 
-                    component="span"
-                    className={classes.segundo}
-                  >
-                    + 56 9 4550 4578
-                  </Typography>
-                  </Grid>
-                </Grid>
-             
-              
-              </Grid>
                 </Fade>
 
                 <Fade bottom>
-              <Typography
-                variant="h5"
-                gutterBottom
-                color="textSecondary"
-                className={classes.about_text}
-                // style={{ color: "#252740" }}
-              >
-                Soy técnico en programación computacional 
-                y en estos momentos me encuentro cursando la carrera de ingeniería en informática 
-                en instituto profesional AIEP Osorno.
-                Me apasiona programar y crear aplicaciones funcionales e interactivas. 
-                Soy un entusiasta de las nuevas tecnologías, 
-                gran parte de mi tiempo la dedico a la investigación y desarrollo de estas.
-              </Typography>
-              </Fade>
-         
-          </Grid>
+                  <Typography
+                    variant="h5"
+                    gutterBottom
+                    color="textSecondary"
+                    className={classes.about_text}
+                  >
+                    {about.summary}
+                  </Typography>
+                </Fade>
+                <Fade bottom>
+                  <Grid item xs={12}>
+                    <Button
+                      variant="contained"
+                      href={about.resume}
+                      target="_blank"
+                      className={classes.buttonColor}
+                    >
+                      Descargar Cv
+                    </Button>
+                  </Grid>
+                </Fade>
+              </Grid>
+            </Grid>
+          ))}
 
-
-        </Grid>
-          <Skills/>
+          <Skills />
         </Paper>
       </Container>
     </div>

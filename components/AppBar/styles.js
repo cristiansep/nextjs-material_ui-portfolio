@@ -9,7 +9,8 @@ export default makeStyles((theme) => ({
     marginBottom: theme.spacing(1),
   },
   title: {
-    flexGrow: 0.7,
+    // flexGrow: 0.7,
+    flexGrow: 1,
     marginLeft: theme.spacing(6),
     [theme.breakpoints.down("md")]: {
         flexGrow: 1,
@@ -65,7 +66,7 @@ export default makeStyles((theme) => ({
     },
     position: "relative",
     background: "transparent",
-    flexGrow: 0.5,
+    // flexGrow: 0.5,
     "& > *": {
       marginLeft: theme.spacing(4),
     },
@@ -104,5 +105,11 @@ export default makeStyles((theme) => ({
   },
   active: {
     borderBottom: "2px solid #ff324d",
+  },
+  buttonSong: {
+    marginLeft: theme.spacing(5),
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: 0,
+    },
   },
 }));

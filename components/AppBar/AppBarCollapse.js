@@ -5,10 +5,11 @@ import { Menu } from "@material-ui/core";
 import Box from '@material-ui/core/Box';
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from '@material-ui/icons/Menu';
-import Flip from 'react-reveal/Flip';
+import Fade from 'react-reveal/Fade';
 
 
 import useStyles from './styles';
+
 
 
 
@@ -28,9 +29,9 @@ export default function AppBarCollapse() {
   <div className={classes.root} id="appbar-collapse">
     <div className={classes.buttonCollapse}>
     <IconButton onClick={handleClick} aria-controls="simple-menu" aria-haspopup="true" className={classes.iconButtonBorder} color="inherit" size="small">
-            <Flip left>
+            <Fade top>
                  <MenuIcon/>
-            </Flip>
+            </Fade>
         </IconButton>
     <Menu
         id="simple-menu"
@@ -56,6 +57,7 @@ export default function AppBarCollapse() {
       </MenuItem>
       </Menu>
       </div>
+      <Fade top cascade>
      <Box component="div" className={classes.buttonBar} id="appbar-collapse">
           <Button color="inherit" className={classes.buttonBorder2}>
             <Link to="inicio" activeClass={classes.active} spy={true}  smooth={true} duration={1000}>Inicio</Link>
@@ -73,7 +75,7 @@ export default function AppBarCollapse() {
             <Link to="contact" activeClass={classes.active}  spy={true} offset={50}  smooth={true} duration={1000}>Contacto</Link>
           </Button>
     </Box>
-   
+    </Fade>
             
   </div>
 )};

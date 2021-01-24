@@ -7,7 +7,7 @@ import Fade from 'react-reveal/Fade';
 
 import AnimatedImage from '../AnimatedImage';
 import { Particulas } from '../Particulas';
-// import AnimatedImage from '../components/AnimatedImage';
+
 
 
 
@@ -25,15 +25,9 @@ const useStyles = makeStyles((theme) => ({
   nameTitle: {
     color: "#fff",
     fontFamily: "Arial Black",
-    marginTop: "40%",
+    marginTop: "30%",
     [theme.breakpoints.up("xl")]: {
-      top: "50%",
-    },
-    [theme.breakpoints.up("md")]: {
-      top: "50%",
-    },
-    [theme.breakpoints.down("sm")]: {
-      top: "50%",
+      marginTop: "50%",
     },
   },
   nameSubTitle: {
@@ -45,8 +39,6 @@ const useStyles = makeStyles((theme) => ({
     width: 400,
     position: 'relative',
     [theme.breakpoints.down("sm")]: {
-      // height: 400,
-      // width: 400,
       display: "none",
     },
     [theme.breakpoints.up("xl")]: {
@@ -97,7 +89,7 @@ export default function Perfil() {
                   gutterBottom
                   className={classes.nameTitle}
                 >
-              <Fade left>
+              <Fade>
            
                   <Typed strings={["Cristian Sepúlveda"]} typeSpeed={50} />
              
@@ -108,7 +100,7 @@ export default function Perfil() {
                   gutterBottom
                   className={classes.nameSubTitle}
                   >
-                    <Fade left>
+                    <Fade>
                   <Typed
                     strings={["Full Stack Developer", "Front-end Developer", "Back-end Developer"]}
                     typeSpeed={50}
@@ -121,7 +113,7 @@ export default function Perfil() {
         
           
           <Grid item xs={12} sm={6} md={6} lg={6}  xl={6}>
-          <Fade right>
+          <Fade>
           <div className={classes.image}>
           <AnimatedImage />
           </div>

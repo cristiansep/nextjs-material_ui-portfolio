@@ -73,7 +73,7 @@ export const Skills = () => {
     <div className={classes.root}>
       <Container className={classes.cardGrid} maxWidth="lg">
           <Fade bottom>
-        <Grid container  justify="center">
+        <Grid container >
             <Grid item xs={12} sm={9} md={12} xl={12} className={classes.marginContent}>
             <Typography variant="h5" gutterBottom className={classes.margenTitulo}>
               Habilidades
