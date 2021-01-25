@@ -170,7 +170,7 @@ export const About = () => {
                           component="span"
                           className={classes.primero}
                         >
-                          Telefono:
+                          Teléfono:
                         </Typography>
                       </Grid>
                       <Grid item>

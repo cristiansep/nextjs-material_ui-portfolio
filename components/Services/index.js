@@ -60,7 +60,7 @@ export default function Services() {
   return (
     <div className={classes.backColor}>
       <Container className={classes.cardGrid} maxWidth="lg" id="servicios">
-        <Title title="Servisios" />
+        <Title title="Servicios" />
 
 
         <Grid container justify="center" spacing={3}>
