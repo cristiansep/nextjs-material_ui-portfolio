@@ -18,7 +18,7 @@ export const ProgressBar = ({name,done}) => {
 
       const about = document.querySelector('#skill');
       const ubicacion = about.getBoundingClientRect();
-      if(ubicacion.top < 200){
+      if(ubicacion.top < 100){
           const newStyle = {
             opacity: 1,
             width: `${done}%`,
