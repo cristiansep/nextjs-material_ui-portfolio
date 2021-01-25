@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 
 
 import { ProgressBar } from './ProgressBar';
+import { skillData } from '../../data';
 
 
 
@@ -53,16 +54,6 @@ const useStyles =  makeStyles((theme) => ({
 
 
 
-  const numsData = [
-    {name: 'Node', num:50},
-    {name: 'React', num:70},
-    {name: 'Angular', num:40},
-    {name: 'Javascript', num:80}
-  ];
-
-
-
-
 
 
 
@@ -78,7 +69,7 @@ export const Skills = () => {
             <Typography variant="h5" gutterBottom className={classes.margenTitulo}>
               Habilidades
             </Typography>
-              {numsData.map((items, idx) => (
+              {skillData.map((items, idx) => (
                 <ProgressBar key={idx} name={items.name} done={items.num} />
               ))}
             </Grid>

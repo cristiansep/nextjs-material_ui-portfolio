@@ -21,8 +21,10 @@ export default function MyApp(props) {
     <React.Fragment>
       <Head>
         <title>CristianSep</title>
-        <link rel="shortcut icon" href="favicon.png" />
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        <meta name="author" content="Cristian Sepúlveda"></meta>
+        <meta name="description" content="Portafolio creado con material-ui"></meta>
+        <link rel="shortcut icon" href="favicon.png" />
       </Head>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />

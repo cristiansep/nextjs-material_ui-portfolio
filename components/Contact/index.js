@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import Title from '../../components/Title';
+import Title from '../widgets/Title';
 import Grid from '@material-ui/core/Grid';
-import {withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import Fade from 'react-reveal/Fade';
 import Paper from '@material-ui/core/Paper';
 
@@ -20,36 +18,11 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 
 
-import useStyles from './styles';
+import useStyles,{InputField} from './styles';
 import { emailContact } from '../../helpers/emailContact';
+import {contactData} from '../../data'
 
 
-
-const InputField = withStyles({
-  root: {
-      "& label.Mui-focused": {
-          color: "#7c7d8c"
-      },
-      "& label": {
-          color: "#7c7d8c",
-      },
-      "& .MuiOutlinedInput-root": {
-          "& fieldset": {
-              borderColor: "#7c7d8c"
-          },
-          "&.MuiOutlinedInput-colorSecondary": {
-            color: "#7c7d8c"
-          },
-          "&.Mui-focused fieldset": {
-            borderColor: "#7c7d8c"
-          },
-          "&:hover fieldset": {
-            borderColor: "#252740"
-        },
-      },
-  },
-  
-})(TextField);
 
 
 const initEvent = {
@@ -100,33 +73,35 @@ const handleSubmitForm = (e) => {
           <Fade left cascade>
             <Grid item xs={12} sm={12} md={6} xl={6} className={classes.espacio}>
            
-                <List component="div">
-                  <ListItem className={classes.margen}>
-                    <ListItemAvatar >
-                      <Avatar  className={classes.tamano}>
-                      <CallIcon className={classes.iconAnimation}/>
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText className={classes.textList} primary="+56 9 4550 4575" />
-                  </ListItem>
-                  <ListItem className={classes.margen}>
-                     <ListItemAvatar >
-                      <Avatar  className={classes.tamano}>
-                      <RoomIcon className={classes.iconAnimation}/>
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText className={classes.textList} primary="Bernardo Ohiggins 234" />
-                  </ListItem>
-                  <ListItem>
-                     <ListItemAvatar>
-                      <Avatar className={classes.tamano}>
-                      <MailIcon className={classes.iconAnimation}/>
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText className={classes.textList} primary="cristiansepulvedamendez@gmail.com" />
-                  </ListItem>
-                </List>
-           
+                  {contactData.map(contact => 
+                  
+                    <List component="div" key={contact.id}>
+                        <ListItem className={classes.margen}>
+                        <ListItemAvatar >
+                          <Avatar  className={classes.tamano}>
+                          <CallIcon className={classes.iconAnimation}/>
+                          </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText className={classes.textList} primary={contact.phone} />
+                      </ListItem>
+                      <ListItem className={classes.margen}>
+                        <ListItemAvatar >
+                          <Avatar  className={classes.tamano}>
+                          <RoomIcon className={classes.iconAnimation}/>
+                          </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText className={classes.textList} primary={contact.address} />
+                      </ListItem>
+                      <ListItem>
+                        <ListItemAvatar>
+                          <Avatar className={classes.tamano}>
+                          <MailIcon className={classes.iconAnimation}/>
+                          </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText className={classes.textList} primary={contact.email} />
+                      </ListItem>
+                    </List>
+                  )}
             </Grid>
           </Fade>
           {/*Section 2*/}

@@ -8,7 +8,7 @@ import { Button } from "@material-ui/core";
 
 import useStyles from "./styles";
 import { animateScroll as scroll } from "react-scroll";
-import ButtonSong from "../ButtonSong";
+import ButtonSong from "../widgets/ButtonSong";
 import Fade from "react-reveal/Fade";
 
 export default function AppBarComponent() {

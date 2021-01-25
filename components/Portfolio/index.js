@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -9,55 +8,12 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import Fade from 'react-reveal/Fade';
 
+import Title from '../widgets/Title';
+import {portfolioData} from '../../data'
 
-
-import Title from '../Title';
 import useStyles from './styles';
 
 
-
-  const projects= [
-    {
-      id:1,
-      title:"Landing page",
-      technology:"React.js, Material UI, Bootstrap.",
-      features:"Responsive web design, Serverless contact form, Google Analytics Setup.",
-      date:"November 2019",
-      img:"/images/undraw_react_y7wq.svg",
-      codeUrl:"https://github.com/HamdiNawfel/anis-construction",
-      demoUrl:"https://quizzical-allen-8a2dcc.netlify.app"
-    },
-    {
-      id:2,
-      title:"Startup feeds",
-      technology:"Express.js, Firebase, React.js, Redux, Material UI.",
-      features:"login, Signup, push notification.",
-      date:"May 2020",
-      img:"/images/undraw_finance_0bdk.svg",
-      codeUrl:"https://github.com/HamdiNawfel/startup-feeds",
-      demoUrl:"https://socialapp-26260.firebaseapp.com/"
-    },
-    {
-      id:3,
-      title:"Rest Api",
-      technology:"Node.js, Express.js, Passport-jwt.",
-      features:"Authentification, CRUD operations, Uploading File.",
-      date:"April 2020",
-      img:"/images/undraw_code_review_l1q9.svg",
-      codeUrl:"https://github.com/HamdiNawfel/auth-api",
-      
-    },
-    {
-      id:4,
-      title:"Portfolio",
-      technology:"React, Material UI, React-spring.",
-      features:"Animation, Responsive web design, Serverless contact form.",
-      date:"July  2020",
-      img:"/images/undraw_portfolio_website_lidw.svg",
-      codeUrl:"https://github.com/HamdiNawfel/nawfel-hamdi.com.git",
-      demoUrl:""
-    },
-  ]
 
 
 
@@ -80,10 +36,10 @@ function ProjectCard(props) {
                 {props.date}
               </Typography>
               <Typography variant="subtitle1" color="textSecondary">
-               <span className={classes.explanation}>Technology:</span> {props.technology}
+               <span className={classes.explanation}>Tecnología:</span> {props.technology}
               </Typography>
               <Typography variant="subtitle1" color="textSecondary">
-              <span  className={classes.explanation}>Features:</span> {props.features}
+              <span  className={classes.explanation}>Características:</span> {props.features}
               </Typography>
 
 
@@ -114,7 +70,7 @@ export default function Portfolio() {
         <Title title="Proyectos"/>
     
       <Grid container justify="center" spacing={10}>
-        {projects.map(item => <ProjectCard
+        {portfolioData.map(item => <ProjectCard
           key={item.id} 
           title={item.title}
           technology={item.technology}

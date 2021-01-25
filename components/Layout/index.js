@@ -15,12 +15,6 @@ import Contact from '../Contact';
 import Portfolio from '../Portfolio';
 import Footer from '../Footer';
 
-// import Services from './Services';
-// import Contact from './Contact';
-// import Footer from '../components/Footer';
-// import Perfil from './Perfil';
-// import Portfolio from './Portfolio';
-// import { About } from './About';
 
 
 

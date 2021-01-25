@@ -1,5 +1,5 @@
 import React from 'react';
-import Title from '../../components/Title';
+import Title from '../widgets/Title';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Fade from 'react-reveal/Fade';
@@ -11,7 +11,7 @@ import {aboutData} from '../../data';
 
 
 
-import { Skills } from '../Skills';
+import { Skills } from '../widgets/Skills';
 
 
 import useStyles from './styles';

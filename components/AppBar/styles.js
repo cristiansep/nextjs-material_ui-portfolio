@@ -16,6 +16,9 @@ export default makeStyles((theme) => ({
         flexGrow: 1,
         marginLeft: 0,
     },
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   buttonTitle: {
     fontSize: '20px',
@@ -30,6 +33,7 @@ export default makeStyles((theme) => ({
       backgroundColor: "transparent"
     
     },
+   
   },
   buttonSpacing: {
     flexGrow: 0.5,
@@ -96,6 +100,7 @@ export default makeStyles((theme) => ({
       outline: "none",
       textShadow: "0 0 0 #ffff",
     },
+  
   },
   buttonCollapse: {
     [theme.breakpoints.up("md")]: {
@@ -112,4 +117,10 @@ export default makeStyles((theme) => ({
       marginLeft: 0,
     },
   },
+  menu: {
+    [theme.breakpoints.down("sm")]: {
+      flexGrow: 1,
+      // marginLeft: theme.spacing(6),
+    },
+  }
 }));

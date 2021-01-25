@@ -9,7 +9,7 @@ export const ProgressBar = ({name,done}) => {
 
 
 
-  const [style, setStyle] = React.useState({});
+  const [style, setStyle] = React.useState({}); 
 
   useEffect(() => {
 
@@ -27,8 +27,6 @@ export const ProgressBar = ({name,done}) => {
       }
   
     })
-   
-
   }, [done]);
     
 

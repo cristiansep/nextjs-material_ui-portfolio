@@ -5,8 +5,8 @@ import {Container, Grid } from '@material-ui/core';
 import Typed from 'react-typed';
 import Fade from 'react-reveal/Fade';
 
-import AnimatedImage from '../AnimatedImage';
-import { Particulas } from '../Particulas';
+import AnimatedImage from '../widgets/AnimatedImage';
+import { Particulas } from '../widgets/Particulas';
 
 
 

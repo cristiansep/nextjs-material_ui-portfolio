@@ -2,27 +2,131 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 export const headData = {
-    title: '', // e.g: 'Name | Developer'
-    lang: '', // e.g: en, es, fr, jp
-    description: '', // e.g: Welcome to my website
+    title: 'CristianSep',
+    lang: 'en',
+    author: 'Cristian Sepúlveda', 
+    description: 'Portafolio creado con material-ui', 
   };
   
   
   // ABOUT DATA
-  export const aboutData = [{
-    id: uuidv4(),
-    name: 'Cristian Sepúlveda',
-    perfil: 'Full Stack Developer',
-    email: 'cristiansepulvedamendez@gmail.com',
-    phone: '+ 56 9 4550 4578',
-    img: '/images/me.jpg',
-    resume: '/docs/Curriculum Cristian Sepúlveda.pdf', 
-    summary: ` Soy técnico en programación computacional 
-    y en estos momentos me encuentro cursando la carrera de ingeniería en informática 
-    en instituto profesional AIEP Osorno.
-    Me apasiona programar y crear aplicaciones funcionales e interactivas. 
-    Soy un entusiasta de las nuevas tecnologías, 
-    gran parte de mi tiempo la dedico a la investigación y desarrollo de estas.`,
-  }];
+  export const aboutData = [
+      {
+      id: uuidv4(),
+      name: 'Cristian Sepúlveda',
+      perfil: 'Full Stack Developer',
+      email: 'cristiansepulvedamendez@gmail.com',
+      phone: '+ 56 9 4550 4578',
+      img: '/images/me.jpg',
+      resume: '/docs/Curriculum Cristian Sepúlveda.pdf', 
+      summary: ` Soy técnico en programación computacional 
+      y en estos momentos me encuentro cursando la carrera de ingeniería en informática 
+      en instituto profesional AIEP Osorno.
+      Me apasiona programar y crear aplicaciones funcionales e interactivas. 
+      Soy un entusiasta de las nuevas tecnologías, 
+      gran parte de mi tiempo la dedico a la investigación y desarrollo de estas.`,
+    }
+  ] ;
+
+  // SKILL DATA
+  export const skillData = [
+    {name: 'Node', num:65},
+    {name: 'React', num:70},
+    {name: 'Angular', num:50},
+    {name: 'Javascript', num:65}
+  ];
+
+
+// PORTFOLIO DATA
+  export const portfolioData = [
+    {
+      id:uuidv4(),
+      title:"Reserva de horas médicas App",
+      technology:"React.js, Context Api, Material UI, Moment.js",
+      features:"Administración de usuarios, Administración de horarios, Autenticación, Protección de rutas.",
+      date:"Noviembre/Diciembre 2020",
+      img:"/images/undraw_react_y7wq.svg",
+      codeUrl:"https://github.com/cristiansep/ReservasApp",
+      demoUrl:""
+    },
+    {
+      id:uuidv4(),
+      title:"Journal App",
+      technology:"Firebase, React.js, Redux, Sass.",
+      features:"Autenticación, CRUD, Manejo de estado global, Subida de archivos a cloudinary.",
+      date:"Agosto 2020",
+      img:"/images/undraw_finance_0bdk.svg",
+      codeUrl:"https://github.com/cristiansep/JournalApp",
+      demoUrl:""
+    },
+    {
+      id:uuidv4(),
+      title:"Rest Api Reserva de horas",
+      technology:"Node.js,Express.js, Jsonwebtoken, Sequelize, Nodemailer.",
+      features:"Autenticación, Protección de rutas, CRUD, Subida de archivos, Envio de emails",
+      date:"Noviembre/Diciembre 2020",
+      img:"/images/undraw_code_review_l1q9.svg",
+      codeUrl:"https://github.com/cristiansep/Backend-Sequelize",
+      
+    },
+    {
+      id:uuidv4(),
+      title:"Portafolio",
+      technology:"Nextjs, Material UI, React-spring.",
+      features:"Animaciones, Diseño web responsivo, Formulario de contacto sin servidor, .",
+      date:"Enero 2021",
+      img:"/images/undraw_portfolio_website_lidw.svg",
+      codeUrl:"https://github.com/cristiansep/nextjs-material_ui-portfolio",
+      demoUrl:""
+    },
+  ]
+
+
+
+
+  export const servicesData = [
+    {
+        id:uuidv4(),
+        title:"Rápido",
+        description:"Mi mayor prioridad son los tiempos de carga rápidos e interacción sin retrasos.",
+        img:'/images/undraw_To_the_stars_qhyy.svg'
+    },
+    {
+        id:uuidv4(),
+        title:"Responsivo",
+        description:"Mis diseños funcionan en todos los dispositivos y en todo tipo de pantallas.",
+        img:'/images/undraw_progressive_app_m9ms.svg'
+    },
+    
+    {
+        id:uuidv4(),
+        title:"Dinámico",
+        description:"Los sitios web no tienen por qué ser estáticos, me encanta hacer que las páginas cobren vida.",
+        img:'/images/undraw_server_cluster_jwwq.svg'
+    },
+  ]
+
+// CONTACT DATA
+  export const contactData = [
+    {
+      id:uuidv4(),
+      phone: '+ 56 9 4550 4578',
+      address: 'Bernardo Ohiggins 234 Osorno',
+      email: 'cristiansepulvedamendez@gmail.com',
+    },
+  ]
   
+
+
+  // FOOTER DATA
+export const footerData = {
+  networks: [
+    {
+      id: uuidv4(),
+      urlGit: 'https://github.com/cristiansep',
+      urlTwitter: 'https://twitter.com/crist_sepulveda',
+      urlIn: 'https://www.linkedin.com/in/cristiansep',
+    }
+  ],
+};
  
