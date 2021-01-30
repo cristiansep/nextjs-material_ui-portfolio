@@ -50,15 +50,7 @@ export default function Album() {
 
 const handleSubmitForm = (e) => {
   e.preventDefault();
-
-
-
   emailContact(e.target);
-
-
-  
-
-
   setContactForm(initEvent);
 }
 
@@ -110,8 +102,6 @@ const handleSubmitForm = (e) => {
               <div className={classes.paper}>
                 <form
                   className={classes.form}
-                  // name="contact"
-                  // data-netlify="true"
                   onSubmit={handleSubmitForm}
                 >
                   <Grid container spacing={2}>

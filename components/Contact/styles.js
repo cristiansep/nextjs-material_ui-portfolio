@@ -15,10 +15,11 @@ export default makeStyles((theme )=> ({
       },
       submit: {
         margin: theme.spacing(3, 0, 2),
-        background: '#ff324d',
+        background: '#ff4c60',
         color: 'white',
         "&:hover,&.MuiButton-hover":{
-          background: '#ff4c60',
+          background: '#DD3A4C',
+          color: 'white',
         }
       },
       images: {

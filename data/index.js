@@ -18,7 +18,7 @@ export const headData = {
       email: 'cristiansepulvedamendez@gmail.com',
       phone: '+ 56 9 4550 4578',
       img: '/images/me.jpg',
-      resume: '/docs/Curriculum Cristian Sepúlveda.pdf', 
+      resume: '/docs/Cristian-Sepúlveda.pdf', 
       summary: ` Soy técnico en programación computacional 
       y en estos momentos me encuentro cursando la carrera de ingeniería en informática 
       en instituto profesional AIEP Osorno.
@@ -77,6 +77,26 @@ export const headData = {
       date:"Enero 2021",
       img:"/images/undraw_portfolio_website_lidw.svg",
       codeUrl:"https://github.com/cristiansep/nextjs-material_ui-portfolio",
+      demoUrl:""
+    },
+    {
+      id:uuidv4(),
+      title:"FoodApp",
+      technology:"React Native, Expo CLI.",
+      features:"Consumo de APIS, tratamiento de imágenes, hooks.",
+      date:"Enero 2021",
+      img:"/images/movil-1.svg",
+      codeUrl:"https://github.com/cristiansep/Food-App",
+      demoUrl:""
+    },
+    {
+      id:uuidv4(),
+      title:"Blog",
+      technology:"React Native, Expo CLI.",
+      features:"CRUD, Context API, Reducer, reutilización de componentes.",
+      date:"Enero 2021",
+      img:"/images/movil-2.svg",
+      codeUrl:"https://github.com/cristiansep/BlogApp",
       demoUrl:""
     },
   ]
