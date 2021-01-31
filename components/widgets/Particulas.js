@@ -34,7 +34,7 @@ export const Particulas = () => {
                             }
                         },
                         size: {
-                            value: 8,
+                            value: 4,
                             random: true,
                             anim: {
                                 enable: true,
