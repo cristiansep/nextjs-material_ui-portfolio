@@ -17,14 +17,14 @@ export const headData = {
       perfil: 'Full Stack Developer',
       email: 'cristiansepulvedamendez@gmail.com',
       phone: '+ 56 9 4550 4578',
-      img: '/images/me.jpg',
+      img: '/images/me3.jpg',
       resume: '/docs/CV-CristianSepúlveda.pdf', 
-      summary: ` Soy técnico en programación computacional 
-      y en estos momentos me encuentro cursando la carrera de ingeniería en informática 
-      en instituto profesional AIEP Osorno.
-      Me apasiona programar y crear aplicaciones funcionales e interactivas. 
-      Soy un entusiasta de las nuevas tecnologías, 
-      gran parte de mi tiempo la dedico a la investigación y desarrollo de estas.`,
+      summary: ` Soy desarrollador de software. 
+      Tengo más de dos años de experiencia en desarrollo web 
+      especialmente en JavaScript y su ecosistema. Me apasiona programar, 
+      crear aplicaciones intuitivas, agradables de ver y de propiedad colectiva. 
+      Soy un entusiasta de las nuevas tecnologías. Siempre, 
+      estoy dispuesto a asumir nuevos desafíos y desarrollar ideas innovadoras.`,
     }
   ] ;
 
@@ -53,11 +53,11 @@ export const headData = {
       id:uuidv4(),
       title:"Journal App",
       technology:"Firebase, React.js, Redux, Sass.",
-      features:"Autenticación, CRUD, Manejo de estado global, Subida de archivos a cloudinary.",
+      features:"Autenticación normal y con google, CRUD, Manejo de estado global, Subida de archivos a cloudinary.",
       date:"Agosto 2020",
       img:"/images/undraw_finance_0bdk.svg",
       codeUrl:"https://github.com/cristiansep/JournalApp",
-      demoUrl:""
+      demoUrl:"https://confident-clarke-e66377.netlify.app"
     },
     {
       id:uuidv4(),

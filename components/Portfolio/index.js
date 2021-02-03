@@ -44,8 +44,16 @@ function ProjectCard(props) {
 
 
               <div className={classes.buttoms}>
+              <a href={props.demoUrl} target="_blank" rel="noopener noreferrer">
+                {props.demoUrl? 
+                  <Button variant="outlined" style={{float:'right',margin:10,  color: '#252740'}} size='small'>
+                    DEMO
+                  </Button>
+                  : null
+                }
+              </a>
                 <a href={props.codeUrl} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outlined"  style={{float:'right',margin:10, color: '#252740'}}size='small'>
+                  <Button variant="outlined"  style={{float:'right',margin:10, color: '#252740'}} size='small'>
                     VER CODIGO 
                   </Button>
                 </a>
