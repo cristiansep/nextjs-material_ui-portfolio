@@ -57,7 +57,7 @@ export const headData = {
       date:"Agosto 2020",
       img:"/images/undraw_finance_0bdk.svg",
       codeUrl:"https://github.com/cristiansep/JournalApp",
-      demoUrl:"https://confident-clarke-e66377.netlify.app"
+      demoUrl:"https://stupefied-jang-d3ed8b.netlify.app"
     },
     {
       id:uuidv4(),
