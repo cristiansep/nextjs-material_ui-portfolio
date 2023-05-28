@@ -10,8 +10,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import Fade from "react-reveal/Fade";
 
 import Copyright from "../widgets/Copyright";
-import { footerData } from "../../data";
-const { networks } = footerData;
+import { networks } from "../../data";
 
 import useStyles from "./styles";
 

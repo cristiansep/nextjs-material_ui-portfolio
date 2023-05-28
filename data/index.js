@@ -139,14 +139,12 @@ export const headData = {
 
 
   // FOOTER DATA
-export const footerData = {
-  networks: [
+export const networks = [
     {
       id: uuidv4(),
       urlGit: 'https://github.com/cristiansep',
       urlTwitter: 'https://twitter.com/crist_sepulveda',
       urlIn: 'https://www.linkedin.com/in/cristiansep',
     }
-  ],
-};
+  ]
  
