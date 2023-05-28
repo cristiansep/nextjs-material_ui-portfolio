@@ -16,7 +16,7 @@ export const headData = {
       name: 'Cristian Sepúlveda',
       perfil: 'Full Stack Developer',
       email: 'cristiansepulvedamendez@gmail.com',
-      phone: '+ 56 9 4550 4578',
+      phone: '+ 56 9 4550 4579',
       img: '/images/me4.jpg',
       resume: '/docs/new_cv.pdf', 
       summary: ` Soy desarrollador de software. 
