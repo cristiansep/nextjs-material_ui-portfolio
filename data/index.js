@@ -18,7 +18,7 @@ export const headData = {
       email: 'cristiansepulvedamendez@gmail.com',
       phone: '+ 56 9 4550 4578',
       img: '/images/me4.jpg',
-      resume: '/docs/CV-Cristian.pdf', 
+      resume: '/docs/new_cv.pdf', 
       summary: ` Soy desarrollador de software. 
       Tengo más de dos años de experiencia en desarrollo web 
       especialmente en JavaScript y su ecosistema. Me apasiona programar, 
