@@ -46,6 +46,15 @@ export default makeStyles((theme )=> ({
         WebkitTransitionDuration: '0.3s',
         transitionDuration: '0.3s'
       },
+      tamanoMobile: {
+        backgroundColor: '#252740',
+        width: theme.spacing(4),
+        height: theme.spacing(4),
+        WebkitTransform: 'perspective(1px) translateZ(0)',
+        transform: 'perspective(1px) translateZ(0)',
+        WebkitTransitionDuration: '0.3s',
+        transitionDuration: '0.3s'
+      },
       iconAnimation: {
         webkitTransform: 'translateZ(0)',
         transform: 'translateZ(0)',
@@ -68,8 +77,20 @@ export default makeStyles((theme )=> ({
         paddingRight: theme.spacing(6),
        
       },
+      paperStyleMobile: {
+        backgroundColor: '#F9EBEA',
+        paddingTop: theme.spacing(0),
+        paddingBottom: theme.spacing(1),
+        paddingLeft: theme.spacing(1),
+        paddingRight: theme.spacing(1),
+       
+      },
       textList: {
         color: '#7c7d8c',
+      },
+      textListMobile: {
+        color: '#7c7d8c',
+        marginLeft:-10
       }
 }));
 

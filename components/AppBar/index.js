@@ -3,7 +3,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Box from "@material-ui/core/Box";
 import AppBarCollapse from "./AppBarCollapse";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 
 import useStyles from "./styles";
@@ -18,10 +18,11 @@ export default function AppBarComponent() {
 
   const navRef = useRef();
   navRef.current = navBackground;
+  let show;
 
   useEffect(() => {
     const handleScroll = () => {
-      const show = window.scrollY > 310;
+       show = window.scrollY > 310;
       if (show) {
         setNavBackground("appBarSolid");
       } else {
@@ -47,17 +48,24 @@ export default function AppBarComponent() {
                   className={classes.buttonTitle}
                   onClick={() => scroll.scrollToTop()}
                 >
-                  CRISTIANSEP
+                  {/* CRISTIANSEP */}
+                  <Typography
+                  style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}}
+                  component='p'
+                  variant="p"
+                  >
+                    CRISTIANSEP
+                  </Typography>
                 </Button>
               </Fade>
             </Box>
 
             <Box component="div" className={classes.menu}>
-              <AppBarCollapse />
+              <AppBarCollapse navBackground={navBackground} />
             </Box>
 
             <Box component="div" className={classes.buttonSong}>
-              <ButtonSong />
+              <ButtonSong navBackground={navBackground} />
             </Box>
           </Toolbar>
         </AppBar>

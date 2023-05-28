@@ -68,6 +68,13 @@ export default makeStyles((theme) => ({
     paddingRight: theme.spacing(6),
    
   },
+  paperStyleMobile: {
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(1),
+    paddingLeft: theme.spacing(1),
+    paddingRight: theme.spacing(1),
+   
+  },
   boxData: {
     marginBottom: 15,
   },

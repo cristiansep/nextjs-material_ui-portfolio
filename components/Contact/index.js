@@ -21,6 +21,7 @@ import Avatar from '@material-ui/core/Avatar';
 import useStyles,{InputField} from './styles';
 import { emailContact } from '../../helpers/emailContact';
 import {contactData} from '../../data'
+import { useMediaQuery, useTheme } from '@material-ui/core';
 
 
 
@@ -34,9 +35,9 @@ const initEvent = {
 
 export default function Album() {
   const classes = useStyles();
-
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [contactForm, setContactForm] = useState(initEvent);
-
   const {name, email, subject, msg} = contactForm;
 
 
@@ -59,8 +60,8 @@ const handleSubmitForm = (e) => {
       <Container className={classes.cardGrid} maxWidth="lg" id="contact">
         <Title title="Contacto" />
 
-        <Paper elevation={3} className={classes.paperStyle}>
-        <Grid container spacing={10} justify="space-evenly">
+        <Paper elevation={3} className={ isMobile ? classes.paperStyleMobile : classes.paperStyle}>
+        <Grid container spacing={{xs:0,md:10}} justify="space-evenly">
           {/*Section 1*/}
           <Fade left cascade>
             <Grid item xs={12} sm={12} md={6} xl={6} className={classes.espacio}>
@@ -68,29 +69,29 @@ const handleSubmitForm = (e) => {
                   {contactData.map(contact => 
                   
                     <List component="div" key={contact.id}>
-                        <ListItem className={classes.margen}>
+                        <ListItem className={ isMobile ? undefined : classes.margen}>
                         <ListItemAvatar >
-                          <Avatar  className={classes.tamano}>
-                          <CallIcon className={classes.iconAnimation}/>
+                          <Avatar  className={ isMobile ? classes.tamanoMobile : classes.tamano}>
+                          <CallIcon style={{ fontSize: isMobile ? 20 : undefined }} className={classes.iconAnimation}/>
                           </Avatar>
                         </ListItemAvatar>
-                        <ListItemText className={classes.textList} primary={contact.phone} />
+                        <ListItemText className={ isMobile ? classes.textListMobile : classes.textList} primary={contact.phone} />
                       </ListItem>
-                      <ListItem className={classes.margen}>
+                      <ListItem className={ isMobile ? undefined : classes.margen}>
                         <ListItemAvatar >
-                          <Avatar  className={classes.tamano}>
-                          <RoomIcon className={classes.iconAnimation}/>
+                          <Avatar  className={ isMobile ? classes.tamanoMobile : classes.tamano}>
+                          <RoomIcon style={{ fontSize: isMobile ? 20 : undefined }} className={classes.iconAnimation}/>
                           </Avatar>
                         </ListItemAvatar>
-                        <ListItemText className={classes.textList} primary={contact.address} />
+                        <ListItemText className={ isMobile ? classes.textListMobile : classes.textList} primary={contact.address} />
                       </ListItem>
                       <ListItem>
                         <ListItemAvatar>
-                          <Avatar className={classes.tamano}>
-                          <MailIcon className={classes.iconAnimation}/>
+                          <Avatar className={ isMobile ? classes.tamanoMobile : classes.tamano}>
+                          <MailIcon style={{ fontSize: isMobile ? 20 : undefined }} className={classes.iconAnimation}/>
                           </Avatar>
                         </ListItemAvatar>
-                        <ListItemText className={classes.textList} primary={contact.email} />
+                        <ListItemText className={ isMobile ? classes.textListMobile : classes.textList} primary={contact.email} />
                       </ListItem>
                     </List>
                   )}

@@ -15,6 +15,7 @@ import { Skills } from '../widgets/Skills';
 
 
 import useStyles from './styles';
+import { useMediaQuery, useTheme } from '@material-ui/core';
 
 
 
@@ -32,6 +33,8 @@ const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg)
 
 export const About = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
@@ -43,7 +46,7 @@ export const About = () => {
       <Container className={classes.cardGrid} maxWidth="lg" id="about">
         <Title title="Sobre mi" />
 
-        <Paper className={classes.paperStyle}>
+        <Paper className={ isMobile ? classes.paperStyleMobile : classes.paperStyle}>
           {aboutData.map((about) => (
             <Grid
               container
@@ -54,14 +57,10 @@ export const About = () => {
             >
               {/*Section 1*/}
               <Fade bottom>
-                <animated.div
-                  onMouseMove={({ clientX: x, clientY: y }) =>
-                    set({ xys: calc(x, y) })
-                  }
-                  onMouseLeave={() => set({ xys: [0, 0, 1] })}
-                  style={{ transform: props.xys.interpolate(trans) }}
-                >
-                  <Grid
+                {
+                  isMobile ? (
+
+                    <Grid
                     item
                     xs={12}
                     sm={6}
@@ -74,7 +73,33 @@ export const About = () => {
                       className={classes.imagen}
                     />
                   </Grid>
-                </animated.div>
+
+                  ) : (
+
+                    <animated.div
+                    onMouseMove={({ clientX: x, clientY: y }) =>
+                      set({ xys: calc(x, y) })
+                    }
+                    onMouseLeave={() => set({ xys: [0, 0, 1] })}
+                    style={{ transform: props.xys.interpolate(trans) }}
+                  >
+                    <Grid
+                      item
+                      xs={12}
+                      sm={6}
+                      md={6}
+                      className={classes.marginImg}
+                    >
+                      <img
+                        src={about.img}
+                        alt="Foto Perfil"
+                        className={classes.imagen}
+                      />
+                    </Grid>
+                  </animated.div>
+
+                  )
+                }
               </Fade>
 
               <Grid item xs={12} sm={8} md={6} xl={6}>

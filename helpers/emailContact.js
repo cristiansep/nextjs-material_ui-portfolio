@@ -13,7 +13,7 @@ export const emailContact = async (data) => {
     });
 
     const emailResp = await emailjs.sendForm(
-      "service_mec8uwk",
+      "service_wkb8ixw",
       "template_gtjxinq",
       data,
       "user_RCE2muWVC7gqmDnATTfOv"

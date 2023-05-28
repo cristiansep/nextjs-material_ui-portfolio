@@ -52,7 +52,7 @@ export default makeStyles((theme) => ({
     transition: "all 0.5s",
   },
   appBarSolid: {
-    backgroundColor: "#080a20",
+    backgroundColor: "white",
 
     transitionTimingFunction: "ease-in",
     transition: "all 0.5s",

@@ -24,6 +24,7 @@ function ProjectCard(props) {
         <Fade bottom>
         <Card className={classes.root}>
           <CardMedia
+          style={{marginLeft:'16px' }}
             className={classes.cover}
             image={props.img}
           />

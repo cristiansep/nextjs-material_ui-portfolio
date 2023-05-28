@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function ButtonSong() {
+export default function ButtonSong({navBackground}) {
 
     const classes = useStyles();
     const soundUrl = '/sounds/Just.mp3';
@@ -70,7 +70,7 @@ export default function ButtonSong() {
       <>
        <Zoom>
       <IconButton
-      color="inherit"
+      style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}}
       className={classes.buttonStyle}
       onClick={handlePlaySound}
       >

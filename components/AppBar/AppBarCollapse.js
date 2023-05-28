@@ -13,7 +13,7 @@ import useStyles from './styles';
 
 
 
-export default function AppBarCollapse() {
+export default function AppBarCollapse({navBackground}) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -28,7 +28,7 @@ export default function AppBarCollapse() {
   return (
   <div className={classes.root} id="appbar-collapse">
     <div className={classes.buttonCollapse}>
-    <IconButton onClick={handleClick} aria-controls="simple-menu" aria-haspopup="true" className={classes.iconButtonBorder} color="inherit" size="small">
+    <IconButton onClick={handleClick} aria-controls="simple-menu" aria-haspopup="true" className={classes.iconButtonBorder} style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}} size="small">
             <Fade top>
                  <MenuIcon/>
             </Fade>
@@ -60,19 +60,19 @@ export default function AppBarCollapse() {
       <Fade top cascade>
      <Box component="div" className={classes.buttonBar} id="appbar-collapse">
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link to="inicio" activeClass={classes.active} spy={true}  smooth={true} duration={1000}>Inicio</Link>
+            <Link style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}} to="inicio" activeClass={classes.active} spy={true}  smooth={true} duration={1000}>Inicio</Link>
           </Button>
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link to="about" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Acerca de</Link>
+            <Link style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}}  to="about" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Acerca de</Link>
           </Button>
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link to="servicios" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Servicios</Link>
+            <Link style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}}  to="servicios" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Servicios</Link>
           </Button>
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link to="portfolio" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Portafolio</Link>
+            <Link style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}}  to="portfolio" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Portafolio</Link>
           </Button>
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link to="contact" activeClass={classes.active}  spy={true} offset={50}  smooth={true} duration={1000}>Contacto</Link>
+            <Link style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}}  to="contact" activeClass={classes.active}  spy={true} offset={50}  smooth={true} duration={1000}>Contacto</Link>
           </Button>
     </Box>
     </Fade>
