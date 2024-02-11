@@ -20,7 +20,7 @@ export const headData = {
       img: '/images/new-me.jpeg',
       resume: '/docs/cv-cristian-23.pdf', 
       summary: ` Soy desarrollador de software. 
-      Tengo más de dos años de experiencia en desarrollo web 
+      Tengo más de tres años de experiencia en desarrollo web 
       especialmente en JavaScript y su ecosistema. Me apasiona programar, 
       crear aplicaciones intuitivas, agradables de ver y de propiedad colectiva. 
       Soy un entusiasta de las nuevas tecnologías. Siempre, 
@@ -30,10 +30,10 @@ export const headData = {
 
   // SKILL DATA
   export const skillData = [
-    {name: 'Node', num:65},
-    {name: 'React', num:70},
-    {name: 'Angular', num:50},
-    {name: 'Javascript', num:65}
+    {name: 'Node - Express - TypeScript', num:90},
+    {name: 'React', num:90},
+    {name: 'Angular', num:70},
+    {name: 'Javascript', num:80}
   ];
 
 
