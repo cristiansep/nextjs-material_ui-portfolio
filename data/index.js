@@ -33,7 +33,7 @@ export const headData = {
     {name: 'Node - Express - TypeScript', num:90},
     {name: 'React', num:90},
     {name: 'Angular', num:70},
-    {name: 'Javascript', num:80}
+    {name: 'Javascript', num:90}
   ];
 
 
