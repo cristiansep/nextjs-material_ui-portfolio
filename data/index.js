@@ -18,13 +18,8 @@ export const headData = {
       email: 'cristiansepulvedamendez@gmail.com',
       phone: '+ 56 9 4550 4578',
       img: '/images/new-me.jpeg',
-      resume: '/docs/cv-cristian-2024.pdf', 
-      summary: ` Soy desarrollador de software. 
-      Tengo más de tres años de experiencia en desarrollo web 
-      especialmente en JavaScript y su ecosistema. Me apasiona programar, 
-      crear aplicaciones intuitivas, agradables de ver y de propiedad colectiva. 
-      Soy un entusiasta de las nuevas tecnologías. Siempre, 
-      estoy dispuesto a asumir nuevos desafíos y desarrollar ideas innovadoras.`,
+      resume: '/docs/cv-2025.pdf', 
+      summary: ` Profesional con más de 5 años de experiencia en el ciclo completo de desarrollo de aplicaciones web y móviles. Experto en arquitecturas REST y MVC, desarrollo de microservicios y metodologías ágiles (SCRUM). He liderado proyectos de alto impacto, optimizando rendimiento y escalabilidad, tanto en el front- end como en el back-end, y construido apps nativas con React Native. Comprometido con la calidad, la mejora continua y la entrega oportuna de soluciones.`,
     }
   ] ;
 
