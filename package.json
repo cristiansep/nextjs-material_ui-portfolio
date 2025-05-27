@@ -7,13 +7,16 @@
     "build": "next build",
     "start": "next start"
   },
+  "engines": {
+    "node": "18.19.0"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
     "emailjs-com": "^2.6.4",
-    "next": "10.0.4",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "next": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-reveal": "^1.2.2",
     "react-scroll": "^1.8.1",
     "react-spinners": "^0.10.4",
