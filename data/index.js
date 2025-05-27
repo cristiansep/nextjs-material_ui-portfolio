@@ -126,7 +126,7 @@ export const headData = {
     {
       id:uuidv4(),
       phone: '+ 56 9 4550 4578',
-      address: 'Bernardo Ohiggins 234 Osorno',
+      address: 'Temuco, Chile',
       email: 'cristiansepulvedamendez@gmail.com',
     },
   ]
