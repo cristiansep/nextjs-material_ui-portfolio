@@ -70,7 +70,7 @@ export default function ButtonSong({navBackground}) {
       <>
        <Zoom>
       <IconButton
-      style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}}
+      style={{color:'white'}}
       className={classes.buttonStyle}
       onClick={handlePlaySound}
       >

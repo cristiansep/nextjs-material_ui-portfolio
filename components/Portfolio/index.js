@@ -36,10 +36,10 @@ function ProjectCard(props) {
               <Typography variant="caption" display="block" gutterBottom color="textSecondary">
                 {props.date}
               </Typography>
-              <Typography variant="subtitle1" color="textSecondary">
+              <Typography variant="subtitle1" className={classes.text}>
                <span className={classes.explanation}>Tecnología:</span> {props.technology}
               </Typography>
-              <Typography variant="subtitle1" color="textSecondary">
+              <Typography variant="subtitle1" className={classes.text}>
               <span  className={classes.explanation}>Características:</span> {props.features}
               </Typography>
 
@@ -47,14 +47,14 @@ function ProjectCard(props) {
               <div className={classes.buttoms}>
               <a href={props.demoUrl} target="_blank" rel="noopener noreferrer">
                 {props.demoUrl? 
-                  <Button variant="outlined" style={{float:'right',margin:10,  color: '#252740'}} size='small'>
+                  <Button variant="outlined" style={{float:'right',margin:10,  color: '#39c8fa'}} size='small'>
                     DEMO
                   </Button>
                   : null
                 }
               </a>
                 <a href={props.codeUrl} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outlined"  style={{float:'right',margin:10, color: '#252740'}} size='small'>
+                  <Button variant="outlined"  style={{float:'right',margin:10, color: '#39c8fa'}} size='small'>
                     VER CODIGO 
                   </Button>
                 </a>

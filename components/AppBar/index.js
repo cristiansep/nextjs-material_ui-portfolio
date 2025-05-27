@@ -50,7 +50,7 @@ export default function AppBarComponent() {
                 >
                   {/* CRISTIANSEP */}
                   <Typography
-                  style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}}
+                  style={{color: '#fff', fontWeight: 'bold'}}
                   component='p'
                   variant="p"
                   >

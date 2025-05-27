@@ -48,6 +48,8 @@ const useStyles =  makeStyles((theme) => ({
   },
   margenTitulo: {
     marginBottom: 30,
+    color: '#c7c9d1',
+    fontWeight: 'bold',
   }
 }));
 

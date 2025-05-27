@@ -26,10 +26,10 @@ const useStyles = makeStyles((theme) => ({
       right: theme.spacing(2),
     },
     backColor: {
-      background: '#2C3E50',
+      background: '#44444a',
       color: 'white',
       "&:hover,&.MuiButton-hover":{
-        background: '#ff324d',
+        background: '#303030',
       },
       "&:focus, &.Mui-focusVisible": {
         outline: 'none',
@@ -88,12 +88,14 @@ export const Layout = (props) => {
                 <KeyboardArrowUpIcon />
               </Fab>
             </ScrollTop>
+            <div style={{background: '#0a0a23'}}>
             < Profile/>
             <About/>
             <Services/>
             <Portfolio/>
             <Contact/>
             <Footer/>
+            </div>
           </React.Fragment>
         );
 

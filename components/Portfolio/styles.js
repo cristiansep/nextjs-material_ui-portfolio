@@ -6,6 +6,7 @@ export default makeStyles((theme) => ({
     background: '#ffffff',
   },
   root: {
+    background: "#44444a",
     display: 'flex',
     borderRadius: 10,
     "&:boder, &.MuiCard-root":{
@@ -20,7 +21,7 @@ export default makeStyles((theme) => ({
     fontSize:'2em',
     fontWeight: 600,
     opacity:'0.95',
-   color:"#e3324d",
+   color:"#39c8fa",
   },
   cover: {
     width: 170,
@@ -45,6 +46,9 @@ export default makeStyles((theme) => ({
     fontWeight:600
   },
   buttoms:{
-    marginTop:10
+    marginTop:10,
+  },
+  text: {
+    color: '#c7c9d1',
   }
 }));

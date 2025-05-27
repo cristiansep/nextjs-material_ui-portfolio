@@ -24,7 +24,7 @@ export default function Perfil() {
         <Grid container spacing={2} justify="center">
       
     
-          <Grid item xs={12} sm={6} md={6} lg={6}  xl={6}  className={classes.textCenter}>
+          <Grid style={{zIndex:999}} item xs={12} sm={6} md={6} lg={6}  xl={6}  className={classes.textCenter}>
                 <Typography
                   variant="h3"
                   gutterBottom
@@ -54,11 +54,11 @@ export default function Perfil() {
         
           
           <Grid item xs={12} sm={6} md={6} lg={6}  xl={6}>
-          <Fade>
+          {/* <Fade>
           <div className={classes.image}>
           <AnimatedImage />
           </div>
-          </Fade>
+          </Fade> */}
           </Grid>
         </Grid>
       </Container>

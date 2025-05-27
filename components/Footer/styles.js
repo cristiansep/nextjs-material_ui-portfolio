@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
     flexGrow: 1, 
   },
   backColor: {
-    background: "#252740",
+    background: "#0a0a23",
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -34,10 +34,10 @@ export default makeStyles((theme) => ({
     marginTop: "65px",
   },
   colorAppbar: {
-    backgroundColor: "#252740",
+    backgroundColor: "#0a0a23",
   },
   socialContent: {
-    background: "#252740",
+    background: "#0a0a23",
     WebkitTransform: 'perspective(1px) translateZ(0)',
     transform: 'perspective(1px) translateZ(0)',
     WebkitTransitionDuration: '0.3s',
@@ -53,7 +53,7 @@ export default makeStyles((theme) => ({
     "& .MuiSvgIcon-root": {
       fill: "white",
       "&:hover, &:focus, &:active": {
-        fill: "#ff4c60",
+        fill: "#39c8fa",
         WebkitTransform: 'scale(1.1)',
         transform: 'scale(1.1)'
       },

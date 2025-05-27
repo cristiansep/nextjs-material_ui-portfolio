@@ -5,14 +5,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     title: {
-      color: '#000000',
+      color: '#39c8fa',
       paddingBottom: theme.spacing(8),
     },
     titleBorder: {
-      color: '#080a20',
+      color: '#39c8fa',
       margin:10,
       padding:5,
-      border : '0px solid #ff4c60',
+      border : '0px solid #44444a',
       borderLeftWidth: '0.4em'
     },
     size: {

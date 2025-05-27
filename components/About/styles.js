@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   cardGrid: {
     paddingTop: theme.spacing(14),
@@ -48,16 +48,16 @@ export default makeStyles((theme) => ({
   primero: {
     marginRight: '10px',
     fontFamily: "Arial Black",
-    color: '#ff4c60',
+    color: '#39c8fa',
   },
   segundo: {
-    color: '#7c7d8c',
+    color: '#c7c9d1',
   
   },
   about_text: {
     marginTop: "20px",
     fontSize: '17px',
-    color: '#7c7d8c',
+    color: '#c7c9d1',
     fontWeight:600,
     textAlign: 'justify'
   },
@@ -66,6 +66,7 @@ export default makeStyles((theme) => ({
     paddingBottom: theme.spacing(6),
     paddingLeft: theme.spacing(6),
     paddingRight: theme.spacing(6),
+    background: "#44444a",
    
   },
   paperStyleMobile: {
@@ -73,18 +74,18 @@ export default makeStyles((theme) => ({
     paddingBottom: theme.spacing(1),
     paddingLeft: theme.spacing(1),
     paddingRight: theme.spacing(1),
-   
+    background: "#44444a",
   },
   boxData: {
     marginBottom: 15,
   },
   buttonColor: {
     marginTop: "15px",
-    color: 'white',
-    background: '#ff4c60',
+    color: '#23233a',
+    background: '#39c8fa',
     "&:hover,&.MuiButton-hover":{
-      background: '#DD3A4C',
-      color: 'white',
+      background: '#39c8fa',
+      color: '#23233a',
     },
     [theme.breakpoints.down("xs")]: {
       width: '100%',

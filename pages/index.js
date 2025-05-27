@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import { Layout } from "../components/Layout";
 import AppBar from "../components/AppBar";
+import Astronaut3D from '../components/ThreeD/Astronaut3D';
 
 import DotLoader from "react-spinners/DotLoader";
 
@@ -20,6 +21,7 @@ export default function Home() {
       ) : (
         <>
           <AppBar />
+          <Astronaut3D />
           <Layout />
         </>
       )}

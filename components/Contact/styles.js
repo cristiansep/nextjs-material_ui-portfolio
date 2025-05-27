@@ -3,7 +3,7 @@ import TextField from '@material-ui/core/TextField';
 
 export default makeStyles((theme )=> ({
     backColor: {
-        background: '#F9EBEA',
+        background: '#0a0a23',
       },
       cardGrid: {
         paddingTop: theme.spacing(14),
@@ -15,11 +15,11 @@ export default makeStyles((theme )=> ({
       },
       submit: {
         margin: theme.spacing(3, 0, 2),
-        background: '#ff4c60',
-        color: 'white',
+        background: '#39c8fa',
+        color: '#23233a',
         "&:hover,&.MuiButton-hover":{
-          background: '#DD3A4C',
-          color: 'white',
+          background: '#39c8fa',
+          color: '#23233a',
         }
       },
       images: {
@@ -38,22 +38,24 @@ export default makeStyles((theme )=> ({
         marginBottom: theme.spacing(4),
       },
       tamano: {
-        backgroundColor: '#252740',
+        backgroundColor: '#39c8fa',
         width: theme.spacing(6),
         height: theme.spacing(6),
         WebkitTransform: 'perspective(1px) translateZ(0)',
         transform: 'perspective(1px) translateZ(0)',
         WebkitTransitionDuration: '0.3s',
-        transitionDuration: '0.3s'
+        transitionDuration: '0.3s',
+        color: '#23233a',
       },
       tamanoMobile: {
-        backgroundColor: '#252740',
+        backgroundColor: '#39c8fa',
         width: theme.spacing(4),
         height: theme.spacing(4),
         WebkitTransform: 'perspective(1px) translateZ(0)',
         transform: 'perspective(1px) translateZ(0)',
         WebkitTransitionDuration: '0.3s',
-        transitionDuration: '0.3s'
+        transitionDuration: '0.3s',
+        color: '#23233a',
       },
       iconAnimation: {
         webkitTransform: 'translateZ(0)',
@@ -70,7 +72,7 @@ export default makeStyles((theme )=> ({
         },
       },
       paperStyle: {
-        backgroundColor: '#F9EBEA',
+        background: "#44444a",
         paddingTop: theme.spacing(6),
         paddingBottom: theme.spacing(6),
         paddingLeft: theme.spacing(6),
@@ -78,7 +80,7 @@ export default makeStyles((theme )=> ({
        
       },
       paperStyleMobile: {
-        backgroundColor: '#F9EBEA',
+        background: "#44444a",
         paddingTop: theme.spacing(0),
         paddingBottom: theme.spacing(1),
         paddingLeft: theme.spacing(1),
@@ -86,10 +88,10 @@ export default makeStyles((theme )=> ({
        
       },
       textList: {
-        color: '#7c7d8c',
+        color: '#c7c9d1',
       },
       textListMobile: {
-        color: '#7c7d8c',
+        color: '#c7c9d1',
         marginLeft:-10
       }
 }));
@@ -99,23 +101,23 @@ export default makeStyles((theme )=> ({
 export const InputField = withStyles({
   root: {
       "& label.Mui-focused": {
-          color: "#7c7d8c"
+          color: "#c7c9d1"
       },
       "& label": {
-          color: "#7c7d8c",
+          color: "#c7c9d1",
       },
       "& .MuiOutlinedInput-root": {
           "& fieldset": {
-              borderColor: "#7c7d8c"
+              borderColor: "#c7c9d1"
           },
           "&.MuiOutlinedInput-colorSecondary": {
-            color: "#7c7d8c"
+            color: "#c7c9d1"
           },
           "&.Mui-focused fieldset": {
-            borderColor: "#7c7d8c"
+            borderColor: "#c7c9d1"
           },
           "&:hover fieldset": {
-            borderColor: "#252740"
+            borderColor: "#23233a"
         },
       },
   },

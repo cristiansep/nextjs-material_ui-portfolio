@@ -5,7 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     backColor: {
-      background: "#252740",
+      // background: "#252740",
+      background: "#0a0a23"
     },
     cardGrid: {
       height: "100vh",
@@ -22,7 +23,7 @@ export default makeStyles((theme) => ({
       },
     },
     nameSubTitle: {
-      color: "#ff4c60",
+      color: "#39c8fa",
       fontFamily: "Arial Black",
     },
     image: {

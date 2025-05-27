@@ -28,7 +28,7 @@ export default function AppBarCollapse({navBackground}) {
   return (
   <div className={classes.root} id="appbar-collapse">
     <div className={classes.buttonCollapse}>
-    <IconButton onClick={handleClick} aria-controls="simple-menu" aria-haspopup="true" className={classes.iconButtonBorder} style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}} size="small">
+    <IconButton onClick={handleClick} aria-controls="simple-menu" aria-haspopup="true" className={classes.iconButtonBorder} style={{color: '#fff'}} size="small">
             <Fade top>
                  <MenuIcon/>
             </Fade>
@@ -39,40 +39,45 @@ export default function AppBarCollapse({navBackground}) {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
+        PaperProps={{
+          style: {
+            background: "#44444a"
+          }
+        }}
       >
+      <MenuItem>
+        <Link style={{color: "#fff"}} to="inicio" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Inicio</Link>
+      </MenuItem>
       <MenuItem >
-        <Link to="inicio" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Inicio</Link>
-      </MenuItem>
-      <MenuItem >
-        <Link to="about" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Acerca de</Link>
+        <Link style={{color: "#fff"}} to="about" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Acerca de</Link>
       </MenuItem>
       <MenuItem>
-        <Link to="servicios" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Servicios</Link>
+        <Link style={{color: "#fff"}} to="servicios" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Servicios</Link>
       </MenuItem>
       <MenuItem>
-        <Link to="portfolio" onClick={handleClose} activeClass="active" spy={true} smooth={true} duration={1000}>Portafolio</Link>
+        <Link style={{color: "#fff"}} to="portfolio" onClick={handleClose} activeClass="active" spy={true} smooth={true} duration={1000}>Portafolio</Link>
       </MenuItem>
       <MenuItem>
-        <Link to="contact" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Contacto</Link>
+        <Link style={{color: "#fff"}} to="contact" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Contacto</Link>
       </MenuItem>
       </Menu>
       </div>
       <Fade top cascade>
      <Box component="div" className={classes.buttonBar} id="appbar-collapse">
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}} to="inicio" activeClass={classes.active} spy={true}  smooth={true} duration={1000}>Inicio</Link>
+            <Link style={{color: '#fff'}} to="inicio" activeClass={classes.active} spy={true}  smooth={true} duration={1000}>Inicio</Link>
           </Button>
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}}  to="about" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Acerca de</Link>
+            <Link style={{color: '#fff'}}  to="about" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Acerca de</Link>
           </Button>
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}}  to="servicios" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Servicios</Link>
+            <Link style={{color: '#fff'}}  to="servicios" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Servicios</Link>
           </Button>
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}}  to="portfolio" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Portafolio</Link>
+            <Link style={{color: '#fff'}}  to="portfolio" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Portafolio</Link>
           </Button>
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link style={{color: navBackground === 'appBarSolid' ? '#000000' : 'white'}}  to="contact" activeClass={classes.active}  spy={true} offset={50}  smooth={true} duration={1000}>Contacto</Link>
+            <Link style={{color: '#fff'}}  to="contact" activeClass={classes.active}  spy={true} offset={50}  smooth={true} duration={1000}>Contacto</Link>
           </Button>
     </Box>
     </Fade>

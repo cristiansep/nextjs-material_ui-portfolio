@@ -52,7 +52,7 @@ export default makeStyles((theme) => ({
     transition: "all 0.5s",
   },
   appBarSolid: {
-    backgroundColor: "white",
+    backgroundColor: "#303030",
 
     transitionTimingFunction: "ease-in",
     transition: "all 0.5s",
@@ -109,7 +109,7 @@ export default makeStyles((theme) => ({
     boxShadow: "none",
   },
   active: {
-    borderBottom: "2px solid #ff324d",
+    borderBottom: "2px solid #39c8fa",
   },
   buttonSong: {
     marginLeft: theme.spacing(5),
