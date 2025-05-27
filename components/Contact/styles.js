@@ -34,8 +34,19 @@ export default makeStyles((theme )=> ({
           margin: theme.spacing(4),
         },
       },
+      espacioMobile: {
+        display: 'flex',
+        '& > *': {
+          marginTop: theme.spacing(2),
+          marginBottom: theme.spacing(2),
+        },
+      },
       margen: {
         marginBottom: theme.spacing(4),
+      },
+      margenMobile: {
+        // margin:0,
+        paddingLeft:0
       },
       tamano: {
         backgroundColor: '#39c8fa',
@@ -92,7 +103,10 @@ export default makeStyles((theme )=> ({
       },
       textListMobile: {
         color: '#c7c9d1',
-        marginLeft:-10
+        marginLeft: -10,
+        // overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
       }
 }));
 

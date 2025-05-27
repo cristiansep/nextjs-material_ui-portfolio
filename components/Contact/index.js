@@ -64,12 +64,12 @@ const handleSubmitForm = (e) => {
         <Grid container spacing={{xs:0,md:10}} justify="space-evenly">
           {/*Section 1*/}
           <Fade left cascade>
-            <Grid item xs={12} sm={12} md={6} xl={6} className={classes.espacio}>
+            <Grid item xs={12} sm={12} md={6} xl={6} className={isMobile ? classes.espacioMobile : classes.espacio}>
            
                   {contactData.map(contact => 
                   
                     <List component="div" key={contact.id}>
-                        <ListItem className={ isMobile ? undefined : classes.margen}>
+                        <ListItem className={ isMobile ? classes.margenMobile : classes.margen}>
                         <ListItemAvatar >
                           <Avatar  className={ isMobile ? classes.tamanoMobile : classes.tamano}>
                           <CallIcon style={{ fontSize: isMobile ? 20 : undefined }} className={classes.iconAnimation}/>
@@ -77,7 +77,7 @@ const handleSubmitForm = (e) => {
                         </ListItemAvatar>
                         <ListItemText className={ isMobile ? classes.textListMobile : classes.textList} primary={contact.phone} />
                       </ListItem>
-                      <ListItem className={ isMobile ? undefined : classes.margen}>
+                      <ListItem className={ isMobile ? classes.margenMobile : classes.margen}>
                         <ListItemAvatar >
                           <Avatar  className={ isMobile ? classes.tamanoMobile : classes.tamano}>
                           <RoomIcon style={{ fontSize: isMobile ? 20 : undefined }} className={classes.iconAnimation}/>
@@ -85,7 +85,7 @@ const handleSubmitForm = (e) => {
                         </ListItemAvatar>
                         <ListItemText className={ isMobile ? classes.textListMobile : classes.textList} primary={contact.address} />
                       </ListItem>
-                      <ListItem>
+                      <ListItem className={ isMobile ? classes.margenMobile : undefined}>
                         <ListItemAvatar>
                           <Avatar className={ isMobile ? classes.tamanoMobile : classes.tamano}>
                           <MailIcon style={{ fontSize: isMobile ? 20 : undefined }} className={classes.iconAnimation}/>
