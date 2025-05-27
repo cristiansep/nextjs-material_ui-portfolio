@@ -91,7 +91,11 @@ const handleSubmitForm = (e) => {
                           <MailIcon style={{ fontSize: isMobile ? 20 : undefined }} className={classes.iconAnimation}/>
                           </Avatar>
                         </ListItemAvatar>
-                        <ListItemText className={ isMobile ? classes.textListMobile : classes.textList} primary={contact.email} />
+                        <ListItemText className={ isMobile ? classes.textListMobile : classes.textList} primary={
+                          <span>
+                            {contact.email.length > 30 ? contact.email.slice(0, 30) + '…' : contact.email}
+                          </span>
+                        } />
                       </ListItem>
                     </List>
                   )}

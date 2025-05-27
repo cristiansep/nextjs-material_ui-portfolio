@@ -70,7 +70,7 @@ export const About = () => {
                     <img
                       src={about.img}
                       alt="Foto Perfil"
-                      className={classes.imagen}
+                      className={classes.imagenMobile}
                     />
                   </Grid>
 

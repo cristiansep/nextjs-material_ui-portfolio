@@ -33,6 +33,13 @@ export default makeStyles((theme) => ({
     height: "20rem",
     borderRadius: "5px"
   },
+  imagenMobile: {
+    marginTop: "6px",
+    width: "100%",
+    maxWidth: "18rem",
+    height: "auto", 
+    borderRadius: "5px"
+  },
   cardroot: {
     minWidth: 275,
   },

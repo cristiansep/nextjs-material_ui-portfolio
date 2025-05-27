@@ -104,7 +104,7 @@ export default makeStyles((theme )=> ({
       textListMobile: {
         color: '#c7c9d1',
         marginLeft: -10,
-        // overflow: 'hidden',
+        overflow: 'hidden',
         textOverflow: 'ellipsis',
         whiteSpace: 'nowrap',
       }
