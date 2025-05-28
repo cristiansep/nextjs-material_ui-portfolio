@@ -66,7 +66,7 @@ const Astronaut3D = () => {
 
   useEffect(() => {
     if (progress === 100) {
-      setTimeout(() => setShow(true), 50);
+      setTimeout(() => setShow(true), 10);
     }
   }, [progress]);
 
@@ -85,7 +85,7 @@ const Astronaut3D = () => {
           alignItems: 'center' 
         }}
       >
-        <Fade when={show} duration={1200}>
+      <Fade when={show} duration={1200}>
       <Canvas style={{ width: '100vw', height: '100vh' }} camera={{ position: [0, 0, 5], fov: 60 }} shadows>
         <ambientLight intensity={0.7} />
         <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
