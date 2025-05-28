@@ -36,7 +36,7 @@ export const headData = {
   export const portfolioData = [
     {
       id:uuidv4(),
-      title:"Reserva de horas médicas App",
+      title:"Plataforma de Reserva de Horas Médicas",
       technology:"React.js, Context Api, Material UI, Moment.js",
       features:"Administración de usuarios, Administración de horarios, Autenticación, Protección de rutas.",
       date:"Noviembre/Diciembre 2020",
@@ -46,7 +46,7 @@ export const headData = {
     },
     {
       id:uuidv4(),
-      title:"Journal App",
+      title:"Aplicación de Diario Personal",
       technology:"Firebase, React.js, Redux, Sass.",
       features:"Autenticación normal y con google, CRUD, Manejo de estado global, Subida de archivos a cloudinary.",
       date:"Agosto 2020",
@@ -56,7 +56,7 @@ export const headData = {
     },
     {
       id:uuidv4(),
-      title:"Rest Api Reserva de horas",
+      title:"API RESTful para Gestión de Reservas",
       technology:"Node.js,Express.js, Jsonwebtoken, Sequelize, Nodemailer.",
       features:"Autenticación, Protección de rutas, CRUD, Subida de archivos, Envio de emails",
       date:"Noviembre/Diciembre 2020",
@@ -66,7 +66,7 @@ export const headData = {
     },
     {
       id:uuidv4(),
-      title:"Portafolio",
+      title:"Sitio Web de Portafolio Profesional",
       technology:"Nextjs, Material UI, React-spring.",
       features:"Animaciones, Diseño web responsivo, Formulario de contacto sin servidor, .",
       date:"Enero 2021",
@@ -76,7 +76,7 @@ export const headData = {
     },
     {
       id:uuidv4(),
-      title:"FoodApp",
+      title:"Aplicación Móvil de Recetas y Comidas",
       technology:"React Native, Expo.",
       features:"Consumo de APIS, tratamiento de imágenes, hooks.",
       date:"Enero 2021",
