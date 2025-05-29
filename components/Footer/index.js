@@ -37,7 +37,7 @@ export default function Footer() {
                   <BottomNavigationAction
                     className={classes.social}
                     style={{ padding: 0 }}
-                    icon={<GitHub />}
+                    icon={<GitHub style={{ fontSize: "30px" }} />}
                     href={value.urlGit}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -45,7 +45,7 @@ export default function Footer() {
                   <BottomNavigationAction
                     className={classes.social}
                     style={{ padding: 0 }}
-                    icon={<Twitter />}
+                    icon={<Twitter style={{ fontSize: "30px" }} />}
                     href={value.urlTwitter}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -53,7 +53,7 @@ export default function Footer() {
                   <BottomNavigationAction
                     className={classes.social}
                     style={{ padding: 0 }}
-                    icon={<LinkedInIcon />}
+                    icon={<LinkedInIcon style={{ fontSize: "30px" }} />}
                     href={value.urlIn}
                     target="_blank"
                     rel="noopener noreferrer"
