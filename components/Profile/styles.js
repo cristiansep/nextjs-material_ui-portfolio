@@ -15,16 +15,22 @@ export default makeStyles((theme) => ({
     },
   
     nameTitle: {
+      fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
+      fontWeight: 700,
+      letterSpacing: '1.5px',
+      textTransform: 'uppercase',
       color: "#fff",
-      fontFamily: "Arial Black",
-      marginTop: "30%",
+      marginTop: '30%',
       [theme.breakpoints.up("xl")]: {
-        marginTop: "50%",
+        marginTop: '50%',
       },
     },
     nameSubTitle: {
-      color: "#39c8fa",
-      fontFamily: "Arial Black",
+      fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
+      fontWeight: 500,
+      letterSpacing: '1px',
+      textTransform: 'uppercase',
+      color: '#39c8fa',
     },
     image: {
       height: 400,
