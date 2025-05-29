@@ -21,16 +21,13 @@ export const lightTheme = createTheme({
     },
     typography: {
       fontFamily: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
+        'Orbitron',
+        'Space Grotesk',
+        'Inter',
+        'Montserrat',
         'Roboto',
-        '"Helvetica Neue"',
         'Arial',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
+        'sans-serif'
       ].join(','),        
       },
 
@@ -38,7 +35,7 @@ export const lightTheme = createTheme({
       MuiCssBaseline: {
         styleOverrides: `
           @font-face {
-            font-family: 'Bitter';
+            font-family: 'Orbitron';
             font-style: normal;
             font-display: swap;
             font-weight: 400
