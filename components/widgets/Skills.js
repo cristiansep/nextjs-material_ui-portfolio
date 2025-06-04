@@ -50,6 +50,8 @@ const useStyles =  makeStyles((theme) => ({
     marginBottom: 30,
     color: '#c7c9d1',
     fontWeight: 'bold',
+    letterSpacing: '1.5px',
+    fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
   }
 }));
 

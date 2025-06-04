@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
     flexGrow: 1, 
   },
   backColor: {
-    background: "#0a0a23",
+    // background: "#0a0a23",
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -37,7 +37,7 @@ export default makeStyles((theme) => ({
     backgroundColor: "#0a0a23",
   },
   socialContent: {
-    background: "#0a0a23",
+    background: "transparent",
     WebkitTransform: 'perspective(1px) translateZ(0)',
     transform: 'perspective(1px) translateZ(0)',
     WebkitTransitionDuration: '0.3s',

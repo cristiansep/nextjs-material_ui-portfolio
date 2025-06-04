@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles(theme => ({
     backColor: {
-        backgroundColor: '#0a0a23',
+        // backgroundColor: '#0a0a23',
 
      },
      cardGrid: {
@@ -32,7 +32,7 @@ export default makeStyles(theme => ({
      background: "#44444a"
     },
     cardMedia: {
-      paddingTop: '56.25%', // 16:9
+      paddingTop: '56.25%' // 16:9
     },
     cardContent: {
       flexGrow: 1,
@@ -50,11 +50,16 @@ export default makeStyles(theme => ({
       fontWeight: 600,
       opacity:'0.95',
       textAlign:'center',
-      color:"#39c8fa",
+      color:'#39c8fa',
+      fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
+      letterSpacing: '1.5px',
+      textTransform: 'uppercase',
     },
     description:{
       fontSize:'1.2em',
       color:'#c7c9d1',
+      fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
+      letterSpacing: '0.5px',
     }
      
 }));

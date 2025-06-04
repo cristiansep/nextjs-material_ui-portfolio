@@ -5,8 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     backColor: {
-      // background: "#252740",
-      background: "#0a0a23"
+      position: 'relative',
     },
     cardGrid: {
       height: "100vh",
@@ -24,6 +23,9 @@ export default makeStyles((theme) => ({
       [theme.breakpoints.up("xl")]: {
         marginTop: '50%',
       },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: '2.5em',
+      },
     },
     nameSubTitle: {
       fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
@@ -31,6 +33,9 @@ export default makeStyles((theme) => ({
       letterSpacing: '1px',
       textTransform: 'uppercase',
       color: '#39c8fa',
+      [theme.breakpoints.down("sm")]: {
+        fontSize: '1.5em',
+      },
     },
     image: {
       height: 400,

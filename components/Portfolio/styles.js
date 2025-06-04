@@ -18,10 +18,12 @@ export default makeStyles((theme) => ({
     paddingBottom: theme.spacing(14),
   },
   title:{
-    fontSize:'2em',
     fontWeight: 600,
     opacity:'0.95',
-   color:"#39c8fa",
+    color:"#39c8fa",
+    // fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
+    letterSpacing: '1.5px',
+    textTransform: 'uppercase',
   },
   cover: {
     width: 170,
@@ -43,12 +45,16 @@ export default makeStyles((theme) => ({
     },
   },
   explanation:{
-    fontWeight:600
+    fontWeight:700
+    
   },
   buttoms:{
     marginTop:10,
   },
   text: {
     color: '#c7c9d1',
+    fontSize: '1em',
+    letterSpacing: '0.5px',
+    // fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
   }
 }));

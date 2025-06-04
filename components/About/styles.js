@@ -54,7 +54,6 @@ export default makeStyles((theme) => ({
   },
   primero: {
     marginRight: '10px',
-    fontFamily: "Arial Black",
     color: '#39c8fa',
   },
   segundo: {

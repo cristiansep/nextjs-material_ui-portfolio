@@ -3,7 +3,7 @@ import TextField from '@material-ui/core/TextField';
 
 export default makeStyles((theme )=> ({
     backColor: {
-        background: '#0a0a23',
+        // background: '#0a0a23',
       },
       cardGrid: {
         paddingTop: theme.spacing(14),

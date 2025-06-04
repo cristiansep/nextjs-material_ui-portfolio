@@ -11,11 +11,14 @@ import Fade from "react-reveal/Fade";
 
 import Copyright from "../widgets/Copyright";
 import { networks } from "../../data";
+import { useMediaQuery, useTheme } from '@material-ui/core';
 
 import useStyles from "./styles";
 
 export default function Footer() {
   const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <div className={classes.backColor}>
       <Container className={classes.cardGrid} maxWidth="lg" id="contact">
@@ -37,7 +40,7 @@ export default function Footer() {
                   <BottomNavigationAction
                     className={classes.social}
                     style={{ padding: 0 }}
-                    icon={<GitHub style={{ fontSize: "30px" }} />}
+                    icon={<GitHub style={{ fontSize: !isMobile ? "30px" : undefined }} />}
                     href={value.urlGit}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -45,7 +48,7 @@ export default function Footer() {
                   <BottomNavigationAction
                     className={classes.social}
                     style={{ padding: 0 }}
-                    icon={<Twitter style={{ fontSize: "30px" }} />}
+                    icon={<Twitter style={{ fontSize: !isMobile ? "30px" : undefined }} />}
                     href={value.urlTwitter}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -53,7 +56,7 @@ export default function Footer() {
                   <BottomNavigationAction
                     className={classes.social}
                     style={{ padding: 0 }}
-                    icon={<LinkedInIcon style={{ fontSize: "30px" }} />}
+                    icon={<LinkedInIcon style={{ fontSize: !isMobile ? "30px" : undefined }} />}
                     href={value.urlIn}
                     target="_blank"
                     rel="noopener noreferrer"

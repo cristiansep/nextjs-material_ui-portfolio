@@ -44,16 +44,16 @@ export const headData = {
       codeUrl:"https://github.com/cristiansep/ReservasApp",
       demoUrl:""
     },
-    {
-      id:uuidv4(),
-      title:"Aplicación de Diario Personal",
-      technology:"Firebase, React.js, Redux, Sass.",
-      features:"Autenticación normal y con google, CRUD, Manejo de estado global, Subida de archivos a cloudinary.",
-      date:"Agosto 2020",
-      img:"/images/undraw_finance_0bdk.svg",
-      codeUrl:"https://github.com/cristiansep/JournalApp",
-      demoUrl:"https://stupefied-jang-d3ed8b.netlify.app"
-    },
+    // {
+    //   id:uuidv4(),
+    //   title:"Aplicación de Diario Personal",
+    //   technology:"Firebase, React.js, Redux, Sass.",
+    //   features:"Autenticación normal y con google, CRUD, Manejo de estado global, Subida de archivos a cloudinary.",
+    //   date:"Agosto 2020",
+    //   img:"/images/undraw_finance_0bdk.svg",
+    //   codeUrl:"https://github.com/cristiansep/JournalApp",
+    //   demoUrl:"https://stupefied-jang-d3ed8b.netlify.app"
+    // },
     {
       id:uuidv4(),
       title:"API RESTful para Gestión de Reservas",
@@ -64,16 +64,16 @@ export const headData = {
       codeUrl:"https://github.com/cristiansep/Backend-Sequelize",
       
     },
-    {
-      id:uuidv4(),
-      title:"Sitio Web de Portafolio Profesional",
-      technology:"Nextjs, Material UI, React-spring.",
-      features:"Animaciones, Diseño web responsivo, Formulario de contacto sin servidor, .",
-      date:"Enero 2021",
-      img:"/images/undraw_portfolio_website_lidw.svg",
-      codeUrl:"https://github.com/cristiansep/nextjs-material_ui-portfolio",
-      demoUrl:""
-    },
+    // {
+    //   id:uuidv4(),
+    //   title:"Sitio Web de Portafolio Profesional",
+    //   technology:"Nextjs, Material UI, React-spring.",
+    //   features:"Animaciones, Diseño web responsivo, Formulario de contacto sin servidor, .",
+    //   date:"Enero 2021",
+    //   img:"/images/undraw_portfolio_website_lidw.svg",
+    //   codeUrl:"https://github.com/cristiansep/nextjs-material_ui-portfolio",
+    //   demoUrl:""
+    // },
     {
       id:uuidv4(),
       title:"Aplicación Móvil de Recetas y Comidas",

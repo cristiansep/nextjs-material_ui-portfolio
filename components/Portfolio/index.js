@@ -33,7 +33,17 @@ function ProjectCard(props) {
               <Typography component="h5" variant="h5" className={classes.title}>
                 {props.title}
               </Typography>
-              <Typography variant="caption" display="block" gutterBottom color="textSecondary">
+              <Typography 
+                variant="caption" 
+                display="block" 
+                gutterBottom 
+                style={{
+                  fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
+                  letterSpacing: '0.5px',
+                  color: '#c7c9d1',
+                  fontSize: '0.8em',
+                }}
+              >
                 {props.date}
               </Typography>
               <Typography variant="subtitle1" className={classes.text}>
@@ -47,14 +57,14 @@ function ProjectCard(props) {
               <div className={classes.buttoms}>
               <a href={props.demoUrl} target="_blank" rel="noopener noreferrer">
                 {props.demoUrl? 
-                  <Button variant="outlined" style={{float:'right',margin:10,  color: '#39c8fa'}} size='small'>
+                  <Button variant="outlined" style={{float:'right',margin:10,  color: '#39c8fa', fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif'}} size='small'>
                     DEMO
                   </Button>
                   : null
                 }
               </a>
                 <a href={props.codeUrl} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outlined"  style={{float:'right',margin:10, color: '#39c8fa'}} size='small'>
+                  <Button variant="outlined"  style={{float:'right',margin:10, color: '#39c8fa', fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif'}} size='small'>
                     VER CODIGO 
                   </Button>
                 </a>

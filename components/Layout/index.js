@@ -26,15 +26,16 @@ const useStyles = makeStyles((theme) => ({
       right: theme.spacing(2),
     },
     backColor: {
-      background: '#44444a',
+      background: '#424242',
       color: 'white',
+      zIndex:99999,
       "&:hover,&.MuiButton-hover":{
         background: '#303030',
       },
       "&:focus, &.Mui-focusVisible": {
         outline: 'none',
         textShadow: '0 0 0 #ffff',
-      },
+      }
     },
   }));
   
@@ -78,6 +79,7 @@ export const Layout = (props) => {
         return (
           <React.Fragment>
             <CssBaseline />
+            <div style={{ zIndex:2, position: 'relative' }}>
             <ScrollTop {...props}>
               <Fab
                 size="medium"
@@ -88,7 +90,6 @@ export const Layout = (props) => {
                 <KeyboardArrowUpIcon />
               </Fab>
             </ScrollTop>
-            <div style={{background: '#0a0a23'}}>
             < Profile/>
             <About/>
             <Services/>

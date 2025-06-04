@@ -33,7 +33,7 @@ export const ProgressBar = ({name,done}) => {
 
   return (
     <div>
-      <Typography variant="h6" style={{ color: "#c7c9d1" }} >
+      <Typography variant="h6" style={{ color: "#c7c9d1", fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',letterSpacing: '1.5px', }} >
         {name}
       </Typography>
       <div className="progress">

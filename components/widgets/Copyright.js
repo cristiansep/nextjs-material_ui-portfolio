@@ -1,9 +1,13 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-
+import { useMediaQuery, useTheme } from '@material-ui/core';
 
 
 export default function Copyright() {
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
     return (
       <React.Fragment>
         <Typography 
@@ -11,8 +15,8 @@ export default function Copyright() {
           style={{
             color: "#fff", 
             fontWeight: 700,
-            fontSize: "1.1em",
-            letterSpacing: '1.5px',
+            fontSize: !isMobile ? "1.1em" : undefined,
+            letterSpacing: !isMobile ? '1.5px' : undefined,
             }} 
             align="center"
             >
@@ -22,8 +26,8 @@ export default function Copyright() {
           style={{
             color: "#fff", 
             fontWeight: 700,
-            fontSize: "1.1em",
-            letterSpacing: '1.5px',
+            fontSize: !isMobile ? "1.1em" : undefined,
+            letterSpacing: !isMobile ? '1.5px' : undefined,
             }} 
           >
          {"cristiansep "}

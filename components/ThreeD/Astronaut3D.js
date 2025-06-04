@@ -36,10 +36,10 @@ function PlanetModel(props) {
 
   React.useEffect(() => {
     if (names && names.length > 0 && actions) {
-      names.forEach((name, idx) => {
+      names.forEach((name) => {
         const action = actions[name];
         if (action) {
-          const slowDownFactor = idx === 0 ? 0.1 : 0.2;
+          const slowDownFactor = 0.1;
           action.setEffectiveTimeScale(slowDownFactor);
           action.play();
         }
@@ -51,7 +51,7 @@ function PlanetModel(props) {
        <primitive
         object={scene}
         scale={isMobile ? 0.1 : 1}
-        position={isMobile ? [18, 10, 0] : [0, 100, -10]}
+        position={isMobile ? [18, 10, 0] : [50, 100, 60]}
         {...props}
       />
     </Float>
@@ -73,7 +73,7 @@ const Astronaut3D = () => {
   return (
     <div
       style={{ 
-          position: 'absolute', 
+          position: 'fixed', 
           top: 0, 
           left: 0, 
           width: '100vw', 
@@ -82,11 +82,12 @@ const Astronaut3D = () => {
           pointerEvents: 'none', 
           display: 'flex', 
           justifyContent: 'center', 
-          alignItems: 'center' 
+          alignItems: 'center',
+          background: "#0a0a23",
         }}
       >
       <Fade when={show} duration={1200}>
-      <Canvas style={{ width: '100vw', height: '100vh' }} camera={{ position: [0, 0, 5], fov: 60 }} shadows>
+      <Canvas style={{ width: '100vw', height: '100vh' }} camera={{ position: [isMobile ? 0 : 1.5, 0, 5], fov: 60 }} shadows>
         <ambientLight intensity={0.7} />
         <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
         <Stars radius={100} depth={50} count={2000} factor={4} saturation={0} fade />
