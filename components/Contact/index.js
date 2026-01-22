@@ -61,7 +61,7 @@ const handleSubmitForm = (e) => {
         <Title title="Contacto" />
 
         <Paper elevation={3} className={ isMobile ? classes.paperStyleMobile : classes.paperStyle}>
-        <Grid container spacing={{xs:0,md:10}} justify="space-evenly">
+        <Grid container spacing={4} justifyContent="space-evenly">
           {/*Section 1*/}
           <Fade left cascade>
             <Grid item xs={12} sm={12} md={6} xl={6} className={isMobile ? classes.espacioMobile : classes.espacio}>
@@ -156,7 +156,7 @@ const handleSubmitForm = (e) => {
                         name="msg"
                         label="Mensaje"
                         type="text"
-                        rows="2"
+                        minRows={2}
                         multiline
                         value={msg || ''}
                         onChange={handleInputChange}

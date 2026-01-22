@@ -88,7 +88,7 @@ export default function Portfolio() {
      
         <Title title="Proyectos"/>
     
-      <Grid container justify="center" spacing={10}>
+      <Grid container justifyContent="center" spacing={10}>
         {portfolioData.map(item => <ProjectCard
           key={item.id} 
           title={item.title}

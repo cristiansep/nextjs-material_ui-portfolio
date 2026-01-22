@@ -41,43 +41,44 @@ export default function AppBarCollapse({navBackground}) {
         onClose={handleClose}
         PaperProps={{
           style: {
-            background: "#44444a"
+            background: "linear-gradient(135deg, #0a0a23 0%, #1a1a3e 100%)",
+            border: "1px solid rgba(57, 200, 250, 0.2)",
           }
         }}
       >
       <MenuItem>
-        <Link style={{color: "#fff"}} to="inicio" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Inicio</Link>
+        <Link style={{color: "#fff", letterSpacing: '1px'}} to="inicio" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Inicio</Link>
       </MenuItem>
       <MenuItem >
-        <Link style={{color: "#fff"}} to="about" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Acerca de</Link>
+        <Link style={{color: "#fff", letterSpacing: '1px'}} to="about" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Acerca de</Link>
       </MenuItem>
       <MenuItem>
-        <Link style={{color: "#fff"}} to="servicios" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Servicios</Link>
+        <Link style={{color: "#fff", letterSpacing: '1px'}} to="servicios" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Servicios</Link>
       </MenuItem>
       <MenuItem>
-        <Link style={{color: "#fff"}} to="portfolio" onClick={handleClose} activeClass="active" spy={true} smooth={true} duration={1000}>Portafolio</Link>
+        <Link style={{color: "#fff", letterSpacing: '1px'}} to="portfolio" onClick={handleClose} activeClass="active" spy={true} smooth={true} duration={1000}>Portafolio</Link>
       </MenuItem>
       <MenuItem>
-        <Link style={{color: "#fff"}} to="contact" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Contacto</Link>
+        <Link style={{color: "#fff", letterSpacing: '1px'}} to="contact" onClick={handleClose} activeClass="active" spy={true}  smooth={true} duration={1000}>Contacto</Link>
       </MenuItem>
       </Menu>
       </div>
       <Fade top cascade>
      <Box component="div" className={classes.buttonBar} id="appbar-collapse">
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link style={{color: '#fff'}} to="inicio" activeClass={classes.active} spy={true}  smooth={true} duration={1000}>Inicio</Link>
+            <Link style={{color: '#fff', letterSpacing: '1px'}} to="inicio" activeClass={classes.active} spy={true}  smooth={true} duration={1000}>Inicio</Link>
           </Button>
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link style={{color: '#fff'}}  to="about" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Acerca de</Link>
+            <Link style={{color: '#fff', letterSpacing: '1px'}}  to="about" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Acerca de</Link>
           </Button>
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link style={{color: '#fff'}}  to="servicios" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Servicios</Link>
+            <Link style={{color: '#fff', letterSpacing: '1px'}}  to="servicios" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Servicios</Link>
           </Button>
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link style={{color: '#fff'}}  to="portfolio" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Portafolio</Link>
+            <Link style={{color: '#fff', letterSpacing: '1px'}}  to="portfolio" activeClass={classes.active} spy={true} offset={50}  smooth={true} duration={1000}>Portafolio</Link>
           </Button>
           <Button color="inherit" className={classes.buttonBorder2}>
-            <Link style={{color: '#fff'}}  to="contact" activeClass={classes.active}  spy={true} offset={50}  smooth={true} duration={1000}>Contacto</Link>
+            <Link style={{color: '#fff', letterSpacing: '1px'}}  to="contact" activeClass={classes.active}  spy={true} offset={50}  smooth={true} duration={1000}>Contacto</Link>
           </Button>
     </Box>
     </Fade>

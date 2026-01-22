@@ -26,7 +26,7 @@ export default function Footer() {
           container
           spacing={1}
           direction="column"
-          justify="center"
+          justifyContent="center"
           alignItems="center"
         >
           <Grid item xs={12} sm={6} md={6}>

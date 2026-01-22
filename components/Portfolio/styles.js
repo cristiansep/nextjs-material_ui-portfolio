@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 export default makeStyles((theme) => ({
   
   divContainer: {
-    background: '#ffffff',
+    background: 'transparent',
   },
   root: {
     background: "#44444a",
@@ -21,9 +21,13 @@ export default makeStyles((theme) => ({
     fontWeight: 600,
     opacity:'0.95',
     color:"#39c8fa",
-    // fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
-    letterSpacing: '1.5px',
+    letterSpacing: '2px',
     textTransform: 'uppercase',
+    textShadow: '0 0 10px rgba(57, 200, 250, 0.5)',
+    [theme.breakpoints.down("sm")]: {
+      fontSize: '1rem',
+      letterSpacing: '1px',
+    },
   },
   cover: {
     width: 170,
@@ -55,6 +59,9 @@ export default makeStyles((theme) => ({
     color: '#c7c9d1',
     fontSize: '1em',
     letterSpacing: '0.5px',
-    // fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
+    [theme.breakpoints.down("sm")]: {
+      fontSize: '0.85em',
+      letterSpacing: '0.3px',
+    },
   }
 }));

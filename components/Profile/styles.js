@@ -16,9 +16,10 @@ export default makeStyles((theme) => ({
     nameTitle: {
       fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
       fontWeight: 700,
-      letterSpacing: '1.5px',
+      letterSpacing: '2px',
       textTransform: 'uppercase',
       color: "#fff",
+      textShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
       marginTop: '30%',
       [theme.breakpoints.up("xl")]: {
         marginTop: '50%',
@@ -30,9 +31,10 @@ export default makeStyles((theme) => ({
     nameSubTitle: {
       fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
       fontWeight: 500,
-      letterSpacing: '1px',
+      letterSpacing: '2px',
       textTransform: 'uppercase',
       color: '#39c8fa',
+      textShadow: '0 0 15px rgba(57, 200, 250, 0.6)',
       [theme.breakpoints.down("sm")]: {
         fontSize: '1.5em',
       },

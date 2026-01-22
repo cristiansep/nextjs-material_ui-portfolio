@@ -48,10 +48,17 @@ const useStyles =  makeStyles((theme) => ({
   },
   margenTitulo: {
     marginBottom: 30,
-    color: '#c7c9d1',
+    color: '#39c8fa',
     fontWeight: 'bold',
-    letterSpacing: '1.5px',
+    letterSpacing: '2px',
     fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
+    textTransform: 'uppercase',
+    textShadow: '0 0 15px rgba(57, 200, 250, 0.6)',
+    [theme.breakpoints.down("sm")]: {
+      fontSize: '1.1rem',
+      marginBottom: 20,
+      letterSpacing: '1px',
+    },
   }
 }));
 

@@ -15,12 +15,21 @@ export default makeStyles((theme )=> ({
       },
       submit: {
         margin: theme.spacing(3, 0, 2),
-        background: '#39c8fa',
-        color: '#23233a',
+        background: 'linear-gradient(90deg, #39c8fa 0%, #7b68ee 100%)',
+        color: '#ffffff',
+        boxShadow: '0 0 15px rgba(57, 200, 250, 0.4)',
+        letterSpacing: '1px',
+        fontWeight: 600,
+        transition: 'all 0.3s ease',
         "&:hover,&.MuiButton-hover":{
-          background: '#39c8fa',
-          color: '#23233a',
-        }
+          background: 'linear-gradient(90deg, #7b68ee 0%, #39c8fa 100%)',
+          boxShadow: '0 0 25px rgba(57, 200, 250, 0.6)',
+          transform: 'translateY(-2px)',
+        },
+        [theme.breakpoints.down("sm")]: {
+          fontSize: '0.85rem',
+          letterSpacing: '0.5px',
+        },
       },
       images: {
         height: 400,
@@ -49,24 +58,26 @@ export default makeStyles((theme )=> ({
         paddingLeft:0
       },
       tamano: {
-        backgroundColor: '#39c8fa',
+        background: 'linear-gradient(135deg, #39c8fa 0%, #7b68ee 100%)',
         width: theme.spacing(6),
         height: theme.spacing(6),
         WebkitTransform: 'perspective(1px) translateZ(0)',
         transform: 'perspective(1px) translateZ(0)',
         WebkitTransitionDuration: '0.3s',
         transitionDuration: '0.3s',
-        color: '#23233a',
+        color: '#ffffff',
+        boxShadow: '0 0 15px rgba(57, 200, 250, 0.4)',
       },
       tamanoMobile: {
-        backgroundColor: '#39c8fa',
+        background: 'linear-gradient(135deg, #39c8fa 0%, #7b68ee 100%)',
         width: theme.spacing(4),
         height: theme.spacing(4),
         WebkitTransform: 'perspective(1px) translateZ(0)',
         transform: 'perspective(1px) translateZ(0)',
         WebkitTransitionDuration: '0.3s',
         transitionDuration: '0.3s',
-        color: '#23233a',
+        color: '#ffffff',
+        boxShadow: '0 0 10px rgba(57, 200, 250, 0.4)',
       },
       iconAnimation: {
         webkitTransform: 'translateZ(0)',
@@ -99,41 +110,61 @@ export default makeStyles((theme )=> ({
        
       },
       textList: {
-        color: '#c7c9d1',
+        '& .MuiListItemText-primary': {
+          color: '#c7c9d1',
+          letterSpacing: '0.5px',
+        },
       },
       textListMobile: {
-        color: '#c7c9d1',
         marginLeft: -10,
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-        whiteSpace: 'nowrap',
+        '& .MuiListItemText-primary': {
+          color: '#c7c9d1',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+          fontSize: '0.85rem',
+          letterSpacing: '0.3px',
+        },
       }
 }));
 
 
 
-export const InputField = withStyles({
+export const InputField = withStyles((theme) => ({
   root: {
       "& label.Mui-focused": {
-          color: "#c7c9d1"
+          color: "#39c8fa",
+          textShadow: '0 0 8px rgba(57, 200, 250, 0.4)',
       },
       "& label": {
           color: "#c7c9d1",
+          [theme.breakpoints.down("sm")]: {
+            fontSize: '0.85rem',
+          },
       },
       "& .MuiOutlinedInput-root": {
           "& fieldset": {
-              borderColor: "#c7c9d1"
+              borderColor: "#c7c9d1",
+              transition: 'all 0.3s ease',
           },
           "&.MuiOutlinedInput-colorSecondary": {
             color: "#c7c9d1"
           },
           "&.Mui-focused fieldset": {
-            borderColor: "#c7c9d1"
+            borderColor: "#39c8fa",
+            boxShadow: '0 0 10px rgba(57, 200, 250, 0.3)',
           },
           "&:hover fieldset": {
-            borderColor: "#23233a"
+            borderColor: "#39c8fa",
         },
+      },
+      "& .MuiOutlinedInput-input": {
+          color: "#c7c9d1",
+          [theme.breakpoints.down("sm")]: {
+            fontSize: '0.85rem',
+            padding: '14px',
+          },
       },
   },
   
-})(TextField);
+}))(TextField);

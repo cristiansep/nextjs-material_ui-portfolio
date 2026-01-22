@@ -52,10 +52,12 @@ export default makeStyles((theme) => ({
     },
     "& .MuiSvgIcon-root": {
       fill: "white",
+      transition: "all 0.3s ease",
       "&:hover, &:focus, &:active": {
         fill: "#39c8fa",
         WebkitTransform: 'scale(1.1)',
-        transform: 'scale(1.1)'
+        transform: 'scale(1.1)',
+        filter: 'drop-shadow(0 0 8px rgba(57, 200, 250, 0.6))',
       },
     },
     "&:focus, &.Mui-focusVisible": {

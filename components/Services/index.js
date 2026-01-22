@@ -63,7 +63,7 @@ export default function Services() {
         <Title title="Servicios" />
 
 
-        <Grid container justify="center" spacing={3}>
+        <Grid container justifyContent="center" spacing={3}>
           {servicesData.map((item) => (
     
             <ItemCard

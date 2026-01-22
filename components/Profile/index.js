@@ -21,7 +21,7 @@ export default function Perfil() {
          <Particulas/>
       <Container className={classes.cardGrid} maxWidth="lg" id="inicio">
 
-        <Grid container spacing={2} justify="center">
+        <Grid container spacing={2} justifyContent="center">
       
     
           <Grid style={{zIndex:999}} item xs={12} sm={6} md={6} lg={6}  xl={6}  className={classes.textCenter}>

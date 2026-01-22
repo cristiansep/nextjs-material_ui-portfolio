@@ -22,6 +22,8 @@ export default makeStyles((theme) => ({
   },
   buttonTitle: {
     fontSize: '20px',
+    letterSpacing: '2px',
+    textShadow: '0 0 10px rgba(57, 200, 250, 0.5)',
     "&:focus, &.Mui-focusVisible": {
       outline: "none",
       color: "transparent",
@@ -30,8 +32,8 @@ export default makeStyles((theme) => ({
     "&:hover, &.Mui-focusVisible": {
       transition: "0.3s",
       opacity: 1,
-      backgroundColor: "transparent"
-    
+      backgroundColor: "transparent",
+      textShadow: '0 0 15px rgba(57, 200, 250, 0.8)',
     },
    
   },
@@ -47,13 +49,14 @@ export default makeStyles((theme) => ({
   appBarTransparent: {
     backgroundColor: "rgba(67, 129, 168, 0)",
     boxShadow: "none",
-
+    borderBottom: "1px solid transparent",
     transitionTimingFunction: "ease-in",
     transition: "all 0.5s",
   },
   appBarSolid: {
-    backgroundColor: "#303030",
-
+    backgroundColor: "rgba(10, 10, 35, 0.95)",
+    backdropFilter: "blur(10px)",
+    borderBottom: "1px solid rgba(57, 200, 250, 0.1)",
     transitionTimingFunction: "ease-in",
     transition: "all 0.5s",
   },
@@ -82,6 +85,7 @@ export default makeStyles((theme) => ({
     transitionProperty: 'transform'
   },
   buttonBorder2: {
+    letterSpacing: '1px',
     "&:focus, &.Mui-focusVisible": {
       outline: "none",
       color: "transparent",
@@ -92,7 +96,8 @@ export default makeStyles((theme) => ({
       opacity: 1,
       backgroundColor: "transparent",
       WebkitTransform: 'scale(1.1)',
-      transform: 'scale(1.1)'
+      transform: 'scale(1.1)',
+      textShadow: '0 0 10px rgba(57, 200, 250, 0.6)',
     },
   },
   iconButtonBorder: {
@@ -110,6 +115,7 @@ export default makeStyles((theme) => ({
   },
   active: {
     borderBottom: "2px solid #39c8fa",
+    textShadow: '0 0 10px rgba(57, 200, 250, 0.6)',
   },
   buttonSong: {
     marginLeft: theme.spacing(5),

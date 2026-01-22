@@ -55,17 +55,29 @@ export default makeStyles((theme) => ({
   primero: {
     marginRight: '10px',
     color: '#39c8fa',
+    textShadow: '0 0 8px rgba(57, 200, 250, 0.4)',
+    letterSpacing: '1px',
+    [theme.breakpoints.down("sm")]: {
+      fontSize: '0.85rem',
+    },
   },
   segundo: {
     color: '#c7c9d1',
-  
+    letterSpacing: '0.5px',
+    [theme.breakpoints.down("sm")]: {
+      fontSize: '0.85rem',
+    },
   },
   about_text: {
-    marginTop: "20px",
     fontSize: '17px',
     color: '#c7c9d1',
-    fontWeight:600,
-    textAlign: 'justify'
+    fontWeight: 600,
+    textAlign: 'justify',
+    lineHeight: 1.7,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: '14px',
+      lineHeight: 1.6,
+    },
   },
   paperStyle: {
     paddingTop: theme.spacing(6),
@@ -84,14 +96,22 @@ export default makeStyles((theme) => ({
   },
   boxData: {
     marginBottom: 15,
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: 10,
+    },
   },
   buttonColor: {
     marginTop: "15px",
-    color: '#23233a',
-    background: '#39c8fa',
+    color: '#ffffff',
+    background: 'linear-gradient(90deg, #39c8fa 0%, #7b68ee 100%)',
+    boxShadow: '0 0 15px rgba(57, 200, 250, 0.4)',
+    letterSpacing: '1px',
+    fontWeight: 600,
+    transition: 'all 0.3s ease',
     "&:hover,&.MuiButton-hover":{
-      background: '#39c8fa',
-      color: '#23233a',
+      background: 'linear-gradient(90deg, #7b68ee 0%, #39c8fa 100%)',
+      boxShadow: '0 0 25px rgba(57, 200, 250, 0.6)',
+      transform: 'translateY(-2px)',
     },
     [theme.breakpoints.down("xs")]: {
       width: '100%',

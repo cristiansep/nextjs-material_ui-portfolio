@@ -10,18 +10,27 @@ export const headData = {
   
   
   // ABOUT DATA
-  export const aboutData = [
-      {
-      id: uuidv4(),
-      name: 'Cristian Sepúlveda',
-      perfil: 'Full Stack Developer',
-      email: 'cristiansepulvedamendez@gmail.com',
-      phone: '+ 56 9 4550 4578',
-      img: '/images/new-me.jpeg',
-      resume: '/docs/cv-2025.pdf', 
-      summary: ` Profesional con más de 5 años de experiencia en el ciclo completo de desarrollo de aplicaciones web y móviles. Experto en arquitecturas REST y MVC, desarrollo de microservicios y metodologías ágiles (SCRUM). He liderado proyectos de alto impacto, optimizando rendimiento y escalabilidad, tanto en el front- end como en el back-end, y construido apps nativas con React Native. Comprometido con la calidad, la mejora continua y la entrega oportuna de soluciones.`,
-    }
-  ] ;
+export const aboutData = [
+  {
+    id: uuidv4(),
+    name: 'Cristian Sepúlveda',
+    perfil: 'Full Stack Developer',
+    email: 'cristiansepulvedamendez@gmail.com',
+    phone: '+ 56 9 4550 4578',
+    img: '/images/new-me.jpeg',
+    resume: '/docs/cv-2026.pdf',
+    summary: `Profesional con más de siete años de experiencia en el ciclo
+    completo de desarrollo de aplicaciones web y móviles.
+    Experto en arquitecturas modernas como Arquitectura de Microfrontend, Microservicios, Flux, Hexagonal, FBA (Feature-Based
+    Architecture) y FSD (Feature-Sliced Design).
+    Cuento con sólida experiencia en el desarrollo bajo metodologías
+    ágiles, especialmente SCRUM. He liderado proyectos de alto
+    impacto, optimizando rendimiento y escalabilidad, tanto en el frontend como en el back-end, y construido aplicaciones nativas con
+    React Native.
+    Comprometido con la calidad, la mejora continua y la entrega
+    oportuna de soluciones de ingeniería.`,
+  }
+];
 
   // SKILL DATA
   export const skillData = [

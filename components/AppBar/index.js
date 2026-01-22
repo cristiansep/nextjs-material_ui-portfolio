@@ -50,9 +50,14 @@ export default function AppBarComponent() {
                 >
                   {/* CRISTIANSEP */}
                   <Typography
-                  style={{color: '#fff', fontWeight: 'bold'}}
-                  component='p'
-                  variant="p"
+                  style={{
+                    color: '#39c8fa', 
+                    fontWeight: 'bold',
+                    letterSpacing: '2px',
+                    textShadow: '0 0 10px rgba(57, 200, 250, 0.6)',
+                  }}
+                  component="p"
+                  variant="body1"
                   >
                     CRISTIANSEP
                   </Typography>

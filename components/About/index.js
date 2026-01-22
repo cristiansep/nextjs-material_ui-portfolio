@@ -51,7 +51,7 @@ export const About = () => {
             <Grid
               container
               spacing={2}
-              justify="center"
+              justifyContent="center"
               id="skill"
               key={about.id}
             >
@@ -103,7 +103,7 @@ export const About = () => {
               </Fade>
 
               <Grid item xs={12} sm={8} md={6} xl={6}>
-                <Fade bottom>
+                {/* <Fade bottom>
                   <Grid container direction="column" className={classes.top}>
                     <Grid
                       container
@@ -209,7 +209,7 @@ export const About = () => {
                       </Grid>
                     </Grid>
                   </Grid>
-                </Fade>
+                </Fade> */}
 
                 <Fade bottom>
                   <Typography

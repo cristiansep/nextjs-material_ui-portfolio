@@ -7,19 +7,30 @@ const useStyles = makeStyles((theme) => ({
     title: {
       color: '#39c8fa',
       paddingBottom: theme.spacing(8),
-      // fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
       fontWeight: 700,
+      textShadow: '0 0 10px rgba(57, 200, 250, 0.5)',
+      [theme.breakpoints.down("sm")]: {
+        paddingBottom: theme.spacing(4),
+      },
     },
     titleBorder: {
       color: '#39c8fa',
-      margin:10,
-      padding:5,
-      border : '0px solid #44444a',
+      margin: 10,
+      padding: 5,
+      border: '0px solid #7b68ee',
       borderLeftWidth: '0.4em',
-      // fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
-      letterSpacing: '1.5px',
+      letterSpacing: '2px',
       fontWeight: 700,
       fontSize: '1.5em',
+      textTransform: 'uppercase',
+      textShadow: '0 0 15px rgba(57, 200, 250, 0.6)',
+      [theme.breakpoints.down("sm")]: {
+        fontSize: '1.1em',
+        letterSpacing: '1px',
+        margin: 5,
+        padding: 3,
+        borderLeftWidth: '0.3em',
+      },
     },
     size: {
       fontSize: '2.5em'

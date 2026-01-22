@@ -52,14 +52,24 @@ export default makeStyles(theme => ({
       textAlign:'center',
       color:'#39c8fa',
       fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
-      letterSpacing: '1.5px',
+      letterSpacing: '2px',
       textTransform: 'uppercase',
+      textShadow: '0 0 10px rgba(57, 200, 250, 0.5)',
+      [theme.breakpoints.down("sm")]: {
+        fontSize: '1.3em',
+        letterSpacing: '1px',
+      },
     },
     description:{
       fontSize:'1.2em',
       color:'#c7c9d1',
       fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
       letterSpacing: '0.5px',
+      lineHeight: 1.6,
+      [theme.breakpoints.down("sm")]: {
+        fontSize: '0.95em',
+        lineHeight: 1.5,
+      },
     }
      
 }));
