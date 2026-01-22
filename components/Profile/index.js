@@ -43,7 +43,7 @@ export default function Perfil() {
                   >
                     <Fade>
                   <Typed
-                    strings={["Full Stack Developer", "Front-end Developer", "Back-end Developer"]}
+                    strings={["Software Engineer", "Senior Full Stack Developer", "Building Digital Solutions"]}
                     typeSpeed={50}
                     backSpeed={70}
                     loop
