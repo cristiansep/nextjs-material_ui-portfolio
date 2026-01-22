@@ -47,7 +47,7 @@ const Loader3D = () => {
         </div>
 
         {/* Texto de carga */}
-        <p style={styles.text}>Cargando experiencia 3D...</p>
+        <p style={styles.text}>Construyendo tu experiencia...</p>
 
         {/* Barra de progreso */}
         <div style={styles.progressContainer}>
@@ -110,7 +110,7 @@ const styles = {
     alignItems: 'center',
     gap: '20px',
     width: '100%',
-    maxWidth: '320px',
+    maxWidth: '500px',
     textAlign: 'center',
   },
   iconContainer: {
@@ -123,13 +123,12 @@ const styles = {
   },
   text: {
     color: '#ffffff',
-    fontSize: 'clamp(0.9rem, 3vw, 1.2rem)',
+    fontSize: 'clamp(0.85rem, 2.5vw, 1.3rem)',
     fontWeight: '500',
-    letterSpacing: '2px',
+    letterSpacing: 'clamp(1px, 0.3vw, 2px)',
     textTransform: 'uppercase',
     margin: 0,
     textShadow: '0 0 10px rgba(57, 200, 250, 0.5)',
-    width: '100%',
   },
   progressContainer: {
     display: 'flex',
