@@ -1,136 +1,30 @@
-import React, { Suspense, useEffect, useState, useMemo, useCallback } from 'react';
+import React, { Suspense, useEffect, useState, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { 
   OrbitControls, 
   Stars, 
-  Float, 
-  useGLTF, 
-  useAnimations, 
   useProgress,
-  Preload 
 } from '@react-three/drei';
 import { useIsMobile } from '../../hooks/useIsMobile';
 import Loader3D from './Loader3D';
-
-const MODEL_PATH = '/models/test/scene.gltf';
-const PLANET_PATH = '/models/planeta/scene.gltf';
-
-/**
- * Preload de modelos GLTF para mejorar la carga inicial
- * Se ejecuta antes de que los componentes se monten
- */
-useGLTF.preload(MODEL_PATH);
-useGLTF.preload(PLANET_PATH);
-
-/**
- * Componente del modelo del astronauta con animación flotante
- * @param {Object} props - Props del componente
- * @returns {JSX.Element} Modelo 3D del astronauta
- */
-function AstronautModel(props) {
-  const { scene, animations } = useGLTF(MODEL_PATH);
-  const { actions, names } = useAnimations(animations, scene);
-  const isMobile = useIsMobile();
-
-  // Memoizar la escala para evitar recálculos
-  const scale = useMemo(() => (isMobile ? 0.7 : 1.1), [isMobile]);
-
-  useEffect(() => {
-    if (names?.length > 0 && actions) {
-      const action = actions[names[0]];
-      if (action) {
-        action.reset().play();
-      }
-    }
-
-    // Cleanup: detener animaciones al desmontar
-    return () => {
-      if (names?.length > 0 && actions) {
-        Object.values(actions).forEach((action) => {
-          action?.stop();
-        });
-      }
-    };
-  }, [actions, names]);
-
-  return (
-    <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-      <primitive
-        object={scene}
-        scale={scale}
-        dispose={null}
-        {...props}
-      />
-    </Float>
-  );
-}
-
-/**
- * Componente del modelo del planeta con animación lenta
- * @param {Object} props - Props del componente
- * @returns {JSX.Element} Modelo 3D del planeta
- */
-function PlanetModel(props) {
-  const { scene, animations } = useGLTF(PLANET_PATH);
-  const { actions, names } = useAnimations(animations, scene);
-  const isMobile = useIsMobile();
-
-  // Memoizar valores para evitar recálculos
-  const scale = useMemo(() => (isMobile ? 0.1 : 1), [isMobile]);
-  const position = useMemo(
-    () => (isMobile ? [18, 10, 0] : [50, 100, 60]),
-    [isMobile]
-  );
-
-  useEffect(() => {
-    if (names?.length > 0 && actions) {
-      const slowDownFactor = 0.1;
-      names.forEach((name) => {
-        const action = actions[name];
-        if (action) {
-          action.setEffectiveTimeScale(slowDownFactor);
-          action.play();
-        }
-      });
-    }
-
-    // Cleanup: detener animaciones al desmontar
-    return () => {
-      if (names?.length > 0 && actions) {
-        Object.values(actions).forEach((action) => {
-          action?.stop();
-        });
-      }
-    };
-  }, [actions, names]);
-
-  return (
-    <Float speed={0.5} rotationIntensity={0} floatIntensity={0}>
-      <primitive
-        object={scene}
-        scale={scale}
-        position={position}
-        dispose={null}
-        {...props}
-      />
-    </Float>
-  );
-}
+import { NoiseSphereScene } from './NoiseSphere';
 
 /**
  * Componente de escena 3D optimizado
- * Contiene las estrellas y los modelos 3D
+ * Contiene las estrellas y la esfera de partículas
  */
 const Scene = React.memo(({ isMobile }) => {
-  const astronautPosition = useMemo(
-    () => (isMobile ? [0, 0, 0] : [2, -1.5, 0]),
+  // Posición de la esfera según el dispositivo
+  const spherePosition = useMemo(
+    () => (isMobile ? [0, 0, 0] : [1.5, 0, 0]),
     [isMobile]
   );
 
   return (
     <>
-      <ambientLight intensity={0.7} />
-      <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} intensity={1} color="#39c8fa" />
+      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#7b68ee" />
       <Stars 
         radius={100} 
         depth={50} 
@@ -140,11 +34,11 @@ const Scene = React.memo(({ isMobile }) => {
         fade 
       />
       <Suspense fallback={null}>
-        <PlanetModel />
-        <AstronautModel position={astronautPosition} />
-        <Preload all />
+        <group position={spherePosition}>
+          <NoiseSphereScene isMobile={isMobile} />
+        </group>
       </Suspense>
-      {!isMobile && <OrbitControls enableZoom={false} enablePan={false} />}
+      {!isMobile && <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />}
     </>
   );
 });
@@ -190,7 +84,7 @@ const Astronaut3D = () => {
     width: '100vw',
     height: '100vh',
     zIndex: 1,
-    pointerEvents: 'none',
+    pointerEvents: 'auto', // Habilitar interacción con mouse
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -212,15 +106,15 @@ const Astronaut3D = () => {
       {/* Canvas 3D */}
       <div style={containerStyle}>
         <Canvas
-          style={canvasStyle}
+          style={{ ...canvasStyle, touchAction: 'none' }}
           camera={{ position: cameraPosition, fov: 60 }}
           shadows
-          dpr={[1, isMobile ? 1.5 : 2]} // Optimizar pixel ratio según dispositivo
-          performance={{ min: 0.5 }} // Ajuste automático de rendimiento
+          dpr={[1, isMobile ? 1.5 : 2]}
+          performance={{ min: 0.5 }}
           gl={{ 
-            antialias: !isMobile, // Desactivar antialiasing en móvil
+            antialias: !isMobile,
             powerPreference: 'high-performance',
-            alpha: true, // Fondo transparente para ver el gradiente
+            alpha: true,
           }}
         >
           <Scene isMobile={isMobile} />
