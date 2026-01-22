@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ButtonSong({navBackground}) {
 
     const classes = useStyles();
-    const soundUrl = '/sounds/Just.mp3';
+    const soundUrl = '/sounds/reflected.mp3';
   
     const [clicked, setClicked] = useState();
     const [play, { stop, isPlaying }] = useSound(soundUrl, {volume: 0.2});
