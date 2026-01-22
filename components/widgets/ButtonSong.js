@@ -7,6 +7,16 @@ import { makeStyles } from "@material-ui/core/styles";
 import Zoom from 'react-reveal/Zoom';
 
 const useStyles = makeStyles((theme) => ({
+  "@keyframes pulseGlow": {
+    "0%, 100%": {
+      transform: 'scale(1)',
+      filter: 'drop-shadow(0 0 8px rgba(57, 200, 250, 0.5))',
+    },
+    "50%": {
+      transform: 'scale(1.15)',
+      filter: 'drop-shadow(0 0 15px rgba(57, 200, 250, 0.9))',
+    },
+  },
   buttonStyle: {
     "&:focus, &.Mui-focusVisible": {
       outline: "none",
@@ -17,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
       transition: "0.3s",
       opacity: 1,
       backgroundColor: "transparent"
-    
+
     },
     WebkitTransform: 'perspective(1px) translateZ(0)',
     transform: 'perspective(1px) translateZ(0)',
@@ -26,23 +36,19 @@ const useStyles = makeStyles((theme) => ({
   },
   iconStyle: {
     fontSize: '35px',
+    filter: 'drop-shadow(0 0 8px rgba(57, 200, 250, 0.5))',
+    animation: '$pulseGlow 2s ease-in-out infinite',
     [theme.breakpoints.down("sm")]: {
       fontSize: '25px',
     },
-    webkitTransform: 'translateZ(0)',
-    transform: 'translateZ(0)',
-    webkitTransitionDuration: '0.3s',
-    transitionDuration: '0.3s',
-    webkitTransitionProperty: 'transform',
-    transitionProperty: 'transform',
-    webkitTransitionTimingFunction: 'ease-out',
-    transitionTimingFunction: 'ease-out',
     "&:hover, &:active, &:focus": {
-      webkitTransform: 'scale(1.3) translateZ(0)',
-      transform: 'scale(1.3) translateZ(0)',
+      animationPlayState: 'paused',
+      transform: 'scale(1.3)',
+      filter: 'drop-shadow(0 0 15px rgba(57, 200, 250, 0.8))',
     },
   },
 }));
+
 
 
 export default function ButtonSong({navBackground}) {
@@ -66,17 +72,20 @@ export default function ButtonSong({navBackground}) {
 
   
     return (
-
       <>
-       <Zoom>
-      <IconButton
-      style={{color:'white'}}
-      className={classes.buttonStyle}
-      onClick={handlePlaySound}
-      >
-        {clicked ? <MusicNoteIcon className={classes.iconStyle}/> : <MusicOffIcon  className={classes.iconStyle}/>}
-      </IconButton>
-      </Zoom>
+        <Zoom>
+          <IconButton
+            style={{ color: 'white' }}
+            className={classes.buttonStyle}
+            onClick={handlePlaySound}
+          >
+            {clicked ? (
+              <MusicNoteIcon className={classes.iconStyle} />
+            ) : (
+              <MusicOffIcon className={classes.iconStyle} />
+            )}
+          </IconButton>
+        </Zoom>
       </>
     );
   }
