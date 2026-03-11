@@ -14,93 +14,77 @@ import {portfolioData} from '../../data'
 import useStyles from './styles';
 
 
-
-
-
 function ProjectCard(props) {
-    const classes = useStyles();
-    return (
-      <Grid item xs={12} sm={10} md={6} xl={6} className={classes.projectCard}>
-        <Fade bottom>
-        <Card className={classes.root}>
+  const classes = useStyles();
+  return (
+    <Grid item xs={12} sm={10} md={6} xl={6} className={classes.projectCard}>
+      <Fade bottom cascade>
+        <Card className={classes.card}>
           <CardMedia
-          style={{marginLeft:'16px' }}
             className={classes.cover}
             image={props.img}
+            title={props.title}
           />
-          <div className={classes.details}>
-            <CardContent>
-              <Typography component="h5" variant="h5" className={classes.title}>
-                {props.title}
-              </Typography>
-              <Typography 
-                variant="caption" 
-                display="block" 
-                gutterBottom 
-                style={{
-                  fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
-                  letterSpacing: '0.5px',
-                  color: '#c7c9d1',
-                  fontSize: '0.8em',
-                }}
-              >
-                {props.date}
-              </Typography>
-              <Typography variant="subtitle1" className={classes.text}>
-               <span className={classes.explanation}>Tecnología:</span> {props.technology}
-              </Typography>
-              <Typography variant="subtitle1" className={classes.text}>
-              <span  className={classes.explanation}>Características:</span> {props.features}
-              </Typography>
+          <CardContent className={classes.cardContent}>
+            <Typography component="h5" variant="h6" className={classes.title}>
+              {props.title}
+            </Typography>
+            <Typography variant="caption" display="block" gutterBottom className={classes.date}>
+              {props.date}
+            </Typography>
+            <Typography variant="body2" className={classes.text}>
+              <span className={classes.explanation}>Tecnología:</span> {props.technology}
+            </Typography>
+            <Typography variant="body2" className={classes.text}>
+              <span className={classes.explanation}>Características:</span> {props.features}
+            </Typography>
 
-
-              <div className={classes.buttoms}>
-              <a href={props.demoUrl} target="_blank" rel="noopener noreferrer">
-                {props.demoUrl? 
-                  <Button variant="outlined" style={{float:'right',margin:10,  color: '#39c8fa', fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif'}} size='small'>
-                    DEMO
-                  </Button>
-                  : null
-                }
-              </a>
+            <div className={classes.buttonsContainer}>
+              {props.codeUrl ? (
                 <a href={props.codeUrl} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outlined"  style={{float:'right',margin:10, color: '#39c8fa', fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif'}} size='small'>
-                    VER CODIGO 
+                  <Button variant="outlined" className={classes.buttonOutlined} size='small'>
+                    VER CODIGO
                   </Button>
                 </a>
-              </div>
-
-
-            </CardContent>
-          </div>
+              ) : null}
+              {props.demoUrl ? (
+                <a href={props.demoUrl} target="_blank" rel="noopener noreferrer">
+                  <Button variant="outlined" className={classes.buttonOutlined} size='small'>
+                    DEMO
+                  </Button>
+                </a>
+              ) : null}
+            </div>
+          </CardContent>
         </Card>
-        </Fade>
-      </Grid>
-    );
-  }
-  
+      </Fade>
+    </Grid>
+  );
+}
+
 export default function Portfolio() {
   const classes = useStyles();
 
   return (
-    <div >
-    <Container className={classes.cardGrid} maxWidth="lg" id="portfolio">
-     
+    <div className={classes.backColor}>
+      <Container className={classes.cardGrid} maxWidth="lg" id="portfolio">
         <Title title="Proyectos"/>
-    
-      <Grid container justifyContent="center" spacing={10}>
-        {portfolioData.map(item => <ProjectCard
-          key={item.id} 
-          title={item.title}
-          technology={item.technology}
-          features={item.features}
-          date={item.date}
-          img={item.img}
-          codeUrl={item.codeUrl}
-          demoUrl={item.demoUrl}
-        />)}
-      </Grid>
-    </Container>
+
+        <Grid container justifyContent="center" spacing={3}>
+          {portfolioData.map(item => (
+            <ProjectCard
+              key={item.id}
+              title={item.title}
+              technology={item.technology}
+              features={item.features}
+              date={item.date}
+              img={item.img}
+              codeUrl={item.codeUrl}
+              demoUrl={item.demoUrl}
+            />
+          ))}
+        </Grid>
+      </Container>
     </div>
   );
 }

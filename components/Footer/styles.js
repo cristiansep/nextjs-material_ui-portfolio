@@ -2,15 +2,18 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   root: {
-    flexGrow: 1, 
+    flexGrow: 1,
   },
   backColor: {
-    // background: "#0a0a23",
+    background: 'rgba(255, 255, 255, 0.03)',
+    backdropFilter: 'blur(20px)',
+    border: '1px solid rgba(255, 255, 255, 0.06)',
+    borderRadius: 20,
   },
   cardGrid: {
-    paddingTop: theme.spacing(8),
+    paddingTop: theme.spacing(6),
     paddingBottom: theme.spacing(8),
-    display: 'block'
+    display: 'block',
   },
   title: {
     fontSize: "20px",
@@ -34,16 +37,11 @@ export default makeStyles((theme) => ({
     marginTop: "65px",
   },
   colorAppbar: {
-    backgroundColor: "#0a0a23",
+    backgroundColor: "#060614",
   },
   socialContent: {
     background: "transparent",
-    WebkitTransform: 'perspective(1px) translateZ(0)',
-    transform: 'perspective(1px) translateZ(0)',
-    WebkitTransitionDuration: '0.3s',
-    transitionDuration: '0.3s',
-    WebkitTransitionProperty: 'transform',
-    transitionProperty: 'transform'
+    transition: 'all 0.3s ease',
   },
   social: {
     "& .MuiBottomNavigationAction-root": {
@@ -51,13 +49,11 @@ export default makeStyles((theme) => ({
       maxWidth: 250,
     },
     "& .MuiSvgIcon-root": {
-      fill: "white",
-      transition: "all 0.3s ease",
+      fill: "rgba(255, 255, 255, 0.5)",
+      transition: "all 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
       "&:hover, &:focus, &:active": {
         fill: "#39c8fa",
-        WebkitTransform: 'scale(1.1)',
-        transform: 'scale(1.1)',
-        filter: 'drop-shadow(0 0 8px rgba(57, 200, 250, 0.6))',
+        transform: 'translateY(-3px)',
       },
     },
     "&:focus, &.Mui-focusVisible": {

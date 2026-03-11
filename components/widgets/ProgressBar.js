@@ -5,13 +5,14 @@ import { makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   skillName: {
-    color: "#c7c9d1", 
-    fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
-    letterSpacing: '1.5px',
-    textShadow: '0 0 8px rgba(57, 200, 250, 0.3)',
+    color: "rgba(255, 255, 255, 0.6)",
+    fontFamily: 'Outfit, sans-serif',
+    letterSpacing: '1px',
+    fontWeight: 500,
+    fontSize: '0.9rem',
     [theme.breakpoints.down("sm")]: {
-      fontSize: '0.9rem',
-      letterSpacing: '1px',
+      fontSize: '0.8rem',
+      letterSpacing: '0.5px',
     },
   },
 }));
@@ -21,7 +22,7 @@ export const ProgressBar = ({name,done}) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const [style, setStyle] = React.useState({}); 
+  const [style, setStyle] = React.useState({});
 
   useEffect(() => {
 
@@ -37,10 +38,10 @@ export const ProgressBar = ({name,done}) => {
           };
           setStyle(newStyle);
       }
-  
+
     })
   }, [done]);
-    
+
 
 
   return (

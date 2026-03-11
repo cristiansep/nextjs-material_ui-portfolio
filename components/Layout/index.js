@@ -22,15 +22,18 @@ const useStyles = makeStyles((theme) => ({
     root: {
       position: 'fixed',
       zIndex: 1,
-      bottom: theme.spacing(2),
-      right: theme.spacing(2),
+      bottom: theme.spacing(3),
+      right: theme.spacing(3),
     },
     backColor: {
-      background: '#424242',
-      color: 'white',
+      background: 'rgba(57, 200, 250, 0.12)',
+      backdropFilter: 'blur(10px)',
+      color: '#39c8fa',
+      border: '1px solid rgba(57, 200, 250, 0.15)',
       zIndex:99999,
+      transition: 'all 0.3s ease',
       "&:hover,&.MuiButton-hover":{
-        background: '#303030',
+        background: 'rgba(57, 200, 250, 0.2)',
       },
       "&:focus, &.Mui-focusVisible": {
         outline: 'none',

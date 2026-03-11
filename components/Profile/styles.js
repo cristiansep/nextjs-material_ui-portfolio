@@ -1,8 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-
-
-
 export default makeStyles((theme) => ({
     backColor: {
       position: 'relative',
@@ -12,31 +9,34 @@ export default makeStyles((theme) => ({
       paddingTop: theme.spacing(14),
       paddingBottom: theme.spacing(14),
     },
-  
+
     nameTitle: {
-      fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
-      fontWeight: 700,
-      letterSpacing: '2px',
+      fontFamily: 'Syne, sans-serif',
+      fontWeight: 800,
+      letterSpacing: '4px',
       textTransform: 'uppercase',
       color: "#fff",
-      textShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
+      lineHeight: 1.1,
       marginTop: '30%',
       [theme.breakpoints.up("xl")]: {
         marginTop: '50%',
       },
       [theme.breakpoints.down("sm")]: {
-        fontSize: '2.5em',
+        fontSize: '2.2em',
+        letterSpacing: '2px',
       },
     },
     nameSubTitle: {
-      fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
-      fontWeight: 500,
-      letterSpacing: '2px',
+      fontFamily: 'Outfit, sans-serif',
+      fontWeight: 400,
+      letterSpacing: '3px',
       textTransform: 'uppercase',
       color: '#39c8fa',
-      textShadow: '0 0 15px rgba(57, 200, 250, 0.6)',
+      opacity: 0.9,
+      marginTop: theme.spacing(2),
       [theme.breakpoints.down("sm")]: {
-        fontSize: '1.5em',
+        fontSize: '1.2em',
+        letterSpacing: '2px',
       },
     },
     image: {

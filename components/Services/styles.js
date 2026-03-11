@@ -1,75 +1,75 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles(theme => ({
-    backColor: {
-        // backgroundColor: '#0a0a23',
-
-     },
+    backColor: {},
      cardGrid: {
        paddingTop: theme.spacing(14),
        paddingBottom: theme.spacing(14),
      },
      projectCard:{
-       WebkitTransform: 'perspective(1px) translateZ(0)',
-       transform: 'perspective(1px) translateZ(0)',
-       WebkitTransitionDuration: '0.3s',
-       transitionDuration: '0.3s',
-       WebkitTransitionProperty: 'transform',
-       transitionProperty: 'transform',
-       WebkitTransitionTimingFunction: 'ease-out',
-       transitionTimingFunction: 'ease-out',
+       transition: 'all 0.4s cubic-bezier(0.22, 1, 0.36, 1)',
       "&:hover": {
-        WebkitTransform: 'translateY(-8px)',
-        transform: 'translateY(-8px)'
+        transform: 'translateY(-12px)',
       },
     },
      card: {
-      borderRadius: 10,
+      borderRadius: 20,
       width: "100%",
-      "&:boder, &.MuiCard-root":{
-        borderColor: 'black'
+      background: 'rgba(255, 255, 255, 0.03)',
+      backdropFilter: 'blur(20px)',
+      border: '1px solid rgba(255, 255, 255, 0.06)',
+      overflow: 'hidden',
+      transition: 'all 0.4s cubic-bezier(0.22, 1, 0.36, 1)',
+      "&:hover": {
+        border: '1px solid rgba(57, 200, 250, 0.15)',
+        boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
       },
-     background: "#44444a"
     },
     cardMedia: {
-      paddingTop: '56.25%' // 16:9
+      paddingTop: '56.25%'
     },
     cardContent: {
       flexGrow: 1,
+      padding: theme.spacing(3),
     },
     cardActionArea:{
       padding:5
     },
     media: {
-      height: 250,
+      height: 220,
       objectFit: 'cover',
-      backgroundSize: '250px 250px'//TODO: resize image bg
+      backgroundSize: '200px 200px',
+      opacity: 0.85,
+      transition: 'opacity 0.3s ease',
+      "$card:hover &": {
+        opacity: 1,
+      },
     },
     title:{
-      fontSize:'2em',
-      fontWeight: 600,
-      opacity:'0.95',
+      fontSize:'1.5em',
+      fontWeight: 700,
       textAlign:'center',
-      color:'#39c8fa',
-      fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
+      color:'#ffffff',
+      fontFamily: 'Syne, sans-serif',
       letterSpacing: '2px',
       textTransform: 'uppercase',
-      textShadow: '0 0 10px rgba(57, 200, 250, 0.5)',
+      marginBottom: theme.spacing(1),
       [theme.breakpoints.down("sm")]: {
-        fontSize: '1.3em',
+        fontSize: '1.2em',
         letterSpacing: '1px',
       },
     },
     description:{
-      fontSize:'1.2em',
-      color:'#c7c9d1',
-      fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
-      letterSpacing: '0.5px',
-      lineHeight: 1.6,
+      fontSize:'1em',
+      color:'rgba(255, 255, 255, 0.55)',
+      fontFamily: 'Outfit, sans-serif',
+      letterSpacing: '0.3px',
+      lineHeight: 1.7,
+      textAlign: 'center',
       [theme.breakpoints.down("sm")]: {
-        fontSize: '0.95em',
-        lineHeight: 1.5,
+        fontSize: '0.9em',
+        lineHeight: 1.6,
       },
     }
-     
+
 }));

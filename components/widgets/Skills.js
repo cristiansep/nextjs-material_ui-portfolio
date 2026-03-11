@@ -14,7 +14,6 @@ import { skillData } from '../../data';
 const useStyles =  makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -26,11 +25,9 @@ const useStyles =  makeStyles((theme) => ({
     marginLeft: "7%",
     [theme.breakpoints.down("md")]: {
       marginLeft: "4%",
-  
     },
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
-  
     },
     [theme.breakpoints.down("xs")]: {
       marginLeft:0,
@@ -48,22 +45,19 @@ const useStyles =  makeStyles((theme) => ({
   },
   margenTitulo: {
     marginBottom: 30,
-    color: '#39c8fa',
-    fontWeight: 'bold',
-    letterSpacing: '2px',
-    fontFamily: 'Orbitron, Space Grotesk, Inter, Montserrat, Roboto, Arial, sans-serif',
+    color: '#ffffff',
+    fontWeight: 700,
+    letterSpacing: '3px',
+    fontFamily: 'Syne, sans-serif',
     textTransform: 'uppercase',
-    textShadow: '0 0 15px rgba(57, 200, 250, 0.6)',
+    fontSize: '1.1rem',
     [theme.breakpoints.down("sm")]: {
-      fontSize: '1.1rem',
+      fontSize: '1rem',
       marginBottom: 20,
-      letterSpacing: '1px',
+      letterSpacing: '2px',
     },
   }
 }));
-
-
-
 
 
 

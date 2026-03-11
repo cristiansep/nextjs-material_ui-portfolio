@@ -9,7 +9,6 @@ export default makeStyles((theme) => ({
     marginBottom: theme.spacing(1),
   },
   title: {
-    // flexGrow: 0.7,
     flexGrow: 1,
     marginLeft: theme.spacing(6),
     [theme.breakpoints.down("md")]: {
@@ -21,21 +20,23 @@ export default makeStyles((theme) => ({
     },
   },
   buttonTitle: {
-    fontSize: '20px',
-    letterSpacing: '2px',
-    textShadow: '0 0 10px rgba(57, 200, 250, 0.5)',
+    fontSize: '18px',
+    fontFamily: 'Syne, sans-serif',
+    fontWeight: 700,
+    letterSpacing: '3px',
+    textTransform: 'uppercase',
     "&:focus, &.Mui-focusVisible": {
       outline: "none",
       color: "transparent",
       textShadow: "0 0 0 #ffff",
     },
     "&:hover, &.Mui-focusVisible": {
-      transition: "0.3s",
+      transition: "0.4s",
       opacity: 1,
       backgroundColor: "transparent",
-      textShadow: '0 0 15px rgba(57, 200, 250, 0.8)',
+      letterSpacing: '5px',
     },
-   
+
   },
   buttonSpacing: {
     flexGrow: 0.5,
@@ -54,9 +55,9 @@ export default makeStyles((theme) => ({
     transition: "all 0.5s",
   },
   appBarSolid: {
-    backgroundColor: "rgba(10, 10, 35, 0.95)",
-    backdropFilter: "blur(10px)",
-    borderBottom: "1px solid rgba(57, 200, 250, 0.1)",
+    backgroundColor: "rgba(6, 6, 20, 0.85)",
+    backdropFilter: "blur(20px) saturate(180%)",
+    borderBottom: "1px solid rgba(57, 200, 250, 0.08)",
     transitionTimingFunction: "ease-in",
     transition: "all 0.5s",
   },
@@ -73,19 +74,17 @@ export default makeStyles((theme) => ({
     },
     position: "relative",
     background: "transparent",
-    // flexGrow: 0.5,
     "& > *": {
-      marginLeft: theme.spacing(4),
+      marginLeft: theme.spacing(3),
     },
-    WebkitTransform: 'perspective(1px) translateZ(0)',
-    transform: 'perspective(1px) translateZ(0)',
-    WebkitTransitionDuration: '0.3s',
-    transitionDuration: '0.3s',
-    WebkitTransitionProperty: 'transform',
-    transitionProperty: 'transform'
   },
   buttonBorder2: {
-    letterSpacing: '1px',
+    fontFamily: 'Outfit, sans-serif',
+    fontWeight: 500,
+    letterSpacing: '1.5px',
+    fontSize: '0.8rem',
+    position: 'relative',
+    padding: '8px 16px',
     "&:focus, &.Mui-focusVisible": {
       outline: "none",
       color: "transparent",
@@ -95,9 +94,21 @@ export default makeStyles((theme) => ({
       transition: "0.3s",
       opacity: 1,
       backgroundColor: "transparent",
-      WebkitTransform: 'scale(1.1)',
-      transform: 'scale(1.1)',
-      textShadow: '0 0 10px rgba(57, 200, 250, 0.6)',
+      color: '#39c8fa',
+    },
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      bottom: 4,
+      left: '50%',
+      width: 0,
+      height: '1px',
+      background: 'linear-gradient(90deg, #39c8fa, #a78bfa)',
+      transition: 'all 0.3s ease',
+      transform: 'translateX(-50%)',
+    },
+    '&:hover::after': {
+      width: '60%',
     },
   },
   iconButtonBorder: {
@@ -105,7 +116,7 @@ export default makeStyles((theme) => ({
       outline: "none",
       textShadow: "0 0 0 #ffff",
     },
-  
+
   },
   buttonCollapse: {
     [theme.breakpoints.up("md")]: {
@@ -114,8 +125,10 @@ export default makeStyles((theme) => ({
     boxShadow: "none",
   },
   active: {
-    borderBottom: "2px solid #39c8fa",
-    textShadow: '0 0 10px rgba(57, 200, 250, 0.6)',
+    color: '#39c8fa !important',
+    '&::after': {
+      width: '60% !important',
+    },
   },
   buttonSong: {
     marginLeft: theme.spacing(5),
@@ -126,7 +139,6 @@ export default makeStyles((theme) => ({
   menu: {
     [theme.breakpoints.down("sm")]: {
       flexGrow: 1,
-      // marginLeft: theme.spacing(6),
     },
   }
 }));

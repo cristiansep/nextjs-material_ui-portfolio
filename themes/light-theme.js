@@ -4,26 +4,22 @@ export const lightTheme = createTheme({
     palette: {
       type: 'dark',
       background: {
-        default: '#0a0a23',
-        paper: '#1a1a3e',
+        default: '#060614',
+        paper: '#0d0d2b',
       },
     },
     typography: {
       fontFamily: [
-        'Orbitron',
-        'Space Grotesk',
-        'Inter',
-        'Montserrat',
-        'Roboto',
-        'Arial',
+        'Outfit',
+        'Syne',
         'sans-serif'
-      ].join(','),        
+      ].join(','),
     },
     overrides: {
       MuiCssBaseline: {
         '@global': {
           body: {
-            background: 'linear-gradient(135deg, #0a0a23 0%, #1a1a3e 50%, #0a0a23 100%)',
+            background: 'radial-gradient(ellipse at 20% 0%, #0f0f3d 0%, #060614 40%), radial-gradient(ellipse at 80% 100%, #0a0a2e 0%, #060614 50%)',
             backgroundAttachment: 'fixed',
           },
         },

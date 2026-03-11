@@ -24,21 +24,22 @@ export default makeStyles((theme) => ({
       width: '100%',
     }
   },
-  top: {
-    // marginTop: "50px",
-  },
+  top: {},
   imagen: {
     marginTop: "6px",
     width: "20rem",
     height: "20rem",
-    borderRadius: "5px"
+    borderRadius: "12px",
+    border: '1px solid rgba(57, 200, 250, 0.15)',
+    transition: 'all 0.4s ease',
   },
   imagenMobile: {
     marginTop: "6px",
     width: "100%",
     maxWidth: "18rem",
-    height: "auto", 
-    borderRadius: "5px"
+    height: "auto",
+    borderRadius: "12px",
+    border: '1px solid rgba(57, 200, 250, 0.15)',
   },
   cardroot: {
     minWidth: 275,
@@ -55,28 +56,30 @@ export default makeStyles((theme) => ({
   primero: {
     marginRight: '10px',
     color: '#39c8fa',
-    textShadow: '0 0 8px rgba(57, 200, 250, 0.4)',
+    fontFamily: 'Outfit, sans-serif',
     letterSpacing: '1px',
     [theme.breakpoints.down("sm")]: {
       fontSize: '0.85rem',
     },
   },
   segundo: {
-    color: '#c7c9d1',
+    color: 'rgba(255, 255, 255, 0.65)',
+    fontFamily: 'Outfit, sans-serif',
     letterSpacing: '0.5px',
     [theme.breakpoints.down("sm")]: {
       fontSize: '0.85rem',
     },
   },
   about_text: {
-    fontSize: '17px',
-    color: '#c7c9d1',
-    fontWeight: 600,
+    fontSize: '16px',
+    color: 'rgba(255, 255, 255, 0.65)',
+    fontFamily: 'Outfit, sans-serif',
+    fontWeight: 400,
     textAlign: 'justify',
-    lineHeight: 1.7,
+    lineHeight: 1.8,
     [theme.breakpoints.down("sm")]: {
       fontSize: '14px',
-      lineHeight: 1.6,
+      lineHeight: 1.7,
     },
   },
   paperStyle: {
@@ -84,15 +87,20 @@ export default makeStyles((theme) => ({
     paddingBottom: theme.spacing(6),
     paddingLeft: theme.spacing(6),
     paddingRight: theme.spacing(6),
-    background: "#44444a",
-   
+    background: 'rgba(255, 255, 255, 0.03)',
+    backdropFilter: 'blur(20px)',
+    border: '1px solid rgba(255, 255, 255, 0.06)',
+    borderRadius: '20px',
   },
   paperStyleMobile: {
     paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(1),
-    paddingLeft: theme.spacing(1),
-    paddingRight: theme.spacing(1),
-    background: "#44444a",
+    paddingBottom: theme.spacing(2),
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+    background: 'rgba(255, 255, 255, 0.03)',
+    backdropFilter: 'blur(20px)',
+    border: '1px solid rgba(255, 255, 255, 0.06)',
+    borderRadius: '16px',
   },
   boxData: {
     marginBottom: 15,
@@ -101,23 +109,25 @@ export default makeStyles((theme) => ({
     },
   },
   buttonColor: {
-    marginTop: "15px",
+    marginTop: "20px",
     color: '#ffffff',
-    background: 'linear-gradient(90deg, #39c8fa 0%, #7b68ee 100%)',
-    boxShadow: '0 0 15px rgba(57, 200, 250, 0.4)',
-    letterSpacing: '1px',
+    fontFamily: 'Outfit, sans-serif',
     fontWeight: 600,
-    transition: 'all 0.3s ease',
+    letterSpacing: '2px',
+    fontSize: '0.85rem',
+    padding: '10px 32px',
+    background: 'linear-gradient(135deg, #39c8fa 0%, #a78bfa 100%)',
+    borderRadius: '10px',
+    border: 'none',
+    transition: 'all 0.4s cubic-bezier(0.22, 1, 0.36, 1)',
     "&:hover,&.MuiButton-hover":{
-      background: 'linear-gradient(90deg, #7b68ee 0%, #39c8fa 100%)',
-      boxShadow: '0 0 25px rgba(57, 200, 250, 0.6)',
-      transform: 'translateY(-2px)',
-    },
-    [theme.breakpoints.down("xs")]: {
-      width: '100%',
+      background: 'linear-gradient(135deg, #a78bfa 0%, #39c8fa 100%)',
+      transform: 'translateY(-3px)',
+      boxShadow: '0 10px 30px rgba(57, 200, 250, 0.25)',
     },
     [theme.breakpoints.down("sm")]: {
       width: '100%',
+      padding: '12px 24px',
     }
   }
 }));

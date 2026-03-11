@@ -10,11 +10,11 @@ const useStyles = makeStyles((theme) => ({
   "@keyframes pulseGlow": {
     "0%, 100%": {
       transform: 'scale(1)',
-      filter: 'drop-shadow(0 0 8px rgba(57, 200, 250, 0.5))',
+      opacity: 0.6,
     },
     "50%": {
-      transform: 'scale(1.15)',
-      filter: 'drop-shadow(0 0 15px rgba(57, 200, 250, 0.9))',
+      transform: 'scale(1.1)',
+      opacity: 1,
     },
   },
   buttonStyle: {
@@ -27,24 +27,19 @@ const useStyles = makeStyles((theme) => ({
       transition: "0.3s",
       opacity: 1,
       backgroundColor: "transparent"
-
     },
-    WebkitTransform: 'perspective(1px) translateZ(0)',
-    transform: 'perspective(1px) translateZ(0)',
-    WebkitTransitionDuration: '0.3s',
-    transitionDuration: '0.3s'
   },
   iconStyle: {
-    fontSize: '35px',
-    filter: 'drop-shadow(0 0 8px rgba(57, 200, 250, 0.5))',
-    animation: '$pulseGlow 2s ease-in-out infinite',
+    fontSize: '28px',
+    color: 'rgba(255, 255, 255, 0.6)',
+    animation: '$pulseGlow 2.5s ease-in-out infinite',
+    transition: 'all 0.3s ease',
     [theme.breakpoints.down("sm")]: {
-      fontSize: '25px',
+      fontSize: '22px',
     },
     "&:hover, &:active, &:focus": {
       animationPlayState: 'paused',
-      transform: 'scale(1.3)',
-      filter: 'drop-shadow(0 0 15px rgba(57, 200, 250, 0.8))',
+      color: '#39c8fa',
     },
   },
 }));
@@ -55,7 +50,7 @@ export default function ButtonSong({navBackground}) {
 
     const classes = useStyles();
     const soundUrl = '/sounds/reflected.mp3';
-  
+
     const [clicked, setClicked] = useState();
     const [play, { stop, isPlaying }] = useSound(soundUrl, {volume: 0.2});
 
@@ -70,7 +65,7 @@ export default function ButtonSong({navBackground}) {
       }
     }
 
-  
+
     return (
       <>
         <Zoom>
@@ -89,4 +84,3 @@ export default function ButtonSong({navBackground}) {
       </>
     );
   }
-

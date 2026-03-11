@@ -45,44 +45,24 @@ export const aboutData = [
   export const portfolioData = [
     {
       id:uuidv4(),
-      title:"Plataforma de Reserva de Horas Médicas",
-      technology:"React.js, Context Api, Material UI, Moment.js",
-      features:"Administración de usuarios, Administración de horarios, Autenticación, Protección de rutas.",
-      date:"Noviembre/Diciembre 2020",
+      title:"RAG - Retrieval-Augmented Generation",
+      technology:"Next.js, TypeScript, LangChain, OpenAI, Google GenAI, ChromaDB, Tailwind CSS",
+      features:"Ingesta de documentos, generación de embeddings, búsqueda semántica, respuestas contextuales con LLM, API RESTful.",
+      date:"2026",
       img:"/images/undraw_react_y7wq.svg",
-      codeUrl:"https://github.com/cristiansep/ReservasApp",
+      codeUrl:"",
       demoUrl:""
     },
-    // {
-    //   id:uuidv4(),
-    //   title:"Aplicación de Diario Personal",
-    //   technology:"Firebase, React.js, Redux, Sass.",
-    //   features:"Autenticación normal y con google, CRUD, Manejo de estado global, Subida de archivos a cloudinary.",
-    //   date:"Agosto 2020",
-    //   img:"/images/undraw_finance_0bdk.svg",
-    //   codeUrl:"https://github.com/cristiansep/JournalApp",
-    //   demoUrl:"https://stupefied-jang-d3ed8b.netlify.app"
-    // },
     {
       id:uuidv4(),
-      title:"API RESTful para Gestión de Reservas",
-      technology:"Node.js,Express.js, Jsonwebtoken, Sequelize, Nodemailer.",
-      features:"Autenticación, Protección de rutas, CRUD, Subida de archivos, Envio de emails",
-      date:"Noviembre/Diciembre 2020",
+      title:"Termic - Diseñador de Ventanas Termopanel",
+      technology:"React 19, TypeScript, Vite, Tailwind CSS, Zustand, jsPDF",
+      features:"Diseñador visual interactivo, cálculo automático de precios con descuentos, exportación a PDF, persistencia local, diseño responsive.",
+      date:"2025",
       img:"/images/undraw_code_review_l1q9.svg",
-      codeUrl:"https://github.com/cristiansep/Backend-Sequelize",
-      
+      codeUrl:"",
+      demoUrl:""
     },
-    // {
-    //   id:uuidv4(),
-    //   title:"Sitio Web de Portafolio Profesional",
-    //   technology:"Nextjs, Material UI, React-spring.",
-    //   features:"Animaciones, Diseño web responsivo, Formulario de contacto sin servidor, .",
-    //   date:"Enero 2021",
-    //   img:"/images/undraw_portfolio_website_lidw.svg",
-    //   codeUrl:"https://github.com/cristiansep/nextjs-material_ui-portfolio",
-    //   demoUrl:""
-    // },
     {
       id:uuidv4(),
       title:"Aplicación Móvil de Recetas y Comidas",

@@ -9,35 +9,35 @@ export default function Copyright() {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
-      <Box 
-        display="flex" 
-        justifyContent="center" 
+      <Box
+        display="flex"
+        justifyContent="center"
         alignItems="center"
         textAlign="center"
         width="100%"
       >
-        <Typography 
-          variant="overline" 
+        <Typography
+          variant="overline"
           style={{
-            color: "#c7c9d1", 
-            fontWeight: 700,
-            fontSize: !isMobile ? "1.1em" : undefined,
-            letterSpacing: !isMobile ? '2px' : '1px',
-            textShadow: '0 0 8px rgba(57, 200, 250, 0.3)',
-            }} 
+            color: "rgba(255, 255, 255, 0.35)",
+            fontFamily: 'Outfit, sans-serif',
+            fontWeight: 400,
+            fontSize: !isMobile ? "0.85em" : '0.7em',
+            letterSpacing: !isMobile ? '3px' : '2px',
+            }}
             align="center"
             >
-          {"Copyright © created by "}
-         <Typography 
+          {"Copyright \u00A9 "}
+         <Typography
           variant="overline"
           component="span"
           style={{
-            color: "#39c8fa", 
-            fontWeight: 700,
-            fontSize: !isMobile ? "1.1em" : undefined,
-            letterSpacing: !isMobile ? '2px' : '1px',
-            textShadow: '0 0 10px rgba(57, 200, 250, 0.6)',
-            }} 
+            color: "rgba(57, 200, 250, 0.7)",
+            fontFamily: 'Outfit, sans-serif',
+            fontWeight: 500,
+            fontSize: "1em",
+            letterSpacing: 'inherit',
+            }}
           >
          {"cristiansep "}
          </Typography>

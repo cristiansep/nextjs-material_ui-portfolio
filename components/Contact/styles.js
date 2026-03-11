@@ -2,33 +2,33 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
 export default makeStyles((theme )=> ({
-    backColor: {
-        // background: '#0a0a23',
-      },
+    backColor: {},
       cardGrid: {
         paddingTop: theme.spacing(14),
         paddingBottom: theme.spacing(14),
       },
       form: {
         width: '100%',
-        // marginTop: theme.spacing(0),
       },
       submit: {
         margin: theme.spacing(3, 0, 2),
-        background: 'linear-gradient(90deg, #39c8fa 0%, #7b68ee 100%)',
+        background: 'linear-gradient(135deg, #39c8fa 0%, #a78bfa 100%)',
         color: '#ffffff',
-        boxShadow: '0 0 15px rgba(57, 200, 250, 0.4)',
-        letterSpacing: '1px',
+        fontFamily: 'Outfit, sans-serif',
         fontWeight: 600,
-        transition: 'all 0.3s ease',
+        letterSpacing: '2px',
+        fontSize: '0.85rem',
+        borderRadius: '10px',
+        padding: '12px',
+        transition: 'all 0.4s cubic-bezier(0.22, 1, 0.36, 1)',
         "&:hover,&.MuiButton-hover":{
-          background: 'linear-gradient(90deg, #7b68ee 0%, #39c8fa 100%)',
-          boxShadow: '0 0 25px rgba(57, 200, 250, 0.6)',
-          transform: 'translateY(-2px)',
+          background: 'linear-gradient(135deg, #a78bfa 0%, #39c8fa 100%)',
+          transform: 'translateY(-3px)',
+          boxShadow: '0 10px 30px rgba(57, 200, 250, 0.25)',
         },
         [theme.breakpoints.down("sm")]: {
-          fontSize: '0.85rem',
-          letterSpacing: '0.5px',
+          fontSize: '0.8rem',
+          letterSpacing: '1px',
         },
       },
       images: {
@@ -37,7 +37,6 @@ export default makeStyles((theme )=> ({
         position: 'relative',
       },
       espacio: {
-        // paddingTop: theme.spacing(4),
         display: 'flex',
         '& > *': {
           margin: theme.spacing(4),
@@ -51,74 +50,63 @@ export default makeStyles((theme )=> ({
         },
       },
       margen: {
-        marginBottom: theme.spacing(4),
+        marginBottom: theme.spacing(3),
       },
       margenMobile: {
-        // margin:0,
         paddingLeft:0
       },
       tamano: {
-        background: 'linear-gradient(135deg, #39c8fa 0%, #7b68ee 100%)',
+        background: 'linear-gradient(135deg, #39c8fa 0%, #a78bfa 100%)',
         width: theme.spacing(6),
         height: theme.spacing(6),
-        WebkitTransform: 'perspective(1px) translateZ(0)',
-        transform: 'perspective(1px) translateZ(0)',
-        WebkitTransitionDuration: '0.3s',
-        transitionDuration: '0.3s',
+        transition: 'all 0.3s ease',
         color: '#ffffff',
-        boxShadow: '0 0 15px rgba(57, 200, 250, 0.4)',
       },
       tamanoMobile: {
-        background: 'linear-gradient(135deg, #39c8fa 0%, #7b68ee 100%)',
-        width: theme.spacing(4),
-        height: theme.spacing(4),
-        WebkitTransform: 'perspective(1px) translateZ(0)',
-        transform: 'perspective(1px) translateZ(0)',
-        WebkitTransitionDuration: '0.3s',
-        transitionDuration: '0.3s',
+        background: 'linear-gradient(135deg, #39c8fa 0%, #a78bfa 100%)',
+        width: theme.spacing(4.5),
+        height: theme.spacing(4.5),
+        transition: 'all 0.3s ease',
         color: '#ffffff',
-        boxShadow: '0 0 10px rgba(57, 200, 250, 0.4)',
       },
       iconAnimation: {
-        webkitTransform: 'translateZ(0)',
-        transform: 'translateZ(0)',
-        webkitTransitionDuration: '0.3s',
-        transitionDuration: '0.3s',
-        webkitTransitionProperty: 'transform',
-        transitionProperty: 'transform',
-        webkitTransitionTimingFunction: 'ease-out',
-        transitionTimingFunction: 'ease-out',
+        transition: 'all 0.3s ease',
         "&:hover, &:active, &:focus": {
-          webkitTransform: 'scale(1.5) rotate(12deg)',
-          transform: 'scale(1.5) rotate(12deg)',
+          transform: 'scale(1.2)',
         },
       },
       paperStyle: {
-        background: "#44444a",
+        background: 'rgba(255, 255, 255, 0.03)',
+        backdropFilter: 'blur(20px)',
+        border: '1px solid rgba(255, 255, 255, 0.06)',
+        borderRadius: '20px',
         paddingTop: theme.spacing(6),
         paddingBottom: theme.spacing(6),
         paddingLeft: theme.spacing(6),
         paddingRight: theme.spacing(6),
-       
       },
       paperStyleMobile: {
-        background: "#44444a",
-        paddingTop: theme.spacing(0),
-        paddingBottom: theme.spacing(1),
-        paddingLeft: theme.spacing(1),
-        paddingRight: theme.spacing(1),
-       
+        background: 'rgba(255, 255, 255, 0.03)',
+        backdropFilter: 'blur(20px)',
+        border: '1px solid rgba(255, 255, 255, 0.06)',
+        borderRadius: '16px',
+        paddingTop: theme.spacing(3),
+        paddingBottom: theme.spacing(2),
+        paddingLeft: theme.spacing(2),
+        paddingRight: theme.spacing(2),
       },
       textList: {
         '& .MuiListItemText-primary': {
-          color: '#c7c9d1',
+          color: 'rgba(255, 255, 255, 0.65)',
+          fontFamily: 'Outfit, sans-serif',
           letterSpacing: '0.5px',
         },
       },
       textListMobile: {
         marginLeft: -10,
         '& .MuiListItemText-primary': {
-          color: '#c7c9d1',
+          color: 'rgba(255, 255, 255, 0.65)',
+          fontFamily: 'Outfit, sans-serif',
           overflow: 'hidden',
           textOverflow: 'ellipsis',
           whiteSpace: 'nowrap',
@@ -134,37 +122,41 @@ export const InputField = withStyles((theme) => ({
   root: {
       "& label.Mui-focused": {
           color: "#39c8fa",
-          textShadow: '0 0 8px rgba(57, 200, 250, 0.4)',
       },
       "& label": {
-          color: "#c7c9d1",
+          color: "rgba(255, 255, 255, 0.4)",
+          fontFamily: 'Outfit, sans-serif',
+          letterSpacing: '0.5px',
           [theme.breakpoints.down("sm")]: {
             fontSize: '0.85rem',
           },
       },
       "& .MuiOutlinedInput-root": {
+          borderRadius: '10px',
+          transition: 'all 0.3s ease',
           "& fieldset": {
-              borderColor: "#c7c9d1",
+              borderColor: "rgba(255, 255, 255, 0.08)",
               transition: 'all 0.3s ease',
           },
           "&.MuiOutlinedInput-colorSecondary": {
-            color: "#c7c9d1"
+            color: "rgba(255, 255, 255, 0.7)"
           },
           "&.Mui-focused fieldset": {
-            borderColor: "#39c8fa",
-            boxShadow: '0 0 10px rgba(57, 200, 250, 0.3)',
+            borderColor: "rgba(57, 200, 250, 0.5)",
+            boxShadow: '0 0 20px rgba(57, 200, 250, 0.08)',
           },
           "&:hover fieldset": {
-            borderColor: "#39c8fa",
+            borderColor: "rgba(57, 200, 250, 0.3)",
         },
       },
       "& .MuiOutlinedInput-input": {
-          color: "#c7c9d1",
+          color: "rgba(255, 255, 255, 0.8)",
+          fontFamily: 'Outfit, sans-serif',
           [theme.breakpoints.down("sm")]: {
             fontSize: '0.85rem',
             padding: '14px',
           },
       },
   },
-  
+
 }))(TextField);
