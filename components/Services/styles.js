@@ -1,75 +1,98 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles(theme => ({
-    backColor: {},
-     cardGrid: {
-       paddingTop: theme.spacing(14),
-       paddingBottom: theme.spacing(14),
-     },
-     projectCard:{
-       transition: 'all 0.4s cubic-bezier(0.22, 1, 0.36, 1)',
-      "&:hover": {
-        transform: 'translateY(-12px)',
+    cardGrid: {
+      paddingTop: theme.spacing(14),
+      paddingBottom: theme.spacing(14),
+      [theme.breakpoints.down("sm")]: {
+        paddingTop: theme.spacing(10),
+        paddingBottom: theme.spacing(10),
       },
     },
-     card: {
-      borderRadius: 20,
-      width: "100%",
-      background: 'rgba(255, 255, 255, 0.03)',
-      backdropFilter: 'blur(20px)',
-      border: '1px solid rgba(255, 255, 255, 0.06)',
+    grid: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      borderTop: '1px solid var(--line)',
+      borderLeft: '1px solid var(--line)',
+      [theme.breakpoints.down("sm")]: {
+        gridTemplateColumns: '1fr',
+      },
+    },
+    card: {
+      position: 'relative',
+      height: '100%',
+      boxSizing: 'border-box',
+      padding: theme.spacing(5, 4),
+      borderRight: '1px solid var(--line)',
+      borderBottom: '1px solid var(--line)',
+      display: 'flex',
+      flexDirection: 'column',
       overflow: 'hidden',
-      transition: 'all 0.4s cubic-bezier(0.22, 1, 0.36, 1)',
-      "&:hover": {
-        border: '1px solid rgba(57, 200, 250, 0.15)',
-        boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
+      transition: 'background 0.5s var(--ease-out)',
+      // Barra de acento que crece al pasar el mouse
+      '&::before': {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        height: 2,
+        width: 0,
+        background: 'var(--flare)',
+        transition: 'width 0.6s var(--ease-out)',
       },
-    },
-    cardMedia: {
-      paddingTop: '56.25%'
-    },
-    cardContent: {
-      flexGrow: 1,
-      padding: theme.spacing(3),
-    },
-    cardActionArea:{
-      padding:5
-    },
-    media: {
-      height: 220,
-      objectFit: 'cover',
-      backgroundSize: '200px 200px',
-      opacity: 0.85,
-      transition: 'opacity 0.3s ease',
-      "$card:hover &": {
-        opacity: 1,
+      '&:hover': {
+        background: 'rgba(236, 239, 246, 0.025)',
       },
-    },
-    title:{
-      fontSize:'1.5em',
-      fontWeight: 700,
-      textAlign:'center',
-      color:'#ffffff',
-      fontFamily: 'Syne, sans-serif',
-      letterSpacing: '2px',
-      textTransform: 'uppercase',
-      marginBottom: theme.spacing(1),
+      '&:hover::before': {
+        width: '100%',
+      },
       [theme.breakpoints.down("sm")]: {
-        fontSize: '1.2em',
-        letterSpacing: '1px',
+        padding: theme.spacing(4, 3),
       },
     },
-    description:{
-      fontSize:'1em',
-      color:'rgba(255, 255, 255, 0.55)',
-      fontFamily: 'Outfit, sans-serif',
-      letterSpacing: '0.3px',
+    number: {
+      fontFamily: 'var(--font-display)',
+      fontStyle: 'italic',
+      fontSize: '3.5rem',
+      lineHeight: 1,
+      color: 'var(--signal)',
+      marginBottom: theme.spacing(6),
+      [theme.breakpoints.down("sm")]: {
+        marginBottom: theme.spacing(3),
+      },
+    },
+    title: {
+      fontFamily: 'var(--font-body)',
+      fontSize: '1.35rem',
+      fontWeight: 500,
+      color: 'var(--ink)',
+      margin: 0,
+      marginBottom: theme.spacing(2),
+    },
+    description: {
+      flex: 1,
+      fontSize: '0.98rem',
       lineHeight: 1.7,
-      textAlign: 'center',
-      [theme.breakpoints.down("sm")]: {
-        fontSize: '0.9em',
-        lineHeight: 1.6,
+      fontWeight: 300,
+      color: 'var(--ink-soft)',
+      margin: 0,
+    },
+    tags: {
+      listStyle: 'none',
+      padding: 0,
+      margin: 0,
+      marginTop: theme.spacing(4),
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: theme.spacing(2),
+      fontFamily: 'var(--font-mono)',
+      fontSize: '0.62rem',
+      letterSpacing: '0.12em',
+      textTransform: 'uppercase',
+      color: 'var(--ink-mute)',
+      '& li::before': {
+        content: '"/ "',
+        color: 'var(--flare)',
       },
-    }
-
+    },
 }));

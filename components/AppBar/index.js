@@ -1,80 +1,41 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Box from "@material-ui/core/Box";
-import AppBarCollapse from "./AppBarCollapse";
-import { Grid, Typography } from "@material-ui/core";
-import { Button } from "@material-ui/core";
-
-import useStyles from "./styles";
+import Container from "@material-ui/core/Container";
 import { animateScroll as scroll } from "react-scroll";
+
+import AppBarCollapse from "./AppBarCollapse";
 import ButtonSong from "../widgets/ButtonSong";
-import Fade from "react-reveal/Fade";
+import useStyles from "./styles";
 
 export default function AppBarComponent() {
   const classes = useStyles();
-
   const [navBackground, setNavBackground] = useState("appBarTransparent");
-
-  const navRef = useRef();
-  navRef.current = navBackground;
-  let show;
 
   useEffect(() => {
     const handleScroll = () => {
-       show = window.scrollY > 310;
-      if (show) {
-        setNavBackground("appBarSolid");
-      } else {
-        setNavBackground("appBarTransparent");
-      }
+      setNavBackground(window.scrollY > 80 ? "appBarSolid" : "appBarTransparent");
     };
     document.addEventListener("scroll", handleScroll);
 
     return () => {
-      document.addEventListener("scroll", handleScroll);
+      document.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <Box display="flex">
-      <Grid container>
-        <AppBar position="fixed" className={classes[navRef.current]}>
-          <Toolbar className={classes.spacingAppbar}>
-            <Box variant="div" className={classes.title}>
-              <Fade top>
-                <Button
-                  color="inherit"
-                  className={classes.buttonTitle}
-                  onClick={() => scroll.scrollToTop()}
-                >
-                  {/* CRISTIANSEP */}
-                  <Typography
-                  style={{
-                    color: '#39c8fa', 
-                    fontWeight: 'bold',
-                    letterSpacing: '2px',
-                    textShadow: '0 0 10px rgba(57, 200, 250, 0.6)',
-                  }}
-                  component="p"
-                  variant="body1"
-                  >
-                    CRISTIANSEP
-                  </Typography>
-                </Button>
-              </Fade>
-            </Box>
+    <AppBar position="fixed" className={classes[navBackground]}>
+      <Container maxWidth="lg">
+        <Toolbar disableGutters className={classes.toolbar}>
+          <button type="button" className={classes.logo} onClick={() => scroll.scrollToTop()}>
+            Cristian<em>Sep</em>
+          </button>
 
-            <Box component="div" className={classes.menu}>
-              <AppBarCollapse navBackground={navBackground} />
-            </Box>
+          <AppBarCollapse />
 
-            <Box component="div" className={classes.buttonSong}>
-              <ButtonSong navBackground={navBackground} />
-            </Box>
-          </Toolbar>
-        </AppBar>
-      </Grid>
-    </Box>
+          <ButtonSong />
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 }

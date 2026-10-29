@@ -1,115 +1,58 @@
-html,body {
-    margin: 0;
-    overflow-x: hidden;
-    font-family: 'Outfit', 'Syne', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-
-.progress {
-	background: rgba(255, 255, 255, 0.04);
-	border-radius: 100px;
-	position: relative;
-	margin: 15px 0;
-	height: 14px;
-	width: 100%;
-	border: 1px solid rgba(57, 200, 250, 0.12);
-	overflow: hidden;
+/* Tokens de diseño — "bitácora de misión" */
+:root {
+  --bg: #05060d;
+  --bg-raised: #0b0d18;
+  --ink: #eceff6;
+  --ink-soft: rgba(236, 239, 246, 0.68);
+  --ink-mute: rgba(236, 239, 246, 0.42);
+  --line: rgba(236, 239, 246, 0.1);
+  --line-strong: rgba(236, 239, 246, 0.22);
+  --signal: #39c8fa;
+  --flare: #ff7a45;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'Martian Mono', ui-monospace, monospace;
+  --font-body: 'Outfit', sans-serif;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.progress-done {
-	background: linear-gradient(90deg, #39c8fa 0%, #a78bfa 60%, #f472b6 100%);
-	border-radius: 100px;
-	color: #fff;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-	width: 0;
-	opacity: 0;
-	transition: 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
-	font-weight: 600;
-	font-size: 0.7rem;
-	letter-spacing: 1px;
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-	position: relative;
-  }
+html,body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .progress-done::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 100%);
-    border-radius: 100px;
-  }
+/* Grano sutil sobre todo el sitio */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100000;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
 
+a {
+  color: inherit;
+}
 
-.transitions-item {
-	overflow: hidden;
-	width: 100%;
-	color: white;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	font-size: 2em;
-	font-weight: 800;
-	text-transform: uppercase;
-	will-change: transform, opacity, height;
-	white-space: nowrap;
-	line-height: 30px;
-  }
+:focus-visible {
+  outline: 1px solid var(--flare);
+  outline-offset: 4px;
+}
 
-
-
-  .card1,
-  .card4 {
-	position: absolute;
-	border-radius: 5px;
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	will-change: transform;
-  }
-
-  .card1 {
-	min-width: 60ch;
-	min-height: 60ch;
-	width: 45vw;
-	height: 45vw;
-	max-width: 100ch;
-	max-height: 100ch;
-	z-index: 1;
-	background-image: url(../public/images/5.svg);
-  }
-
-
-  .card4 {
-	width: 45vw;
-	height: 45vw;
-	background-image: url(../public/images/2.svg);
-  }
-
-  .container {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-  }
-
-
-  .loader{
-	  text-align: center;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  width: 100%;
-	  height: 100vh;
-  }
+.loader{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
 
 /* Animaciones para el Loader 3D */
 @keyframes loader3d-float {
@@ -135,10 +78,21 @@ html,body {
   animation: loader3d-pulse 1s ease-in-out infinite;
 }
 
+/* Entrada escalonada del hero */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
 /* Selection styling */
 ::selection {
-  background: rgba(57, 200, 250, 0.3);
-  color: #ffffff;
+  background: var(--flare);
+  color: var(--bg);
 }
 
 /* Scrollbar */
@@ -147,14 +101,23 @@ html,body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #060614;
+  background: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #39c8fa, #7b68ee);
+  background: var(--line-strong);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #5dd8ff, #9b88ff);
+  background: var(--signal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

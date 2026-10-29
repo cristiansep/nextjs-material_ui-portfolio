@@ -3,9 +3,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const headData = {
     title: 'CristianSep',
-    lang: 'en',
+    lang: 'es',
     author: 'Cristian Sepúlveda', 
-    description: 'Portafolio creado con material-ui', 
+    description: 'Cristian Sepúlveda — Ingeniero de software full stack. Arquitecturas web, mobile e IA aplicada.', 
   };
   
   
@@ -19,25 +19,22 @@ export const aboutData = [
     phone: '+ 56 9 4550 4578',
     img: '/images/new-me.jpeg',
     resume: '/docs/cv-2026.pdf',
-    summary: `Profesional con más de siete años de experiencia en el ciclo
-    completo de desarrollo de aplicaciones web y móviles.
-    Experto en arquitecturas modernas como Arquitectura de Microfrontend, Microservicios, Flux, Hexagonal, FBA (Feature-Based
-    Architecture) y FSD (Feature-Sliced Design).
-    Cuento con sólida experiencia en el desarrollo bajo metodologías
-    ágiles, especialmente SCRUM. He liderado proyectos de alto
-    impacto, optimizando rendimiento y escalabilidad, tanto en el frontend como en el back-end, y construido aplicaciones nativas con
-    React Native.
-    Comprometido con la calidad, la mejora continua y la entrega
-    oportuna de soluciones de ingeniería.`,
+    lead: 'Llevo más de siete años construyendo aplicaciones web y móviles de punta a punta.',
+    summary: [
+      'Me especializo en arquitecturas modernas: microfrontends, microservicios, Flux, hexagonal, FBA (Feature-Based Architecture) y FSD (Feature-Sliced Design).',
+      'He liderado proyectos de alto impacto bajo metodologías ágiles —especialmente SCRUM—, optimizando rendimiento y escalabilidad tanto en el frontend como en el backend, y he construido aplicaciones nativas con React Native.',
+      'Me importan la calidad, la mejora continua y entregar soluciones de ingeniería a tiempo.',
+    ],
   }
 ];
 
-  // SKILL DATA
-  export const skillData = [
-    {name: 'Node - Express - TypeScript', num:90},
-    {name: 'React', num:90},
-    {name: 'Angular', num:70},
-    {name: 'Javascript', num:90}
+  // STACK DATA (agrupado por área, sin porcentajes)
+  export const stackData = [
+    { area: 'Frontend', items: ['React', 'Next.js', 'Angular', 'TypeScript', 'Tailwind CSS'] },
+    { area: 'Backend', items: ['Node.js', 'Express', 'APIs REST', 'Microservicios'] },
+    { area: 'Mobile', items: ['React Native', 'Expo'] },
+    { area: 'Arquitectura', items: ['Microfrontends', 'Hexagonal', 'Flux', 'FBA', 'FSD'] },
+    { area: 'IA aplicada', items: ['LangChain', 'OpenAI', 'Google GenAI', 'RAG', 'ChromaDB'] },
   ];
 
 
@@ -49,7 +46,6 @@ export const aboutData = [
       technology:"Next.js, TypeScript, LangChain, OpenAI, Google GenAI, ChromaDB, Tailwind CSS",
       features:"Ingesta de documentos, generación de embeddings, búsqueda semántica, respuestas contextuales con LLM, API RESTful.",
       date:"2026",
-      img:"/images/undraw_react_y7wq.svg",
       codeUrl:"",
       demoUrl:""
     },
@@ -59,7 +55,6 @@ export const aboutData = [
       technology:"React 19, TypeScript, Vite, Tailwind CSS, Zustand, jsPDF",
       features:"Diseñador visual interactivo, cálculo automático de precios con descuentos, exportación a PDF, persistencia local, diseño responsive.",
       date:"2025",
-      img:"/images/undraw_code_review_l1q9.svg",
       codeUrl:"",
       demoUrl:""
     },
@@ -69,7 +64,6 @@ export const aboutData = [
       technology:"React Native, Expo.",
       features:"Consumo de APIS, tratamiento de imágenes, hooks.",
       date:"Enero 2021",
-      img:"/images/movil-1.svg",
       codeUrl:"https://github.com/cristiansep/Food-App",
       demoUrl:""
     },
@@ -79,7 +73,6 @@ export const aboutData = [
       technology:"React Native, Expo.",
       features:"CRUD, Context API, Reducer, reutilización de componentes.",
       date:"Enero 2021",
-      img:"/images/movil-2.svg",
       codeUrl:"https://github.com/cristiansep/BlogApp",
       demoUrl:""
     },
@@ -91,22 +84,21 @@ export const aboutData = [
   export const servicesData = [
     {
         id:uuidv4(),
-        title:"Rápido",
-        description:"Mi mayor prioridad son los tiempos de carga rápidos e interacción sin retrasos.",
-        img:'/images/undraw_To_the_stars_qhyy.svg'
+        title:"Arquitectura que escala",
+        description:"Diseño sistemas pensados para crecer: microfrontends, microservicios y arquitecturas hexagonales o feature-sliced que mantienen el código ordenado cuando el equipo y el producto se multiplican.",
+        tags:["Microfrontends", "Microservicios", "FSD"]
     },
     {
         id:uuidv4(),
-        title:"Responsivo",
-        description:"Mis diseños funcionan en todos los dispositivos y en todo tipo de pantallas.",
-        img:'/images/undraw_progressive_app_m9ms.svg'
+        title:"Producto de punta a punta",
+        description:"Del backend en Node a la interfaz en React, Angular o React Native. Me hago cargo del ciclo completo, cuidando el rendimiento, la calidad y los plazos de entrega.",
+        tags:["Web", "Mobile", "APIs"]
     },
-    
     {
         id:uuidv4(),
-        title:"Dinámico",
-        description:"Los sitios web no tienen por qué ser estáticos, me encanta hacer que las páginas cobren vida.",
-        img:'/images/undraw_server_cluster_jwwq.svg'
+        title:"IA aplicada",
+        description:"Integro modelos de lenguaje en productos reales: ingesta de documentos, embeddings, búsqueda semántica y respuestas con contexto (RAG).",
+        tags:["LangChain", "RAG", "LLM"]
     },
   ]
 

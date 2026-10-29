@@ -1,183 +1,102 @@
 import React, { useState } from 'react';
-import Title from '../widgets/Title';
-import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import Button from '@material-ui/core/Button';
 import Fade from 'react-reveal/Fade';
-import Paper from '@material-ui/core/Paper';
 
-
-
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import CallIcon from '@material-ui/icons/Call';
-import RoomIcon from '@material-ui/icons/Room';
-import MailIcon from '@material-ui/icons/Mail';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
-
-
-import useStyles,{InputField} from './styles';
+import Title from '../widgets/Title';
+import useStyles from './styles';
 import { emailContact } from '../../helpers/emailContact';
-import {contactData} from '../../data'
-import { useMediaQuery, useTheme } from '@material-ui/core';
-
-
-
+import { contactData } from '../../data';
 
 const initEvent = {
-    name: '',
-    email: '',
-    subject: '',
-    msg: ''
-}
+  name: '',
+  email: '',
+  subject: '',
+  msg: '',
+};
 
-export default function Album() {
+const fields = [
+  { name: 'name', label: 'Nombre', type: 'text', autoComplete: 'name' },
+  { name: 'email', label: 'Correo electrónico', type: 'email', autoComplete: 'email' },
+  { name: 'subject', label: 'Asunto', type: 'text' },
+];
+
+export default function Contact() {
   const classes = useStyles();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const [contact] = contactData;
   const [contactForm, setContactForm] = useState(initEvent);
-  const {name, email, subject, msg} = contactForm;
 
-
-  const handleInputChange = ({target}) => {
+  const handleInputChange = ({ target }) => {
     setContactForm({
-        ...contactForm,
-        [target.name]: target.value
+      ...contactForm,
+      [target.name]: target.value,
     });
-}
+  };
 
-
-const handleSubmitForm = (e) => {
-  e.preventDefault();
-  emailContact(e.target);
-  setContactForm(initEvent);
-}
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    emailContact(e.target);
+    setContactForm(initEvent);
+  };
 
   return (
-    <div className={classes.backColor}>
+    <section>
       <Container className={classes.cardGrid} maxWidth="lg" id="contact">
-        <Title title="Contacto" />
+        <Title index="04" kicker="Canal abierto" title="Hablemos" />
 
-        <Paper elevation={3} className={ isMobile ? classes.paperStyleMobile : classes.paperStyle}>
-        <Grid container spacing={4} justifyContent="space-evenly">
-          {/*Section 1*/}
-          <Fade left cascade>
-            <Grid item xs={12} sm={12} md={6} xl={6} className={isMobile ? classes.espacioMobile : classes.espacio}>
-           
-                  {contactData.map(contact => 
-                  
-                    <List component="div" key={contact.id}>
-                        <ListItem className={ isMobile ? classes.margenMobile : classes.margen}>
-                        <ListItemAvatar >
-                          <Avatar  className={ isMobile ? classes.tamanoMobile : classes.tamano}>
-                          <CallIcon style={{ fontSize: isMobile ? 20 : undefined }} className={classes.iconAnimation}/>
-                          </Avatar>
-                        </ListItemAvatar>
-                        <ListItemText className={ isMobile ? classes.textListMobile : classes.textList} primary={contact.phone} />
-                      </ListItem>
-                      <ListItem className={ isMobile ? classes.margenMobile : classes.margen}>
-                        <ListItemAvatar >
-                          <Avatar  className={ isMobile ? classes.tamanoMobile : classes.tamano}>
-                          <RoomIcon style={{ fontSize: isMobile ? 20 : undefined }} className={classes.iconAnimation}/>
-                          </Avatar>
-                        </ListItemAvatar>
-                        <ListItemText className={ isMobile ? classes.textListMobile : classes.textList} primary={contact.address} />
-                      </ListItem>
-                      <ListItem className={ isMobile ? classes.margenMobile : undefined}>
-                        <ListItemAvatar>
-                          <Avatar className={ isMobile ? classes.tamanoMobile : classes.tamano}>
-                          <MailIcon style={{ fontSize: isMobile ? 20 : undefined }} className={classes.iconAnimation}/>
-                          </Avatar>
-                        </ListItemAvatar>
-                        <ListItemText className={ isMobile ? classes.textListMobile : classes.textList} primary={
-                          <span>
-                            {contact.email.length > 30 ? contact.email.slice(0, 30) + '…' : contact.email}
-                          </span>
-                        } />
-                      </ListItem>
-                    </List>
-                  )}
-            </Grid>
+        <div className={classes.grid}>
+          <Fade bottom distance="30px">
+            <div>
+              <p className={classes.pitch}>
+                ¿Tienes una <em>misión</em> en mente? Cuéntame qué quieres construir y te respondo pronto.
+              </p>
+              <a href={`mailto:${contact.email}`} className={classes.email}>
+                {contact.email} <span aria-hidden="true">→</span>
+              </a>
+              <dl className={classes.details}>
+                <div>
+                  <dt>Teléfono</dt>
+                  <dd><a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a></dd>
+                </div>
+                <div>
+                  <dt>Ubicación</dt>
+                  <dd>{contact.address}</dd>
+                </div>
+              </dl>
+            </div>
           </Fade>
-          {/*Section 2*/}
-          <Grid item xs={12} sm={12} md={6} xl={6}>
-            <Fade right cascade>
-              <div className={classes.paper}>
-                <form
-                  className={classes.form}
-                  onSubmit={handleSubmitForm}
-                >
-                  <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                      <InputField
-                        label="Nombre"
-                        required
-                        fullWidth
-                        variant="outlined"
-                        id="name"
-                        name="name"
-                        value={name || ''}
-                        onChange={handleInputChange}
-                      />
-                    </Grid>
-                 
-                    <Grid item xs={12}>
-                      <InputField
-                        label="Correo electronico"
-                        autoComplete="email"
-                        required
-                        fullWidth
-                        variant="outlined"
-                        id="email"
-                        name="email"
-                        value={email || ''}
-                        onChange={handleInputChange}
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <InputField
-                        variant="outlined"
-                        required
-                        fullWidth
-                        name="subject"
-                        label="Asunto"
-                        type="text"
-                        value={subject || ''}
-                        onChange={handleInputChange}
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <InputField
-                        variant="outlined"
-                        required
-                        fullWidth
-                        name="msg"
-                        label="Mensaje"
-                        type="text"
-                        minRows={2}
-                        multiline
-                        value={msg || ''}
-                        onChange={handleInputChange}
-                      />
-                    </Grid>
-                  </Grid>
-                  <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    className={classes.submit}
-                  >
-                    Enviar mensaje
-                  </Button>
-                </form>
-              </div>
-            </Fade>
-          </Grid>
-        </Grid>
-        </Paper>
+
+          <Fade bottom distance="30px" delay={150}>
+            <form className={classes.form} onSubmit={handleSubmitForm}>
+              {fields.map((field) => (
+                <label key={field.name} className={classes.field}>
+                  <span>{field.label}</span>
+                  <input
+                    required
+                    type={field.type}
+                    name={field.name}
+                    autoComplete={field.autoComplete}
+                    value={contactForm[field.name]}
+                    onChange={handleInputChange}
+                  />
+                </label>
+              ))}
+              <label className={classes.field}>
+                <span>Mensaje</span>
+                <textarea
+                  required
+                  name="msg"
+                  rows={4}
+                  value={contactForm.msg}
+                  onChange={handleInputChange}
+                />
+              </label>
+              <button type="submit" className={classes.submit}>
+                Enviar mensaje <span aria-hidden="true">→</span>
+              </button>
+            </form>
+          </Fade>
+        </div>
       </Container>
-    </div>
+    </section>
   );
 }

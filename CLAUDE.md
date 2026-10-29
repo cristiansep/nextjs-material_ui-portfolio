@@ -20,21 +20,21 @@ Single-page portfolio site built with **Next.js 13 (Pages Router)** and **Materi
 3. `Layout` (`components/Layout/index.js`) composes all sections in order: Profile → About → Services → Portfolio → Contact → Footer
 
 ### Key directories
-- `data/index.js` — Single file containing all portfolio content (about, skills, portfolio items, services, contact info, social links). Each entry uses `uuid` for keys.
+- `data/index.js` — Single file containing all portfolio content (about, stack groups, portfolio items, services, contact info, social links). Each entry uses `uuid` for keys.
 - `components/` — Each section has its own folder with `index.js` (component) and `styles.js` (Material-UI `makeStyles`)
 - `components/ThreeD/` — Three.js components (Astronaut3D, NoiseSphere, Loader3D) loaded dynamically to avoid SSR issues
-- `components/widgets/` — Reusable UI pieces (AnimatedImage, ButtonSong, Skills, ProgressBar, Particulas, Title, Copyright)
+- `components/widgets/` — Reusable UI pieces (ButtonSong, Title, Copyright)
 - `themes/` — MUI theme definitions (light-theme.js, dark-theme.js); currently only `lightTheme` is used in `_app.js`
 
 ### Styling approach
 - Material-UI v4 `makeStyles` for component-level styles (JSS)
-- `styles/globals.css` for global styles
+- `styles/globals.css` defines design tokens as CSS variables (`--bg`, `--ink`, `--signal`, `--flare`, `--font-display`, `--font-mono`…); component styles reference them via `var(--…)`
+- Fonts: Instrument Serif (display), Martian Mono (labels/telemetry), Outfit (body), loaded in `_document.js`
 - Server-side JSS is removed on mount in `_app.js`
 
 ### Notable dependencies
 - `react-three/fiber` + `three` — 3D rendering (loaded client-side only)
-- `react-reveal` + `react-spring` — Animations
-- `react-tsparticles` — Particle background effects
+- `react-reveal` — Scroll reveal animations
 - `emailjs-com` — Contact form email sending (client-side)
 - `sweetalert2` — Alert dialogs
 - `use-sound` — Sound playback (music button)

@@ -10,73 +10,60 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: theme.spacing(5),
       },
     },
-    titleContainer: {
+    meta: {
       display: 'flex',
       alignItems: 'center',
-      gap: theme.spacing(3),
+      gap: theme.spacing(2),
+      fontFamily: 'var(--font-mono)',
+      fontSize: '0.7rem',
+      letterSpacing: '0.12em',
+      textTransform: 'uppercase',
+      color: 'var(--ink-mute)',
+      marginBottom: theme.spacing(3),
     },
-    titleLine: {
-      width: '4px',
-      height: '2.2em',
-      background: 'linear-gradient(180deg, #39c8fa 0%, #a78bfa 100%)',
-      borderRadius: '4px',
-      flexShrink: 0,
-      [theme.breakpoints.down("sm")]: {
-        width: '3px',
-        height: '1.8em',
-      },
+    index: {
+      color: 'var(--flare)',
+    },
+    rule: {
+      flex: 1,
+      height: 1,
+      background: 'var(--line)',
     },
     titleText: {
-      fontFamily: 'Syne, sans-serif',
-      fontWeight: 700,
-      fontSize: '2em',
-      letterSpacing: '3px',
-      textTransform: 'uppercase',
-      color: '#ffffff',
-      margin: 0,
-      lineHeight: 1,
-      [theme.breakpoints.down("sm")]: {
-        fontSize: '1.4em',
-        letterSpacing: '2px',
-      },
-    },
-    titleAccent: {
-      display: 'block',
-      fontFamily: 'Outfit, sans-serif',
-      fontSize: '0.4em',
+      fontFamily: 'var(--font-display)',
       fontWeight: 400,
-      letterSpacing: '6px',
-      color: '#39c8fa',
-      opacity: 0.7,
-      marginTop: '6px',
-      textTransform: 'uppercase',
-      [theme.breakpoints.down("sm")]: {
-        letterSpacing: '4px',
-        fontSize: '0.45em',
+      fontSize: 'clamp(2.6rem, 6vw, 4.5rem)',
+      lineHeight: 1,
+      letterSpacing: '-0.01em',
+      color: 'var(--ink)',
+      margin: 0,
+      '& em': {
+        color: 'var(--signal)',
       },
     },
   }));
 
-const subtitles = {
-  'Sobre mi': 'Conociéndome',
-  'Servicios': 'Lo que ofrezco',
-  'Proyectos': 'Mi trabajo',
-  'Contacto': 'Hablemos',
-};
-
-export default function Title({title}){
+/**
+ * Encabezado de sección con índice numerado estilo bitácora
+ * @param {string} index - Número de sección ("01")
+ * @param {string} kicker - Etiqueta corta en monoespaciada
+ * @param {string} title - Título principal
+ * @param {string} accent - Parte del título en cursiva
+ */
+export default function Title({ index, kicker, title, accent }){
     const classes = useStyles();
     return (
         <div className={classes.title}>
-          <Fade left>
-            <div className={classes.titleContainer}>
-              <div className={classes.titleLine} />
-              <h1 className={classes.titleText}>
-                {title}
-                {subtitles[title] && (
-                  <span className={classes.titleAccent}>{subtitles[title]}</span>
-                )}
-              </h1>
+          <Fade bottom distance="20px">
+            <div>
+              <div className={classes.meta}>
+                <span className={classes.index}>{index}</span>
+                <span>{kicker}</span>
+                <span className={classes.rule} />
+              </div>
+              <h2 className={classes.titleText}>
+                {title}{accent && <> <em>{accent}</em></>}
+              </h2>
             </div>
           </Fade>
         </div>
@@ -84,5 +71,8 @@ export default function Title({title}){
 }
 
 Title.propTypes = {
+  index: PropTypes.string.isRequired,
+  kicker: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  accent: PropTypes.string,
 };

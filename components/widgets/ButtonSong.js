@@ -30,8 +30,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   iconStyle: {
-    fontSize: '28px',
-    color: 'rgba(255, 255, 255, 0.6)',
+    fontSize: '22px',
+    color: 'var(--ink-soft)',
     animation: '$pulseGlow 2.5s ease-in-out infinite',
     transition: 'all 0.3s ease',
     [theme.breakpoints.down("sm")]: {
@@ -39,14 +39,14 @@ const useStyles = makeStyles((theme) => ({
     },
     "&:hover, &:active, &:focus": {
       animationPlayState: 'paused',
-      color: '#39c8fa',
+      color: 'var(--flare)',
     },
   },
 }));
 
 
 
-export default function ButtonSong({navBackground}) {
+export default function ButtonSong() {
 
     const classes = useStyles();
     const soundUrl = '/sounds/reflected.mp3';
@@ -70,8 +70,8 @@ export default function ButtonSong({navBackground}) {
       <>
         <Zoom>
           <IconButton
-            style={{ color: 'white' }}
             className={classes.buttonStyle}
+            aria-label={clicked ? 'Detener música' : 'Reproducir música'}
             onClick={handlePlaySound}
           >
             {clicked ? (

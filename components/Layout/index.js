@@ -26,19 +26,26 @@ const useStyles = makeStyles((theme) => ({
       right: theme.spacing(3),
     },
     backColor: {
-      background: 'rgba(57, 200, 250, 0.12)',
+      background: 'rgba(5, 6, 13, 0.7)',
       backdropFilter: 'blur(10px)',
-      color: '#39c8fa',
-      border: '1px solid rgba(57, 200, 250, 0.15)',
+      color: 'var(--ink)',
+      border: '1px solid var(--line-strong)',
+      boxShadow: 'none',
       zIndex:99999,
       transition: 'all 0.3s ease',
       "&:hover,&.MuiButton-hover":{
-        background: 'rgba(57, 200, 250, 0.2)',
+        background: 'var(--flare)',
+        borderColor: 'var(--flare)',
+        color: 'var(--bg)',
       },
       "&:focus, &.Mui-focusVisible": {
         outline: 'none',
         textShadow: '0 0 0 #ffff',
       }
+    },
+    // Velo bajo el hero: deja ver las estrellas tenuemente detrás del contenido
+    sections: {
+      background: 'linear-gradient(to bottom, rgba(5, 6, 13, 0.6) 0, rgba(5, 6, 13, 0.92) 60vh)',
     },
   }));
   
@@ -94,10 +101,12 @@ export const Layout = (props) => {
               </Fab>
             </ScrollTop>
             < Profile/>
-            <About/>
-            <Services/>
-            <Portfolio/>
-            <Contact/>
+            <main className={classes.sections}>
+              <About/>
+              <Services/>
+              <Portfolio/>
+              <Contact/>
+            </main>
             <Footer/>
             </div>
           </React.Fragment>

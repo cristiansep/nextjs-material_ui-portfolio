@@ -22,10 +22,11 @@ export default function MyApp(props) {
   return (
     <React.Fragment>
       <Head>
-        <title>CristianSep</title>
+        <title>Cristian Sepúlveda — Ingeniero de software</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
         <meta name="author" content="Cristian Sepúlveda"></meta>
-        <meta name="description" content="Portafolio creado con material-ui"></meta>
+        <meta name="description" content="Cristian Sepúlveda — Ingeniero de software full stack. Arquitecturas web, mobile e IA aplicada."></meta>
+        <meta name="theme-color" content="#05060d" />
         <link rel="shortcut icon" href="favicon.png" />
       </Head>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
