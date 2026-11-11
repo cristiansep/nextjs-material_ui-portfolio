@@ -69,11 +69,11 @@ export const aboutData = [
     },
     {
       id:uuidv4(),
-      title:"Blogs",
-      technology:"React Native, Expo.",
-      features:"CRUD, Context API, Reducer, reutilización de componentes.",
-      date:"Enero 2021",
-      codeUrl:"https://github.com/cristiansep/BlogApp",
+      title:"ParkEasy - API de Arriendo de Estacionamientos",
+      technology:"NestJS, TypeScript, PostgreSQL + PostGIS, Redis, Docker, Jest",
+      features:"Marketplace P2P por minutos u horas, búsqueda geoespacial con cache en Redis, autenticación JWT con rotación de tokens, validaciones chilenas (RUT, teléfono), 101 tests. En desarrollo.",
+      date:"2026",
+      codeUrl:"",
       demoUrl:""
     },
   ]
