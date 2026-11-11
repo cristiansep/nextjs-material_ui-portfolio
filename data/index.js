@@ -60,12 +60,12 @@ export const aboutData = [
     },
     {
       id:uuidv4(),
-      title:"Aplicación Móvil de Recetas y Comidas",
-      technology:"React Native, Expo.",
-      features:"Consumo de APIS, tratamiento de imágenes, hooks.",
-      date:"Enero 2021",
-      codeUrl:"https://github.com/cristiansep/Food-App",
-      demoUrl:""
+      title:"Semtris - Sitio de Producto SaaS",
+      technology:"Next.js 16, TypeScript, Tailwind CSS v4, Resend, SVG isométrico",
+      features:"Landing B2B para TermoDesign y TallerPro, figuras isométricas animadas, formulario de contacto con envío de email, SEO con JSON-LD y sitemap.",
+      date:"2026",
+      codeUrl:"",
+      demoUrl:"https://www.semtris.cl"
     },
     {
       id:uuidv4(),
